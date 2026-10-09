@@ -4,7 +4,7 @@ Zdroj: [Clientelo projekt v Notion](https://app.notion.com/p/3f4e1942c8af80ddacf
 
 Termín: **2026-10-16**. Aktualizace: **2026-10-09**.
 
-Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouze k odškrtávání dokončených bodů. Reklamy (bod 4) odložené na pokyn uživatele. Následuje přenos návrhu do aplikace a bod 6.
+Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouze k odškrtávání dokončených bodů. Reklamy (bod 4) odložené na pokyn uživatele. Návrh už je implementovaný v React aplikaci; následuje bod 6.
 
 | Bod | Výsledek | Stav |
 | --- | --- | --- |
@@ -12,13 +12,13 @@ Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouz
 | 2 | Hodnota zdarma, hodnota za e-mail, okamžik žádosti | Hotovo; nabídka schválená v docs/offer.md |
 | 3 | ETF, NYSE/Arca, dostupnost, skutečná data a zdroje | Hotovo; VOO, VTI, SCHD, zdroje a omezení v docs/etf-research.md |
 | 4 | Dvě reklamy s textem, nadpisem a CTA v repozitáři | Odloženo na později uživatelem |
-| 5 | Obsah, pořadí sekcí a vlastní vzhled pro mobil | Návrh hotový v MagicPath; struktura odsouhlasená, přepracovaný vzhled k posouzení; docs/design.md. Aplikace zatím nezměněná |
+| 5 | Obsah, pořadí sekcí a vlastní vzhled pro mobil | Hotovo; návrh z MagicPath na pokyn uživatele převedený do React aplikace, ověření v docs/design.md |
 | 6 | Jedna interaktivní funkce s ověřenými výsledky | Nezahájeno |
-| 7 | Formulář, uložení kontaktu, ochrana údajů, doručení | Nezahájeno |
+| 7 | Formulář, uložení kontaktu, ochrana údajů, doručení | Připravený frontend a validace; PDF, ukládání, doručení a informace o správci zbývají |
 | 8 | Rozlišení reklam, události trychtýře a ověření záznamu | Nezahájeno |
 | 9 | README, důvody řešení, zdroje, konverze, tři A/B hypotézy, spuštění | Rozpracováno; základ README |
 | 10 | AI pokyny, kontroly, chyby, exporty a metoda exportu | Rozpracováno; souhrn, úplné exporty chybí |
-| 11 | Veřejný GitHub, commity, hosting, mobilní a koncové testy | Rozpracováno; veřejný GitHub Myro685/ETF a úvodní commit nahraný, bez nasazení |
+| 11 | Veřejný GitHub, commity, hosting, mobilní a koncové testy | Rozpracováno; GitHub Myro685/ETF, ověřený responzivní frontend; hosting a koncové testy doručení zbývají |
 | 12 | Odpověď na e-mail s GitHub, veřejným webem a omezeními | Nezahájeno |
 
 ## Priority
@@ -27,4 +27,4 @@ Jasná nabídka, ověřená data, mobilní stránka, funkční formulář, doru�
 
 ## Technická příprava
 
-Na žádost uživatele vytvořen projekt C:\Users\miros\Projects\clientelo: React, TypeScript, Vite, instrukce pro AI, rules, místo pro skills a dokumentace. Příprava neznamená dokončení bodů 5, 9, 10 ani 11.
+Na žádost uživatele vytvořen projekt C:\Users\miros\Projects\clientelo: React, TypeScript, Vite, instrukce pro AI, rules, místo pro skills a dokumentace. Nyní obsahuje implementovanou stránku. Dokončení frontendu neznamená hotové doručení průvodce, měření ani hosting.

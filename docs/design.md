@@ -1,6 +1,6 @@
 # Obsah a design stránky — bod 5
 
-Datum: 2026-10-09. Stav: **návrh vytvořený v MagicPath; struktura odsouhlasená uživatelem, přepracovaný vzhled připravený k posouzení**. Toto není nasazená aplikace. Reklamy (bod 4) jsou na pokyn uživatele odložené.
+Datum: 2026-10-09. Stav: **návrh z MagicPath na navazující pokyn uživatele implementovaný v React aplikaci**. Web běží místně, veřejný hosting zbývá. Reklamy (bod 4) jsou na pokyn uživatele odložené. Následující návrhová měření popisují původní prototyp; aktuální implementace je popsaná samostatně níže.
 
 ## Účel a vizuální směr
 
@@ -79,9 +79,28 @@ Plán byl zkontrolovaný proti tématu ETF: místo univerzálních produktových
 - Semantická tabulka v DOM zachovává sloupcové a řádkové hlavičky. Focus a reduced motion jsou v CSS; plný test screen readeru, zvětšení 200 %, všech zařízení a vizuální test nové tmavé varianty nejsou dokončené. Kontrast tmavých tokenů je spočítaný.
 - Formulář neukládá kontakty ani neodesílá e-mail. Potvrzení výslovně označuje náhled. PDF, backend, informace o správci údajů, chyba doručení, opakované odeslání a měření patří do dalších bodů.
 
-Návrh naplňuje šest návrhových úkolů bodu 5; nemění stav bodů 6–8 ani nepotvrzuje finální vzhled za uživatele. Do hlavní React aplikace zatím není zapojený. Podklady jsou v designs/magicpath/.
+Návrh naplňuje šest návrhových úkolů bodu 5. Původní podklady jsou v designs/magicpath/; následnou implementaci zachycuje další sekce. Návrhové ověření samo nepotvrzuje dokončení bodů 6–8.
 
 Šest návrhových úkolů bodu 5 odškrtnuto v Notion a ověřeno zpětným načtením. Bod 4 ponechaný nehotový. Náhledy z živého prohlížeče uložené v designs/magicpath/clientelo-design-desktop.jpg a clientelo-design-mobile.jpg.
+
+## Implementace webu a ověření
+
+EtfLanding v src/components/ nahrazuje původní úvodní stránku. Styly jsou převzaté z návrhu a upravené pro skutečná data. Data čte src/data/etfs.ts z JSON; SourceList zobrazuje všech devět zdrojů s datem dokumentu odděleným od data ověření. Plné zaměření VTI je delší než v prototypu, zůstává ale čitelné ve společném porovnání.
+
+Formulář používá nativní kontrolu email inputu, vrací focus na chybné pole a oznamuje stav přes role=status. Před zadáním e-mailu je viditelné, že služba není zapojená. Platný vstup zobrazí „E-mail nebyl uložen ani odeslán.“ PDF není vytvořené. Neexistuje endpoint, úložiště kontaktů ani analytika.
+
+| Kontrola | Výsledek |
+| --- | --- |
+| npm run lint, npm run build, git diff --check | Úspěšné; build zahrnuje TypeScript |
+| Viewporty 320, 390, 768 a 1440 px | Bez vodorovného přetékání i při otevřených detailech a zdrojích |
+| Kotvy a rozbalovací prvky | Porovnání a nabídka dostupné; podrobnosti otevřené také klávesou Enter |
+| Data | Zobrazené nákladovosti 0,03 / 0,03 / 0,06 %, aktuální Morningstar index VTI, přesný listing NYSE Arca |
+| Zdroje | Všech 9 položek z JSON a poznámky k jejich rozsahu |
+| Formulář | Prázdný vstup: chyba a focus; testovací syntakticky platný vstup: nedostupné doručení, žádný zápis ani odeslání |
+| Klávesnice | Vyzkoušené Tab a Enter, viditelný focus |
+| Vzhled a konzole | Tmavá varianta zkontrolovaná na desktopu i mobilu, bez zachycených chyb a varování v konzoli |
+
+Na 320 px způsobovala původní minimální šířka body přetékání o šířku systémového scrollbar. Opraveno odstraněním této minimální šířky; následně prošly všechny čtyři šířky. Zvětšení 200 %, screen reader a koncový proces skutečného doručení zbývají. Světlá varianta zachovává tokeny již ověřeného návrhu; aktuální browser testy proběhly s tmavou systémovou preferencí.
 
 ## MagicPath identifikátory
 

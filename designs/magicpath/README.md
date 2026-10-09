@@ -6,4 +6,4 @@ ClienteloSrovnNETF.tsx importuje ClienteloApple.css. Oba soubory představují j
 
 Formulář pouze ukazuje validační chybu a označený náhled potvrzení. E-mail drží jen v paměti komponenty. Kontakty neukládá ani nic neposílá. Návrh neobsahuje PDF, produkční souhlasy, backend, měření ani kalkulačku.
 
-React aplikace v src/ tento návrh zatím neimportuje. MagicPath build byl úspěšný; hlavní aplikace a tento návrh mají odlišný způsob sestavení.
+Na navazující pokyn uživatele je návrh převedený do src/components/EtfLanding.tsx a EtfLanding.css. Aplikace používá společná data z JSON a všech devět zdrojů, doplňuje metadata a pravdivý stav nedostupného doručení. Zdejší soubory zůstávají archivem návrhu, nezastupují aktuální implementaci. Její ověření a omezení jsou v ../../docs/design.md.

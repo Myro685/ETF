@@ -1,5 +1,15 @@
 # Rozhodnutí
 
+## 2026-10-09 — implementace webu (pokyn uživatele)
+
+Navazující pokyn „vezmi ten design a vytvoř web“ přijímá přepracovaný návrh pro implementaci. Návrh z MagicPath je převedený do React aplikace jako EtfLanding. Zachovaná hierarchie, paleta, mobilní porovnání a tmavá varianta. Původní návrh zůstává archivovaný v designs/magicpath/.
+
+Čísla, názvy, indexy, dostupnost, data ověření a všech devět zdrojů se čtou ze společného src/data/etfs.json přes src/data/etfs.ts. Nepřidáváme závislosti, které návrh nepoužívá. Součástí implementace je české formátování procent a dat, favicon, titulek a popis stránky.
+
+Formulář má validaci a předem viditelné omezení dostupnosti služby. Syntakticky platný e-mail není úspěšné doručení: aplikace výslovně říká, že nebyl uložen ani odeslán. PDF, backend a měření patří do dalších bodů. Bod 5 již byl odškrtnutý v Notion; implementace neopravňuje označit body 6, 7 nebo 11 jako celé dokončené.
+
+Lint, TypeScript a build prošly. Browser kontrola šířek 320–1440 px, klávesnice, detailů, zdrojů a validačních stavů je popsaná v docs/design.md.
+
 ## 2026-10-09 — návrh v MagicPath a přepracování vzhledu
 
 Uživatel požádal o bod 5 v MagicPath a odložil reklamu. Poté odsouhlasil strukturu prvního návrhu a požádal o přepracování vzhledu podle apple-design. Nový vzhled je návrh k posouzení, nikoliv dodatečně připsané schválení.

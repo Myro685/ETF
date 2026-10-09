@@ -1,8 +1,0 @@
-.welcome { max-width: 960px; margin: 0 auto; padding: clamp(28px, 7vw, 96px) 24px; }
-.brand { display: block; font-size: 24px; font-weight: 750; letter-spacing: -1px; }
-.eyebrow { margin-top: clamp(72px, 14vw, 140px); color: #406e60; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
-h1 { max-width: 850px; margin: 20px 0 28px; font-size: clamp(36px, 6.5vw, 72px); line-height: 1.08; letter-spacing: -0.045em; }
-.intro { max-width: 580px; color: #52645c; font-size: clamp(18px, 2.5vw, 21px); line-height: 1.65; }
-.status { display: flex; align-items: baseline; gap: 12px; margin-top: 48px; padding-top: 24px; border-top: 1px solid #d6dfd8; color: #52645c; font-size: 14px; line-height: 1.6; }
-.status-dot { flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%; background: #406e60; }
-
