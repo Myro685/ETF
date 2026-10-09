@@ -12,6 +12,7 @@ Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký t
 - Bod 3 hotový: pro vzdělávací porovnání vybrané VOO, VTI a SCHD. Data a zdroje v [src/data/etfs.json](src/data/etfs.json), zdůvodnění a omezení v [docs/etf-research.md](docs/etf-research.md).
 - Bod 5 hotový; na navazující pokyn uživatele převedený návrh podle apple-design do aplikace. Specifikace a ověření v [docs/design.md](docs/design.md), původní podklady v designs/magicpath/.
 - Bod 6 hotový: na přání uživatele implementovaná kalkulačka ročního nákladu v Kč a tříotázkový kvíz. [Popis a ověření funkcí](docs/interactive-feature.md). Reklamy (bod 4) zůstávají odložené.
+- Bod 7 rozpracovaný: formulář s validačními a síťovými stavy, ochranou proti dvojkliku a připraveným Supabase/Resend API. [Nastavení a zbývající kroky](docs/form.md). Skutečný sběr a odesílání čekají na služby, PDF a údaje správce.
 - Termín odevzdání: **16. října 2026**.
 
 Zadání bylo načteno z [Clientelo projektu v Notion](https://app.notion.com/p/3f4e1942c8af80ddacf7c7b070dea863). Notion nyní slouží pouze k odškrtávání bodů. Aktuální informace, rozhodnutí a podrobnosti řešení vedeme v tomto repozitáři.
@@ -36,6 +37,8 @@ npm run dev
 
 Vite vypíše místní adresu vývojového serveru.
 
+Pro formulář spusť ve druhém terminálu také `npm run dev:api`. API běží místně na portu 5174, Vite jej předává pod /api. Nastavení podle .env.example patří do ignorovaného .env.local. Bez nastavení zůstává formulář v režimu místní kontroly e-mailu. npm run preview spouští pouze statický frontend.
+
 ```powershell
 npm run lint
 npm run test
@@ -58,6 +61,9 @@ Build provede kontrolu TypeScriptu a sestaví aplikaci do dist/. Preview slouž�
 | docs/offer.md | Schválená nabídka výměnou za e-mail |
 | docs/etf-research.md | Výběr ETF, primární zdroje, burza a dostupnost |
 | docs/design.md | Obsah, pořadí sekcí, design tokeny a kontrola návrhu |
+| docs/form.md | Stav formuláře, serverové napojení, konfigurace a limity testů |
+| server/ a api/ | Místní API a připravené serverless handlery |
+| supabase/001-guide.sql | Schéma kontaktů, žádostí, oprávnění a výmaz |
 | designs/magicpath/ | Uložené TSX a CSS návrhu v MagicPath |
 | src/data/etfs.json | Ověřená data ETF a odkazy na zdroje |
 | src/data/etfs.ts | Typované použití dat, české formátování a vysvětlující texty |
@@ -72,7 +78,7 @@ ETF pro porovnání: **VOO (0,03 %), VTI (0,03 %) a SCHD (0,06 %)** roční zve�
 
 Dostupnost pro český retail je **podmíněná podle brokera a účtu**: IBKR uvádí omezení bez KID, Fio umožňuje přístup k americkým ETF a ČNB rozlišuje execution-only přístup. Konkrétní nákup jednotlivých tickerů na klientském účtu nebyl otestován. Tuto informaci zobrazujeme přímo u porovnání. VTI používá aktuální název Vanguard Morningstar Total Stock Market ETF a Morningstar US Total Market Index, účinné od 29. 7. 2026.
 
-Externí služby zatím nejsou vybrané. Formulář kontroluje formát e-mailu, ale nic neukládá ani neodesílá; omezení je viditelné před zadáním e-mailu i po odeslání. PDF zatím není vytvořené. Aplikace nepoužívá analytiku ani úložiště pro kontakty. Nejsou potřeba žádné proměnné prostředí. Při doplnění služeb vytvoříme .env.example pouze s názvy proměnných a bezpečnými příklady. Tajné klíče a kontakty návštěvníků nepatří do repozitáře.
+Pro bod 7 připravené serverové napojení na Supabase a Resend; služby zatím nejsou aktivované a uživatel byl požádán o preferenci a údaje správce. Formulář má jedno pole, čekání, chyby a bezpečné opakování. V současném nenastaveném režimu nic neukládá ani neodesílá. PDF zatím není vytvořené. Aplikace nepoužívá analytiku. Serverové proměnné jsou vypsané v .env.example; skutečné hodnoty patří do .env.local nebo do prostředí hostingu. Tajné klíče a kontakty návštěvníků nepatří do repozitáře. Potvrzení neslibuje doručení do schránky před skutečným koncovým testem.
 
 Před spuštěním zopakujeme kontrolu nákladovosti a dostupnosti. Očekávanou konverzi a tři hypotézy pro A/B testování doplníme po návrhu stránky. Skutečná konverze zatím není změřená.
 
@@ -90,10 +96,10 @@ Zbývá vytvoření PDF, ukládání kontaktů a doručení (bod 7), měření, 
 ## Ověření webu (2026-10-09)
 
 - npm run lint: úspěšné.
-- npm run test: úspěšné; nezávislé výsledky kalkulačky, české vstupy a všech 8 kombinací odpovědí kvízu. Nativní test runner Node.js 24, bez nové závislosti.
+- npm run test: 9 úspěšných testů; kalkulačka, kvíz, email a API chyby, PostgreSQL schéma, retry, kvóty, oprávnění a výmaz. Nativní Node.js 24 runner; PGlite je jen vývojová závislost pro skutečné SQL testy.
 - npm run build: úspěšné, včetně kontroly TypeScriptu.
 - npm install: audit hlásil 0 zranitelností při instalaci.
 - Git repozitář na větvi main je propojený s https://github.com/Myro685/ETF.git; hosting zatím není založený.
 - Browser kontrola při 320, 390, 768 a 1 440 px: bez vodorovného přetékání i s rozbalenými názvy a zdroji.
-- Ověřené kotvy, rozbalení detailů, všech 9 zdrojů, poplatky z JSON, klávesnice a viditelný focus, prázdný i platný e-mail. Platný e-mail zobrazí dostupnost služby, nikoliv úspěšné doručení.
+- Ověřené kotvy, detaily, zdroje, údaje a klávesnice. Nový formulář: samostatné testovací scénáře pro čekání a dvojklik, potvrzení, chybu a retry, bez skutečného odesílání. Hlavní web ověřený v nenastaveném režimu; skutečné uložení v Supabase a doručení e-mailu ještě nejsou ověřené.
 - Tmavá varianta vizuálně zkontrolovaná; konzole bez zachycených chyb a varování. Zvětšení 200 % a plný test screen readeru zbývají. Doručení PDF nelze koncově otestovat před bodem 7.

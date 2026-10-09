@@ -1,5 +1,11 @@
 # Rozhodnutí
 
+## 2026-10-09 — formulář a připravené napojení (implementace, bod 7 rozpracovaný)
+
+Uživatel požádal o bod 7 se zaměřením na formulář. Jediné pole zachované; oddělená komponenta GuideForm má validaci, čekání, synchronní ochranu proti dvojkliku, retry se stejným UUID a konkrétní chybové stavy. Potvrzení vyžaduje skutečný úspěch API a nabídne přímé stažení, neslibuje přijetí do schránky. Vypnutá služba má jasně pojmenovanou místní kontrolu formátu a neukládá kontakt.
+
+Připravená výchozí integrace Supabase + Resend bez produkčních SDK; volba poskytovatelů čeká na odpověď uživatele. Serverové proměnné oddělené od klienta. PostgreSQL schéma a chyby ověřené lokálně přes PGlite, poskytovatelé v testech simulovaní. Proto neoznačujeme skutečný sběr, informace správce ani doručení jako hotové. Chybí služby, PDF a konkrétní údaje správce; na ty byla položena průběžná otázka. Podrobný stav a primární podklady v docs/form.md.
+
 ## 2026-10-09 — kalkulačka a kvíz (výběr uživatele)
 
 Uživatel zvolil varianty 1 a 3 předchozího seznamu. Jeho přímý pokyn má přednost před obecnou preferencí jediné funkce. Implementované oba nástroje, varianta 2 vynechaná. Kalkulačka je hlavní interaktivita přímo po porovnání, kvíz volitelně rozbalitelný po interpretaci údajů. Používáme současné tokeny podle apple-design, bez nové runtime závislosti.

@@ -1,8 +1,8 @@
-import { useState, type FormEvent } from "react";
 import { etfData, funds, formatDate } from "../data/etfs";
 import { SourceList } from "./SourceList";
 import { CostCalculator } from "./CostCalculator";
 import { EtfQuiz } from "./EtfQuiz";
+import { GuideForm } from "./GuideForm";
 import "./EtfLanding.css";
 const Arrow = () => (
   <svg
@@ -51,22 +51,6 @@ const Mosaic = ({ kind }: { kind: string }) => (
   </span>
 );
 export const EtfLanding = () => {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "invalid" | "unavailable">(
-    "idle",
-  );
-  function submit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const field = event.currentTarget.elements.namedItem(
-      "email",
-    ) as HTMLInputElement;
-    if (!field.validity.valid) {
-      setStatus("invalid");
-      field.focus();
-      return;
-    }
-    setStatus("unavailable");
-  }
   return (
     <div className="cl-page" lang="cs">
       <a className="cl-skip" href="#cl-main">
@@ -311,54 +295,7 @@ export const EtfLanding = () => {
               <li>Příklad pro pochopení ročních poplatků</li>
               <li>Checklist toho, co ověřit u brokera</li>
             </ul>
-            <p className="cl-prototype-note" id="cl-form-availability">
-              Průvodce připravujeme. Formulář zatím nic neodesílá.
-            </p>
-            <form
-              noValidate
-              onSubmit={submit}
-              className="cl-form"
-              aria-describedby="cl-form-availability"
-            >
-              <label htmlFor="cl-email">E-mail pro doručení průvodce</label>
-              <div className="cl-form-row">
-                <input
-                  id="cl-email"
-                  name="email"
-                  maxLength={254}
-                  type="email"
-                  autoComplete="email"
-                  inputMode="email"
-                  placeholder="vas@email.cz"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                    setStatus("idle");
-                  }}
-                  aria-invalid={status === "invalid"}
-                  aria-describedby="cl-form-note cl-form-status"
-                  required
-                />
-                <button type="submit" className="cl-button">
-                  Poslat průvodce zdarma <Arrow />
-                </button>
-              </div>
-              <div
-                id="cl-form-status"
-                className={"cl-form-status " + status}
-                role="status"
-              >
-                {status === "invalid"
-                  ? "Zadejte e-mail ve tvaru jmeno@domena.cz."
-                  : status === "unavailable"
-                    ? "Doručení průvodce zatím není dostupné. E-mail nebyl uložen ani odeslán."
-                    : ""}
-              </div>
-              <p id="cl-form-note" className="cl-form-note">
-                E-mail bude sloužit k doručení průvodce. Vyžádání PDF vás
-                automaticky nepřihlásí k newsletteru.
-              </p>
-            </form>
+            <GuideForm />
           </div>
         </section>
         <section id="cl-context" className="cl-context">

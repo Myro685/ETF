@@ -87,6 +87,8 @@ Návrh naplňuje šest návrhových úkolů bodu 5. Původní podklady jsou v de
 
 ## Implementace webu a ověření
 
+Aktualizace bodu 7: původní ukázkový formulář nahrazený GuideForm se skutečným API kontraktem, čekáním, chybami a bezpečným retry. Nenastavený režim pouze kontroluje formát; potvrzení a PDF se zobrazí až po úspěšném serverovém výsledku. Vizuální testy těchto stavů proběhly na oddělené označené testovací stránce, živé služby nejsou aktivované. Aktuální podrobnosti v docs/form.md; níže uvedené starší kontroly popisují první implementaci.
+
 EtfLanding v src/components/ nahrazuje původní úvodní stránku. Styly jsou převzaté z návrhu a upravené pro skutečná data. Data čte src/data/etfs.ts z JSON; SourceList zobrazuje všech devět zdrojů s datem dokumentu odděleným od data ověření. Plné zaměření VTI je delší než v prototypu, zůstává ale čitelné ve společném porovnání.
 
 Formulář používá nativní kontrolu email inputu, vrací focus na chybné pole a oznamuje stav přes role=status. Před zadáním e-mailu je viditelné, že služba není zapojená. Platný vstup zobrazí „E-mail nebyl uložen ani odeslán.“ PDF není vytvořené. Neexistuje endpoint, úložiště kontaktů ani analytika.

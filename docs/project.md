@@ -14,7 +14,7 @@ Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouz
 | 4 | Dvě reklamy s textem, nadpisem a CTA v repozitáři | Odloženo na později uživatelem |
 | 5 | Obsah, pořadí sekcí a vlastní vzhled pro mobil | Hotovo; návrh z MagicPath na pokyn uživatele převedený do React aplikace, ověření v docs/design.md |
 | 6 | Interaktivní funkce s ověřenými výsledky | Hotovo; na výslovné přání uživatele dvě: kalkulačka a kvíz, automatické a browser testy v docs/interactive-feature.md |
-| 7 | Formulář, uložení kontaktu, ochrana údajů, doručení | Připravený frontend a validace; PDF, ukládání, doručení a informace o správci zbývají |
+| 7 | Formulář, uložení kontaktu, ochrana údajů, doručení | Formulář a serverové API implementované a lokálně testované; skutečné služby, PDF, údaje správce a koncový test zbývají; docs/form.md |
 | 8 | Rozlišení reklam, události trychtýře a ověření záznamu | Nezahájeno |
 | 9 | README, důvody řešení, zdroje, konverze, tři A/B hypotézy, spuštění | Rozpracováno; základ README |
 | 10 | AI pokyny, kontroly, chyby, exporty a metoda exportu | Rozpracováno; souhrn, úplné exporty chybí |
