@@ -1,5 +1,9 @@
 # Rozhodnutí
 
+## 2026-10-09 — možnosti interaktivní funkce (návrh k výběru)
+
+Na žádost uživatele připravené tři možnosti pro bod 6: ilustrativní roční náklad v Kč, porovnání zvolené dvojice a krátký vzdělávací kvíz. Podrobnosti a plán ověření v docs/interactive-feature.md. AI doporučuje první variantu kvůli konkrétnímu novému výsledku a návaznosti na současnou nabídku PDF. Uživatel zatím variantu nezvolil; žádná funkce není implementovaná a úkoly bodu 6 v Notion zůstávají neodškrtnuté.
+
 ## 2026-10-09 — implementace webu (pokyn uživatele)
 
 Navazující pokyn „vezmi ten design a vytvoř web“ přijímá přepracovaný návrh pro implementaci. Návrh z MagicPath je převedený do React aplikace jako EtfLanding. Zachovaná hierarchie, paleta, mobilní porovnání a tmavá varianta. Původní návrh zůstává archivovaný v designs/magicpath/.

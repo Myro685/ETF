@@ -11,7 +11,7 @@ Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký t
 - Schválená nabídka (bod 2): porovnání zdarma a PDF průvodce s checklistem za e-mail; formulář až po porovnání. Podrobnosti v [docs/offer.md](docs/offer.md).
 - Bod 3 hotový: pro vzdělávací porovnání vybrané VOO, VTI a SCHD. Data a zdroje v [src/data/etfs.json](src/data/etfs.json), zdůvodnění a omezení v [docs/etf-research.md](docs/etf-research.md).
 - Bod 5 hotový; na navazující pokyn uživatele převedený návrh podle apple-design do aplikace. Specifikace a ověření v [docs/design.md](docs/design.md), původní podklady v designs/magicpath/.
-- Reklamy (bod 4) odložené na pokyn uživatele. Následuje bod 6.
+- Reklamy (bod 4) odložené na pokyn uživatele. Bod 6: [tři návrhy interaktivní funkce](docs/interactive-feature.md) připravené k výběru, zatím bez implementace.
 - Termín odevzdání: **16. října 2026**.
 
 Zadání bylo načteno z [Clientelo projektu v Notion](https://app.notion.com/p/3f4e1942c8af80ddacf7c7b070dea863). Notion nyní slouží pouze k odškrtávání bodů. Aktuální informace, rozhodnutí a podrobnosti řešení vedeme v tomto repozitáři.
