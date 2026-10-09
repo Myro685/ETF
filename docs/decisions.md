@@ -1,5 +1,13 @@
 # Rozhodnutí
 
+## 2026-10-09 — návrh v MagicPath a přepracování vzhledu
+
+Uživatel požádal o bod 5 v MagicPath a odložil reklamu. Poté odsouhlasil strukturu prvního návrhu a požádal o přepracování vzhledu podle apple-design. Nový vzhled je návrh k posouzení, nikoliv dodatečně připsané schválení.
+
+Zachované pořadí: jasný úvod, užitečné porovnání, vysvětlení, nabídka PDF a formulář, souvislosti a zdroje. Nový návrh nahrazuje tři dlouhé mobilní karty společným porovnáním, odstraňuje velkou mobilní obálku a opakované logo. Pro web používáme obecné principy Apple HIG, nikoliv nativní navigační vzory.
+
+Podrobnosti, tokeny a ověření v docs/design.md; zdroj návrhu v designs/magicpath/. Návrh je v existujícím MagicPath projektu 459239012931100672 s desktopovým a mobilním náhledem. Formulář je výslovně označený prototyp bez ukládání a doručení. Hlavní aplikace zatím zůstává technickým základem; body 6–8 nejsou hotové.
+
 ## 2026-10-09 — výběr ETF a interpretace zadání (výběr na pokyn uživatele)
 
 Pro vzdělávací porovnání vybrané VOO, VTI a SCHD: velké americké firmy, široký americký trh a dividendová strategie. Jde o redakční výběr pro projekt, nikoliv osobní doporučení investice. Primární zdroje a datový podklad jsou v docs/etf-research.md a src/data/etfs.json.

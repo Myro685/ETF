@@ -10,7 +10,8 @@ Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký t
 - Veřejný repozitář [Myro685/ETF](https://github.com/Myro685/ETF), větev main napojená na origin/main; úvodní commit nahraný.
 - Schválená nabídka (bod 2): porovnání zdarma a PDF průvodce s checklistem za e-mail; formulář až po porovnání. Podrobnosti v [docs/offer.md](docs/offer.md).
 - Bod 3 hotový: pro vzdělávací porovnání vybrané VOO, VTI a SCHD. Data a zdroje v [src/data/etfs.json](src/data/etfs.json), zdůvodnění a omezení v [docs/etf-research.md](docs/etf-research.md).
-- Další krok: připravit dvě varianty reklamy (bod 4).
+- Bod 5: obsah a responzivní návrh vytvořené v MagicPath, vzhled přepracovaný podle apple-design. Struktura je odsouhlasená; nový vzhled připravený k posouzení. Specifikace v [docs/design.md](docs/design.md), podklady v designs/magicpath/. Návrh zatím není zapojený do aplikace.
+- Reklamy (bod 4) odložené na pokyn uživatele. Následuje přenos návrhu do aplikace a bod 6.
 - Termín odevzdání: **16. října 2026**.
 
 Zadání bylo načteno z [Clientelo projektu v Notion](https://app.notion.com/p/3f4e1942c8af80ddacf7c7b070dea863). Notion nyní slouží pouze k odškrtávání bodů. Aktuální informace, rozhodnutí a podrobnosti řešení vedeme v tomto repozitáři.
@@ -55,6 +56,8 @@ Build provede kontrolu TypeScriptu a sestaví aplikaci do dist/. Preview slouž�
 | docs/decisions.md | Rozhodnutí a jejich důvody |
 | docs/offer.md | Schválená nabídka výměnou za e-mail |
 | docs/etf-research.md | Výběr ETF, primární zdroje, burza a dostupnost |
+| docs/design.md | Obsah, pořadí sekcí, design tokeny a kontrola návrhu |
+| designs/magicpath/ | Uložené TSX a CSS návrhu v MagicPath |
 | src/data/etfs.json | Ověřená data ETF a odkazy na zdroje |
 | ai-log/ | Záznam spolupráce s AI a budoucí exporty |
 
@@ -78,7 +81,7 @@ Obsah kontrolujeme proti zadání a schváleným rozhodnutím, zápisy do Notion
 
 ## Co zbývá
 
-Body 4–12: dvě reklamy, obsah a vzhled, interaktivní funkce, ukládání kontaktů a doručení obsahu, měření, doplnění README, úplné AI exporty, hosting a odevzdání. Nabídka je schválená a výběr ETF prověřený; PDF a jeho doručení ještě zbývá vytvořit. Úvodní stránka je základ projektu; formulář ani porovnávač zatím nejsou implementované.
+Zbývá přenos návrhu do React aplikace, bod 6 (interaktivní funkce), ukládání kontaktů a doručení PDF, měření, dvě odložené reklamy a body 9–12. Nabídka je schválená a výběr ETF prověřený. MagicPath formulář je pouze ukázka, PDF a jeho doručení ještě zbývá vytvořit. Produkční aplikace stále obsahuje původní úvodní stránku.
 
 
 ## Ověření základu (2026-10-09)
