@@ -82,15 +82,15 @@ export const EtfLanding = () => {
               <span>poznejte rozdíly.</span>
             </h1>
             <p className="cl-lead">
-              Tři přístupy k americkým akciím. Porovnejte zaměření a roční
-              náklady — zdarma, bez e-mailu.
+              Porovnejte zaměření a roční nákladovost tří ETF. V kalkulačce
+              uvidíte orientační náklad fondu v Kč — zdarma, bez e-mailu.
             </p>
             <div className="cl-hero-actions">
               <a className="cl-button" href="#cl-comparison">
                 Porovnat ETF <Arrow />
               </a>
-              <a className="cl-secondary" href="#cl-guide">
-                Co najdu v průvodci <span aria-hidden="true">↓</span>
+              <a className="cl-secondary" href="#cl-calculator">
+                Porovnat náklady v Kč <span aria-hidden="true">↓</span>
               </a>
             </div>
           </div>

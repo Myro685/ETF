@@ -1,6 +1,10 @@
 # Obsah a design stránky — bod 5
 
-Datum: 2026-10-09. Stav: **návrh z MagicPath na navazující pokyn uživatele implementovaný v React aplikaci**. Web běží místně, veřejný hosting zbývá. Reklamy (bod 4) jsou na pokyn uživatele odložené. Následující návrhová měření popisují původní prototyp; aktuální implementace je popsaná samostatně níže.
+Datum: 2026-10-09. Stav: **návrh z MagicPath na navazující pokyn uživatele implementovaný v React aplikaci**. Web běží místně, veřejný hosting zbývá. Dvě reklamy bodu 4 připravené v docs/ads.md. Následující návrhová měření popisují původní prototyp; aktuální implementace je popsaná samostatně níže.
+
+## Návaznost reklam — aktuální úvod
+
+Po návratu uživatele k bodu 4 úvod výslovně uvádí orientační náklad fondu v Kč a kalkulačku bez e-mailu. Hlavní CTA „Porovnat ETF“ zachované; vedlejší „Co najdu v průvodci“ nahrazené přímým „Porovnat náklady v Kč“. Nabídka průvodce zůstává v navigaci i za užitečným obsahem. Podrobnosti obou textových reklam a jejich návaznosti v docs/ads.md.
 
 ## Účel a vizuální směr
 

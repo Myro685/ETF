@@ -1,5 +1,11 @@
 # Rozhodnutí
 
+## 2026-10-09 — dvě textové reklamy (návrhy, bod 4)
+
+Uživatel se vrátil k odloženému bodu 4. Připravené dvě varianty v docs/ads.md: A vysvětlení rozdílů VOO/VTI/SCHD, B orientační roční náklad v Kč. Obě slibují funkční obsah bez e-mailu; doručení PDF není součástí příslibu. Návrhy jsou k posouzení, nikoliv dodatečně připsané schválení uživatelem.
+
+Úvod stránky doplněný o kalkulačku a přímou cestu k ní. Stejný úvod obslouží obě reklamy, hlavní CTA porovnání zachované. UTM označení pouze plán pro bod 8, žádné měření ani placené spuštění. Grafické kreativy a konkrétní kanál nebyly zadáním bodu 4 požadované.
+
 ## 2026-10-09 — formulář a připravené napojení (implementace, bod 7 rozpracovaný)
 
 Uživatel požádal o bod 7 se zaměřením na formulář. Jediné pole zachované; oddělená komponenta GuideForm má validaci, čekání, synchronní ochranu proti dvojkliku, retry se stejným UUID a konkrétní chybové stavy. Potvrzení vyžaduje skutečný úspěch API a nabídne přímé stažení, neslibuje přijetí do schránky. Vypnutá služba má jasně pojmenovanou místní kontrolu formátu a neukládá kontakt.

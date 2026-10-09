@@ -11,7 +11,8 @@ Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký t
 - Schválená nabídka (bod 2): porovnání zdarma a PDF průvodce s checklistem za e-mail; formulář až po porovnání. Podrobnosti v [docs/offer.md](docs/offer.md).
 - Bod 3 hotový: pro vzdělávací porovnání vybrané VOO, VTI a SCHD. Data a zdroje v [src/data/etfs.json](src/data/etfs.json), zdůvodnění a omezení v [docs/etf-research.md](docs/etf-research.md).
 - Bod 5 hotový; na navazující pokyn uživatele převedený návrh podle apple-design do aplikace. Specifikace a ověření v [docs/design.md](docs/design.md), původní podklady v designs/magicpath/.
-- Bod 6 hotový: na přání uživatele implementovaná kalkulačka ročního nákladu v Kč a tříotázkový kvíz. [Popis a ověření funkcí](docs/interactive-feature.md). Reklamy (bod 4) zůstávají odložené.
+- Bod 4 hotový jako příprava návrhů: [dvě textové reklamy](docs/ads.md) s nadpisem a CTA, zaměřené na rozdíly fondů a náklady v Kč. Úvod stránky navazuje na oba sliby; kampaň není spuštěná a návrhy čekají na posouzení uživatelem.
+- Bod 6 hotový: na přání uživatele implementovaná kalkulačka ročního nákladu v Kč a tříotázkový kvíz. [Popis a ověření funkcí](docs/interactive-feature.md).
 - Bod 7 rozpracovaný: formulář s validačními a síťovými stavy, ochranou proti dvojkliku a připraveným Supabase/Resend API. [Nastavení a zbývající kroky](docs/form.md). Skutečný sběr a odesílání čekají na služby, PDF a údaje správce.
 - Termín odevzdání: **16. října 2026**.
 
@@ -59,6 +60,7 @@ Build provede kontrolu TypeScriptu a sestaví aplikaci do dist/. Preview slouž�
 | docs/project.md | Zadání, priority a stav všech bodů |
 | docs/decisions.md | Rozhodnutí a jejich důvody |
 | docs/offer.md | Schválená nabídka výměnou za e-mail |
+| docs/ads.md | Dvě verze reklamy, návaznost stránky a plán rozlišení v bodu 8 |
 | docs/etf-research.md | Výběr ETF, primární zdroje, burza a dostupnost |
 | docs/design.md | Obsah, pořadí sekcí, design tokeny a kontrola návrhu |
 | docs/form.md | Stav formuláře, serverové napojení, konfigurace a limity testů |
@@ -90,7 +92,7 @@ Obsah kontrolujeme proti zadání a schváleným rozhodnutím, zápisy do Notion
 
 ## Co zbývá
 
-Zbývá vytvoření PDF, ukládání kontaktů a doručení (bod 7), měření, dvě odložené reklamy a dokončení bodů 9–12. Frontend včetně kalkulačky a kvízu je implementovaný; veřejný hosting a celý proces získání průvodce ještě nejsou hotové.
+Zbývá vytvoření PDF, ukládání kontaktů a doručení (bod 7), měření a dokončení bodů 9–12. Dvě reklamy jsou připravené k posouzení. Frontend včetně kalkulačky a kvízu je implementovaný; veřejný hosting a celý proces získání průvodce ještě nejsou hotové.
 
 
 ## Ověření webu (2026-10-09)
