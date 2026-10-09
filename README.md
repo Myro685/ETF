@@ -8,10 +8,11 @@ Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký t
 - Vytvořený základ React + TypeScript + Vite a jednoduchá česká úvodní stránka.
 - Připravené instrukce pro AI, projektová pravidla, místo pro skills a dokumentace.
 - Veřejný repozitář [Myro685/ETF](https://github.com/Myro685/ETF), větev main napojená na origin/main; úvodní commit nahraný.
-- Bod 2 rozpracovaný: návrh porovnání zdarma a PDF průvodce s checklistem za e-mail v [docs/offer.md](docs/offer.md). Nabídka čeká na projednání s uživatelem.
+- Schválená nabídka (bod 2): porovnání zdarma a PDF průvodce s checklistem za e-mail; formulář až po porovnání. Podrobnosti v [docs/offer.md](docs/offer.md).
+- Další krok: vybrat ETF a ověřit údaje, NYSE versus NYSE Arca a dostupnost pro českého investora (bod 3).
 - Termín odevzdání: **16. října 2026**.
 
-Zdroj zadání a průběžného stavu: [Clientelo projekt v Notion](https://app.notion.com/p/3f4e1942c8af80ddacf7c7b070dea863).
+Zadání bylo načteno z [Clientelo projektu v Notion](https://app.notion.com/p/3f4e1942c8af80ddacf7c7b070dea863). Notion nyní slouží pouze k odškrtávání bodů. Aktuální informace, rozhodnutí a podrobnosti řešení vedeme v tomto repozitáři.
 
 ## Cílová skupina
 
@@ -53,7 +54,7 @@ Build provede kontrolu TypeScriptu a sestaví aplikaci do dist/. Preview slouž�
 | docs/decisions.md | Rozhodnutí a jejich důvody |
 | ai-log/ | Záznam spolupráce s AI a budoucí exporty |
 
-Po dokončeném kroku aktualizujeme README, příslušnou dokumentaci a Notion. Návrhy odlišujeme od schválených rozhodnutí. Práci ukládáme průběžnými commity.
+Po dokončeném kroku aktualizujeme README a příslušnou dokumentaci; v Notion pouze odškrtneme splněné body. Návrhy odlišujeme od schválených rozhodnutí. Práci ukládáme průběžnými commity.
 
 ## Data, služby a měření
 
@@ -69,7 +70,7 @@ Obsah kontrolujeme proti zadání a schváleným rozhodnutím, zápisy do Notion
 
 ## Co zbývá
 
-Body 2–12: nabídka, ověřená ETF data, dvě reklamy, obsah a vzhled, interaktivní funkce, ukládání kontaktů a doručení obsahu, měření, doplnění README, úplné AI exporty, hosting a odevzdání. Úvodní stránka je základ projektu; formulář ani porovnávač zatím nejsou implementované.
+Body 3–12: ověřená ETF data, dvě reklamy, obsah a vzhled, interaktivní funkce, ukládání kontaktů a doručení obsahu, měření, doplnění README, úplné AI exporty, hosting a odevzdání. Nabídka je schválená, PDF a jeho doručení ještě zbývá vytvořit. Úvodní stránka je základ projektu; formulář ani porovnávač zatím nejsou implementované.
 
 
 ## Ověření základu (2026-10-09)

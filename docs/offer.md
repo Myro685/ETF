@@ -1,6 +1,6 @@
 # Nabídka výměnou za e-mail — bod 2
 
-Stav: **návrh k projednání, neschváleno uživatelem**. Datum: 2026-10-09.
+Stav: **schváleno uživatelem, bod 2 hotový**. Datum schválení: 2026-10-09. Tento dokument popisuje zvolenou nabídku; vytvoření PDF a implementace doručení teprve následují.
 
 ## Zdarma na stránce
 
@@ -20,10 +20,10 @@ CTA: „Poslat průvodce zdarma“.
 
 ## Doručení a důvod zanechat kontakt
 
-Návrh: odkaz na PDF v e-mailu a možnost stažení po úspěšném odeslání. Službu i skutečné doručení vyřešíme v bodu 7. Vyžádání průvodce neznamená automatické přihlášení k newsletteru.
+Zvolený způsob: odkaz na PDF v e-mailu a možnost stažení po úspěšném odeslání. Službu i skutečné doručení vyřešíme v bodu 7. Vyžádání průvodce neznamená automatické přihlášení k newsletteru.
 
 Návštěvník získá přehled pro pozdější návrat a konkrétní postup porovnání kandidátů před nákupem.
 
 ## Co zbývá
 
-Projednat nabídku s uživatelem, potom označit bod 2 jako hotový. PDF ani jeho doručení zatím nejsou vytvořené. Data pro obsah se musí nejprve ověřit v bodu 3.
+PDF ani jeho doručení zatím nejsou vytvořené. Data pro obsah se musí nejprve ověřit v bodu 3. Podrobnosti nabídky a další rozhodnutí vedeme v projektových souborech; Notion slouží jen k odškrtávání bodů.

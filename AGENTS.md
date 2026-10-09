@@ -5,7 +5,7 @@ Před změnami přečti README.md, .agents/rules/project.md, docs/project.md a d
 ## Průběžná dokumentace
 
 - Po dokončeném kroku aktualizuj README, přehled úkolů a příslušná rozhodnutí.
-- Uživatel výslovně požaduje zapisovat hotovou práci do Notion: https://app.notion.com/p/3f4e1942c8af80ddacf7c7b070dea863.
+- Podrobnosti řešení, nabídku, rozhodnutí a další informace zapisuj do projektových souborů. Notion slouží pouze k odškrtávání dokončených bodů: https://app.notion.com/p/3f4e1942c8af80ddacf7c7b070dea863. Nepřidávej tam návrhy, souhrny ani podrobnou dokumentaci.
 - Před úpravou načti aktuální stránku a zachovej nesouvisející text a změny uživatele. Označuj jen skutečně dokončené úkoly. Pokud Notion není dostupný, zaznamenej neprovedenou synchronizaci a sděl to uživateli.
 - Udržuj pravdivý záznam v ai-log/. Souhrn ani rekonstrukci nikdy nevydávej za úplný export konverzace.
 - Ukládej dokončené části průběžnými Git commity. Nevkládej tajné klíče ani osobní kontakty do kódu, dokumentace, logů nebo commitů.

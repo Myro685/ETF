@@ -2,7 +2,7 @@
 
 ## Rozsah a kvalita
 
-- Postupuj po bodech zadání. Bod 1 je schválený, nabídka z bodu 2 ještě není rozhodnutá.
+- Postupuj po bodech zadání. Body 1 a 2 jsou schválené; nabídka je popsaná v docs/offer.md.
 - Navrhuj pro mobil, používej sémantické HTML, přístupné popisky a čitelný kontrast.
 - Používej React s TypeScriptem. Závislosti přidávej s konkrétním důvodem a používej npm s lockfilem.
 - Po relevantních změnách spusť npm run lint a npm run build. Další testy přidávej podle dopadu, zejména pro výpočty, formulář, chyby, doručení obsahu a měření. Build není vizuální ani koncový test.
@@ -18,6 +18,7 @@
 ## Informace a bezpečnost
 
 - README obsahuje stav, spuštění, služby, omezení a další krok. Podrobnosti patří do docs/.
+- Notion používej pouze k odškrtávání dokončených bodů. Návrhy, podrobnosti a rozhodnutí patří do souborů projektu.
 - Rozhodnutí zapisuj s datem, důvodem a stavem schválení. Návrhy neoznačuj jako schválené.
 - Tajné klíče patří pouze do neveřejných proměnných prostředí. Klíč v klientském bundlu není tajný.
 - E-maily návštěvníků nepatří do Gitu ani měřicích událostí. Použití kontaktu a ochranu údajů vyřeš před sběrem.
