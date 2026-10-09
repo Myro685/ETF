@@ -12,7 +12,7 @@ Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouz
 | 2 | Hodnota zdarma, hodnota za e-mail, okamžik žádosti | Hotovo; nabídka schválená v docs/offer.md |
 | 3 | ETF, NYSE/Arca, dostupnost, skutečná data a zdroje | Hotovo; VOO, VTI, SCHD, zdroje a omezení v docs/etf-research.md |
 | 4 | Dvě reklamy s textem, nadpisem a CTA v repozitáři | Hotovo jako příprava návrhů; docs/ads.md, návaznost úvodu stránky ověřená; kampaň nespuštěná, návrhy k posouzení |
-| 5 | Obsah, pořadí sekcí a vlastní vzhled pro mobil | Hotovo; návrh z MagicPath na pokyn uživatele převedený do React aplikace, ověření v docs/design.md |
+| 5 | Obsah, pořadí sekcí a vlastní vzhled pro mobil | Hotovo; nový Atlas z MagicPath na pokyn uživatele implementovaný v React aplikaci, ověření v docs/design-atlas.md |
 | 6 | Interaktivní funkce s ověřenými výsledky | Hotovo; na výslovné přání uživatele dvě: kalkulačka a kvíz, automatické a browser testy v docs/interactive-feature.md |
 | 7 | Formulář, uložení kontaktu, ochrana údajů, doručení | Formulář a serverové API implementované a lokálně testované; skutečné služby, PDF, údaje správce a koncový test zbývají; docs/form.md |
 | 8 | Rozlišení reklam, události trychtýře a ověření záznamu | Nezahájeno |
@@ -23,7 +23,7 @@ Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouz
 
 ## Priority
 
-Na nový pokyn uživatele přepracovaný design v MagicPath do směru Atlas, včetně 3D studie a zachovaných funkcí. Dokončený návrh k posouzení a samostatný prototyp jsou popsané v docs/design-atlas.md. Hlavní aplikace používá dosavadní vzhled. Limit API zastavil až poslední drobný pokus o úpravu panelu průvodce; nové body v Notion se neodškrtávají.
+Na pokyn „přepracuj design v reactu“ Atlas implementovaný v hlavní aplikaci, včetně samostatně načítané 3D studie a zachovaných funkcí a API formuláře. Specifikace a aktuální kontroly v docs/design-atlas.md. Samostatný prototyp a limit API MagicPath patří k historii návrhu; implementace v Reactu na limitu nezávisí. Bod 5 již byl odškrtnutý, nové body v Notion se neodškrtávají.
 
 Jasná nabídka, ověřená data, mobilní stránka, funkční formulář, doručení a měření. Potom vizuální detaily a další interaktivita. Historii commitů a záznam práce s AI vést od začátku.
 

@@ -1,6 +1,24 @@
 # Návrh Atlas — přepracování v MagicPath
 
-Datum: 2026-10-09. Stav: nový návrh k posouzení uživatelem. Dosavadní React aplikace používá předchozí design. Přenos tohoto návrhu do hlavní aplikace je další krok.
+Datum: 2026-10-09. Stav: **Atlas implementovaný v hlavní React aplikaci** na navazující pokyn uživatele „přepracuj design v reactu“. Níže uvedená historie prototypu a MagicPath zůstává pro dohledání podkladů.
+
+## Aktuální implementace v Reactu
+
+EtfLanding používá nový úvod s MarketSculpture, styly Atlas.css navazují na existující strukturu. Zachované aktuální komponenty kalkulačky, kvízu, zdrojů a GuideForm i jeho skutečná služba guideService. Data se dále čtou pouze z src/data/etfs.json. Prototypový náhradní service nebyl do aplikace přenesený; původní API může po konfiguraci dál ukládat žádosti a doručovat průvodce. V současném nenastaveném režimu pouze kontroluje formát e-mailu.
+
+Three.js 0.186.1 je přesně připnutá runtime závislost, @types/three 0.186.0 vývojová. MarketSculpture přes IntersectionObserver načte marketScene.ts při přiblížení scény k viewportu. Nadpis a obsah nečekají na 3D; prostor má pevnou výšku a před vykreslením nebo při chybě je viditelná lehká CSS ilustrace. Canvas má aria-hidden, vysvětlení zůstává v textu. Vykreslování po resize se slučuje do jednoho frame, bez průběžné animace. Cleanup odpojí observery, posluchače a plánovaný frame a uvolní geometrii, materiály, stín i renderer. Ověřená jediná canvas instance i s React StrictMode.
+
+V Reactu dokončené i odstranění zaobleného panelu průvodce; sekce zachovává společné okraje obsahu. Theme-color a favicon odpovídají nové paletě. Atlas používá světlý vzhled i při preferenci tmavého systému, včetně nativních formulářových prvků.
+
+Ověření aktuální aplikace:
+
+- npm run lint, npm run build včetně TypeScriptu a všech 9 existujících testů prošly. Install audit 0 zranitelností.
+- Živý browser při 320, 390, 768 a 1440 px: bez vodorovného přetékání, také s rozbalenými názvy, zdroji, kvízem a kalkulačkou s hodnotou 1 miliardy Kč. WebGL scéna viditelná a právě jeden canvas.
+- Kvíz vrací správné vysvětlení. Formulář při prázdném vstupu vrátí chybu a fokus do pole, při syntakticky platném testovacím vstupu pravdivě hlásí neukládání a neodesílání. Žádný skutečný kontakt nebyl použitý.
+- Nový browser náhled bez zachycených chyb a varování. Pořizované screenshoty jsou ve výstupech chatu. Plný screen reader, zvětšení 200 %, fyzické zařízení bez WebGL a skutečné doručení PDF nebyly znovu koncově testované.
+- Hlavní JS 256,60 kB / gzip 80,91 kB; samostatný 3D chunk 529,07 kB / gzip 131,40 kB. Build nadále upozorňuje na velikost 3D chunku. Oddělení načítání není měření LCP; výkon na reálném mobilním připojení zbývá ověřit před veřejným spuštěním.
+
+Spuštění hlavní aplikace z kořene projektu: npm run dev; pro API druhý terminál npm run dev:api. Archiv níže slouží pouze jako historický prototyp.
 
 ## Směr
 

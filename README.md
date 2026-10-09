@@ -4,14 +4,14 @@ Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký t
 
 ## Aktuální stav
 
-- Nový návrh **Atlas** v MagicPath: papírové tóny, redakční typografie a Three.js studie. Návrh je k posouzení; přenos do hlavní aplikace je další krok. [Specifikace a omezení](docs/design-atlas.md), spustitelný prototyp v designs/magicpath/atlas-2026-10-09/. Poslední drobnou úpravu panelu zastavil limit API MagicPath; dokončené revize jsou uložené.
+- **Atlas je implementovaný v React aplikaci** na pokyn uživatele: papírové tóny, redakční typografie a skutečná Three.js studie. Grafika se načítá samostatně při přiblížení k viewportu, formulář zachovává původní API. [Specifikace a ověření](docs/design-atlas.md); prototyp v designs/magicpath/atlas-2026-10-09/ zůstává historickým podkladem.
 - Schválená cílová skupina a hlavní problém (bod 1).
 - Implementovaná responzivní stránka v React + TypeScript + Vite podle přepracovaného návrhu MagicPath: porovnání, vysvětlení, nabídka PDF a zdroje.
 - Připravené instrukce pro AI, projektová pravidla, místo pro skills a dokumentace.
 - Veřejný repozitář [Myro685/ETF](https://github.com/Myro685/ETF), větev main napojená na origin/main; úvodní commit nahraný.
 - Schválená nabídka (bod 2): porovnání zdarma a PDF průvodce s checklistem za e-mail; formulář až po porovnání. Podrobnosti v [docs/offer.md](docs/offer.md).
 - Bod 3 hotový: pro vzdělávací porovnání vybrané VOO, VTI a SCHD. Data a zdroje v [src/data/etfs.json](src/data/etfs.json), zdůvodnění a omezení v [docs/etf-research.md](docs/etf-research.md).
-- Bod 5 hotový; na navazující pokyn uživatele převedený návrh podle apple-design do aplikace. Specifikace a ověření v [docs/design.md](docs/design.md), původní podklady v designs/magicpath/.
+- Bod 5 hotový; nový vzhled Atlas převedený z MagicPath do aplikace. Aktuální ověření v [docs/design-atlas.md](docs/design-atlas.md), historie struktury a předchozího vzhledu v [docs/design.md](docs/design.md).
 - Bod 4 hotový jako příprava návrhů: [dvě textové reklamy](docs/ads.md) s nadpisem a CTA, zaměřené na rozdíly fondů a náklady v Kč. Úvod stránky navazuje na oba sliby; kampaň není spuštěná a návrhy čekají na posouzení uživatelem.
 - Bod 6 hotový: na přání uživatele implementovaná kalkulačka ročního nákladu v Kč a tříotázkový kvíz. [Popis a ověření funkcí](docs/interactive-feature.md).
 - Bod 7 rozpracovaný: formulář s validačními a síťovými stavy, ochranou proti dvojkliku a připraveným Supabase/Resend API. [Nastavení a zbývající kroky](docs/form.md). Skutečný sběr a odesílání čekají na služby, PDF a údaje správce.
@@ -72,6 +72,7 @@ Build provede kontrolu TypeScriptu a sestaví aplikaci do dist/. Preview slouž�
 | src/data/etfs.json | Ověřená data ETF a odkazy na zdroje |
 | src/data/etfs.ts | Typované použití dat, české formátování a vysvětlující texty |
 | src/components/ | Stránka EtfLanding, seznam zdrojů a responzivní styly |
+| src/components/Atlas.css, MarketSculpture.tsx a marketScene.ts | Vzhled Atlas a samostatně načítaná 3D scéna |
 | ai-log/ | Záznam spolupráce s AI a budoucí exporty |
 
 Po dokončeném kroku aktualizujeme README a příslušnou dokumentaci; v Notion pouze odškrtneme splněné body. Návrhy odlišujeme od schválených rozhodnutí. Práci ukládáme průběžnými commity.
@@ -108,4 +109,5 @@ Zbývá vytvoření PDF, ukládání kontaktů a doručení (bod 7), měření a
 - Git repozitář na větvi main je propojený s https://github.com/Myro685/ETF.git; hosting zatím není založený.
 - Browser kontrola při 320, 390, 768 a 1 440 px: bez vodorovného přetékání i s rozbalenými názvy a zdroji.
 - Ověřené kotvy, detaily, zdroje, údaje a klávesnice. Nový formulář: samostatné testovací scénáře pro čekání a dvojklik, potvrzení, chybu a retry, bez skutečného odesílání. Hlavní web ověřený v nenastaveném režimu; skutečné uložení v Supabase a doručení e-mailu ještě nejsou ověřené.
-- Tmavá varianta vizuálně zkontrolovaná; konzole bez zachycených chyb a varování. Zvětšení 200 % a plný test screen readeru zbývají. Doručení PDF nelze koncově otestovat před bodem 7.
+- Atlas používá světlou papírovou paletu; předchozí automatická tmavá varianta se nepoužívá. Konzole bez zachycených chyb a varování. Zvětšení 200 % a plný test screen readeru zbývají. Doručení PDF nelze koncově otestovat před bodem 7.
+- Hlavní JS Atlasu 256,60 kB / gzip 80,91 kB; 3D chunk 529,07 kB / gzip 131,40 kB se načítá odděleně. Vite stále upozorňuje na velikost 3D chunku. LCP na skutečném mobilním připojení zatím nebylo změřené.

@@ -1010,41 +1010,6 @@
     font-size: 20px;
   }
 }
-@media (prefers-color-scheme: dark) {
-  .cl-page {
-    --cl-bg: #111a26;
-    --cl-surface: #1c2939;
-    --cl-ink: #f3f5fa;
-    --cl-muted: #b4c1d2;
-    --cl-accent: #a3baff;
-    --cl-line: #41546c;
-    color-scheme: dark;
-  }
-  .cl-button {
-    background: #a3baff;
-    color: #111a26 !important;
-  }
-  .cl-button:hover {
-    background: #c0cfff;
-  }
-  .cl-ribbon {
-    box-shadow: none;
-  }
-  .cl-form-status.invalid {
-    color: #ffb5c0;
-  }
-  .cl-mosaic.large i:nth-child(-n + 8),
-  .cl-mosaic.broad i,
-  .cl-mosaic.dividend i:nth-child(3n + 1) {
-    background: #c6d4e9;
-  }
-  .cl-book {
-    box-shadow: 0 18px 30px #0003;
-  }
-  .cl-brand svg rect {
-    fill: #182332;
-  }
-}
 @media (prefers-reduced-motion: reduce) {
   .cl-page * {
     animation: none !important;

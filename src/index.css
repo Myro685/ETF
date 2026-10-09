@@ -4,8 +4,9 @@
     -apple-system,
     "Segoe UI",
     sans-serif;
-  color: #182332;
-  background: #fff;
+  color: #252a23;
+  background: #f4f2e9;
+  color-scheme: light;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -22,12 +23,6 @@ p {
   margin: 0;
 }
 ::selection {
-  background: #dce6ff;
-  color: #182332;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: #f3f5fa;
-    background: #111a26;
-  }
+  background: #d9dec9;
+  color: #252a23;
 }

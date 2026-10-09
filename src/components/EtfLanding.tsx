@@ -4,6 +4,8 @@ import { CostCalculator } from "./CostCalculator";
 import { EtfQuiz } from "./EtfQuiz";
 import { GuideForm } from "./GuideForm";
 import "./EtfLanding.css";
+import { MarketSculpture } from "./MarketSculpture";
+import "./Atlas.css";
 const Arrow = () => (
   <svg
     aria-hidden="true"
@@ -21,35 +23,6 @@ const Arrow = () => (
     />
   </svg>
 );
-const Mark = () => (
-  <svg
-    aria-hidden="true"
-    width="30"
-    height="30"
-    viewBox="0 0 30 30"
-    fill="none"
-  >
-    <rect width="30" height="30" rx="9" fill="currentColor" />
-    <path
-      d="M9 9h12M9 15h8M9 21h12"
-      stroke="white"
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
-  </svg>
-);
-const Mosaic = ({ kind }: { kind: string }) => (
-  <span className={"cl-mosaic " + kind} aria-hidden="true">
-    {Array.from(
-      {
-        length: 16,
-      },
-      (_, i) => (
-        <i key={i} />
-      ),
-    )}
-  </span>
-);
 export const EtfLanding = () => {
   return (
     <div className="cl-page" lang="cs">
@@ -58,7 +31,6 @@ export const EtfLanding = () => {
       </a>
       <header className="cl-header cl-wrap">
         <a href="#cl-main" className="cl-brand" aria-label="Clientelo — úvod">
-          <Mark />
           clientelo<span className="cl-brand-dot">.</span>
         </a>
         <nav aria-label="Sekce stránky">
@@ -73,9 +45,7 @@ export const EtfLanding = () => {
       <main id="cl-main">
         <section className="cl-hero cl-wrap" aria-labelledby="cl-title">
           <div className="cl-hero-copy">
-            <p className="cl-eyebrow">
-              {funds.map((f) => f.ticker).join(" / ")}
-            </p>
+            <p className="cl-eyebrow">První nákup začíná porovnáním</p>
             <h1 id="cl-title">
               Než koupíte ETF,
               <br />
@@ -94,20 +64,7 @@ export const EtfLanding = () => {
               </a>
             </div>
           </div>
-          <div className="cl-ribbon" aria-label="Rychlý přehled zaměření ETF">
-            {funds.map((f) => (
-              <div className="cl-ribbon-fund" key={f.ticker}>
-                <Mosaic kind={f.dots} />
-                <div>
-                  <strong>{f.ticker}</strong>
-                  <span>{f.short}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="cl-ribbon-note">
-            Tři pohledy na americký trh. Symboly jsou schematické.
-          </p>
+          <MarketSculpture />
         </section>
         <section
           id="cl-comparison"

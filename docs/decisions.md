@@ -1,5 +1,11 @@
 # Rozhodnutí
 
+## 2026-10-09 — Atlas převedený do React aplikace (pokyn uživatele)
+
+Pokyn „přepracuj design v reactu“ přijímá nový návrh Atlas pro implementaci. Hlavní aplikace používá jeho paletu, typografii, 3D studii a otevřené porovnání. Stávající data, kalkulačka, kvíz a API formuláře zachované. Prototypové vypnutí služby se nepřenáší.
+
+Three.js přidané jako přesně připnutá závislost; samostatný import při přiblížení grafiky k viewportu a CSS náhrada umožňují zobrazit obsah před 3D. Bez animační smyčky. Panel průvodce nyní otevřený bez zaoblení. Atlas má světlou paletu i při tmavé systémové preferenci; původní automatická tmavá varianta zůstává jen v historii návrhu. Aktuální ověření a velikosti bundlu v docs/design-atlas.md. Notion se nemění, protože bod 5 již byl splněný; bod 7 nadále čeká na služby a PDF.
+
 ## 2026-10-09 — Atlas, nový návrh v MagicPath (k posouzení)
 
 Na pokyn uživatele vznikl méně generický redakční vzhled: papír, serifová typografie, otevřené porovnání a statická Three.js studie se vztahem k zaměření fondů. Zachované reklamní sliby a interaktivní komponenty z aktuální aplikace. Návrh nepřidává výnosová data ani skutečné odesílání kontaktu. View Transitions nejsou pro tento jednopage návrh potřebné.
