@@ -8,7 +8,7 @@ Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký t
 - Vytvořený základ React + TypeScript + Vite a jednoduchá česká úvodní stránka.
 - Připravené instrukce pro AI, projektová pravidla, místo pro skills a dokumentace.
 - Veřejný repozitář [Myro685/ETF](https://github.com/Myro685/ETF), větev main napojená na origin/main; úvodní commit nahraný.
-- Další krok: rozhodnout, co nabídneme zdarma a co navíc po zadání e-mailu (bod 2).
+- Bod 2 rozpracovaný: návrh porovnání zdarma a PDF průvodce s checklistem za e-mail v [docs/offer.md](docs/offer.md). Nabídka čeká na projednání s uživatelem.
 - Termín odevzdání: **16. října 2026**.
 
 Zdroj zadání a průběžného stavu: [Clientelo projekt v Notion](https://app.notion.com/p/3f4e1942c8af80ddacf7c7b070dea863).

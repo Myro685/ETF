@@ -7,7 +7,7 @@ Termín: **2026-10-16**. Aktualizace: **2026-10-09**.
 | Bod | Výsledek | Stav |
 | --- | --- | --- |
 | 1 | Návštěvník, problém, jazyk a obsah | Hotovo, schválena varianta 2 |
-| 2 | Hodnota zdarma, hodnota za e-mail, okamžik žádosti | Čeká na návrh a rozhodnutí |
+| 2 | Hodnota zdarma, hodnota za e-mail, okamžik žádosti | Rozpracováno; návrh v docs/offer.md, čeká na rozhodnutí |
 | 3 | ETF, NYSE/Arca, dostupnost, skutečná data a zdroje | Nezahájeno |
 | 4 | Dvě reklamy s textem, nadpisem a CTA v repozitáři | Nezahájeno |
 | 5 | Obsah, pořadí sekcí a vlastní vzhled pro mobil | Nezahájeno; úvodní stránka je základ |
