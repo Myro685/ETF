@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "verifiedOn": "2026-10-09",
+  "selectionPurpose": "Vzdělávací porovnání tří přístupů k americkým akciím, nikoliv osobní doporučení k nákupu.",
+  "exchangeInterpretation": {
+    "requested": "NYSE",
+    "used": "NYSE Arca",
+    "strictNyseMainMarketMatch": false,
+    "explanation": "Pracovní interpretace zahrnuje burzy skupiny NYSE. Všechny tři fondy mají primární listing na NYSE Arca, nikoliv na hlavní burze NYSE. Při striktním požadavku na NYSE main market je nutné výběr přehodnotit.",
+    "sourceIds": [
+      "nyse-etp"
+    ]
+  },
+  "expenseRatioExplanation": "Hodnota expenseRatioPercent je v procentech za rok: 0.03 znamená 0,03 %, nikoliv 3 %. Jde o nákladovost fondu, nikoliv součet nákladů investora. Nezahrnuje jeho brokerské poplatky, spread, měnovou konverzi ani daně.",
+  "availability": {
+    "status": "broker-dependent",
+    "labelCs": "Dostupnost závisí na brokerovi a účtu",
+    "verifiedOn": "2026-10-09",
+    "sourceIds": [
+      "cnb-priips",
+      "ibkr-priips",
+      "fio-etf"
+    ],
+    "accountLevelBuyOrderVerified": false,
+    "explanationCs": "IBKR uvádí omezení nákupů pro retailové klienty EHP bez KID. Fio uvádí možnost obchodování amerických ETF. Konkrétní nákup VOO, VTI nebo SCHD na českém retailovém účtu nebyl ověřen; před nákupem je nutné ověřit přesný instrument a oprávnění u brokera. CFD není přímé vlastnictví ETF."
+  },
+  "funds": [
+    {
+      "ticker": "VOO",
+      "name": "Vanguard S&P 500 ETF",
+      "issuer": "Vanguard",
+      "benchmark": "S&P 500 Index",
+      "focusCs": "Velké americké společnosti",
+      "strategyCs": "Pasivní sledování indexu S&P 500.",
+      "expenseRatioPercent": 0.03,
+      "expenseRatioSourceId": "voo-factsheet",
+      "expenseRatioSourceAsOf": "2026-06-30",
+      "exchange": "NYSE Arca",
+      "verifiedOn": "2026-10-09",
+      "fieldSourceIds": {
+        "name": [
+          "voo-factsheet"
+        ],
+        "ticker": [
+          "voo-factsheet"
+        ],
+        "benchmark": [
+          "voo-factsheet"
+        ],
+        "focusCs": [
+          "voo-factsheet"
+        ],
+        "strategyCs": [
+          "voo-factsheet"
+        ],
+        "exchange": [
+          "voo-factsheet"
+        ]
+      },
+      "availabilityStatus": "broker-dependent",
+      "tickerSpecificAvailabilityVerified": false,
+      "comparisonRoleCs": "Srozumitelný výchozí bod pro porovnání s širším trhem a dividendovou strategií."
+    },
+    {
+      "ticker": "VTI",
+      "name": "Vanguard Morningstar Total Stock Market ETF",
+      "previousName": "Vanguard Total Stock Market ETF",
+      "issuer": "Vanguard",
+      "benchmark": "Morningstar US Total Market Index",
+      "previousBenchmark": "CRSP US Total Market Index",
+      "nameChangeEffectiveOn": "2026-07-29",
+      "focusCs": "Široký americký akciový trh včetně menších společností",
+      "strategyCs": "Pasivní sledování širokého trhu pomocí výběrové replikace indexu.",
+      "expenseRatioPercent": 0.03,
+      "expenseRatioSourceId": "vti-factsheet",
+      "expenseRatioSourceAsOf": "2026-06-30",
+      "exchange": "NYSE Arca",
+      "verifiedOn": "2026-10-09",
+      "fieldSourceIds": {
+        "name": [
+          "vti-name-supplement"
+        ],
+        "ticker": [
+          "vti-factsheet"
+        ],
+        "benchmark": [
+          "vti-name-supplement"
+        ],
+        "focusCs": [
+          "vti-factsheet"
+        ],
+        "strategyCs": [
+          "vti-factsheet"
+        ],
+        "exchange": [
+          "vti-factsheet"
+        ]
+      },
+      "availabilityStatus": "broker-dependent",
+      "tickerSpecificAvailabilityVerified": false,
+      "publicDirectorySourceIds": [
+        "fio-vti-directory"
+      ],
+      "comparisonRoleCs": "Ukazuje širší pokrytí trhu při stejné publikované nákladovosti jako VOO; nejde o předpověď vyššího výnosu."
+    },
+    {
+      "ticker": "SCHD",
+      "name": "Schwab U.S. Dividend Equity ETF",
+      "issuer": "Schwab Asset Management",
+      "benchmark": "Dow Jones U.S. Dividend 100 Index",
+      "focusCs": "Vybrané americké dividendové společnosti",
+      "strategyCs": "Pasivní sledování dividendového indexu s výběrem podle fundamentálních ukazatelů.",
+      "expenseRatioPercent": 0.06,
+      "expenseRatioSourceId": "schd-profile",
+      "expenseRatioSourceAsOf": null,
+      "exchange": "NYSE Arca",
+      "verifiedOn": "2026-10-09",
+      "fieldSourceIds": {
+        "name": [
+          "schd-profile"
+        ],
+        "ticker": [
+          "schd-profile"
+        ],
+        "benchmark": [
+          "schd-profile"
+        ],
+        "focusCs": [
+          "schd-profile"
+        ],
+        "strategyCs": [
+          "schd-profile"
+        ],
+        "exchange": [
+          "schd-profile"
+        ]
+      },
+      "availabilityStatus": "broker-dependent",
+      "tickerSpecificAvailabilityVerified": false,
+      "comparisonRoleCs": "Ukazuje odlišnou výběrovou strategii. Dividendové zaměření samo o sobě neznamená vyšší celkový výnos ani menší riziko."
+    }
+  ],
+  "sources": [
+    {
+      "id": "voo-factsheet",
+      "title": "Vanguard S&P 500 ETF — fact sheet",
+      "publisher": "Vanguard",
+      "url": "https://workplace.vanguard.com/assets/corp/fund_communications/pdf_publish/us-products/fact-sheet/F0968.pdf",
+      "documentAsOf": "2026-06-30",
+      "verifiedOn": "2026-10-09",
+      "scope": "Ticker, benchmark, strategy, expense ratio and NYSE Arca listing."
+    },
+    {
+      "id": "vti-factsheet",
+      "title": "Vanguard Total Stock Market ETF — fact sheet (previous name)",
+      "publisher": "Vanguard",
+      "url": "https://workplace.vanguard.com/assets/corp/fund_communications/pdf_publish/us-products/fact-sheet/F0970.pdf",
+      "documentAsOf": "2026-06-30",
+      "verifiedOn": "2026-10-09",
+      "scope": "Ticker, strategy, expense ratio and NYSE Arca listing; name and benchmark superseded by July supplement."
+    },
+    {
+      "id": "vti-name-supplement",
+      "title": "Vanguard Index Funds — supplement dated July 29, 2026",
+      "publisher": "Vanguard / SEC EDGAR",
+      "url": "https://www.sec.gov/Archives/edgar/data/36405/000003640526000386/f45788d1.htm",
+      "documentAsOf": "2026-07-29",
+      "verifiedOn": "2026-10-09",
+      "scope": "Current fund and benchmark names, effective July 29, 2026; investment objective and strategy unchanged."
+    },
+    {
+      "id": "schd-profile",
+      "title": "Schwab U.S. Dividend Equity ETF — official profile",
+      "publisher": "Schwab Asset Management",
+      "url": "https://www.schwabassetmanagement.com/products/schd",
+      "documentAsOf": null,
+      "verifiedOn": "2026-10-09",
+      "scope": "Name, ticker, benchmark, dividend selection strategy, total expense ratio and exchange. Fee effective date not separately stated on page."
+    },
+    {
+      "id": "nyse-etp",
+      "title": "Exchange Traded Products",
+      "publisher": "NYSE Regulation",
+      "url": "https://www.nyse.com/regulation/exchange-traded-products",
+      "documentAsOf": null,
+      "verifiedOn": "2026-10-09",
+      "scope": "NYSE and NYSE Arca are distinct NYSE exchanges; do not label Arca as NYSE main market."
+    },
+    {
+      "id": "cnb-priips",
+      "title": "Otázky a odpovědi k nařízení o sdělení klíčových informací (PRIIPs)",
+      "publisher": "Česká národní banka",
+      "url": "https://www.cnb.cz/cs/dohled-financni-trh/legislativni-zakladna/stanoviska-k-regulaci-financniho-trhu/RS2018-12/",
+      "documentAsOf": null,
+      "verifiedOn": "2026-10-09",
+      "scope": "Section B.2: execution-only access on investor initiative is distinguished from active selling/advice; no guarantee of ticker-specific availability."
+    },
+    {
+      "id": "ibkr-priips",
+      "title": "US Taxes for US Non-Residents — official IBKR answer on PRIIPs",
+      "publisher": "Interactive Brokers",
+      "url": "https://www.interactivebrokers.com/campus/trading-lessons/us-taxes-for-us-non-residents-3/",
+      "documentAsOf": "2025-11-19",
+      "verifiedOn": "2026-10-09",
+      "scope": "IBKR response dated November 19, 2025: blocks PRIIP purchases for EEA/UK retail clients where a KID is unavailable. Public policy, not account-level order test."
+    },
+    {
+      "id": "fio-etf",
+      "title": "ETF — přístup k americkým ETF",
+      "publisher": "Fio banka",
+      "url": "https://www.fio.cz/akcie-investice/etf",
+      "documentAsOf": null,
+      "verifiedOn": "2026-10-09",
+      "scope": "Fio states that clients may trade US ETFs and distinguishes market access from offering. Does not establish all selected tickers' current eligibility."
+    },
+    {
+      "id": "fio-vti-directory",
+      "title": "Výpis ETF — VTI",
+      "publisher": "Fio banka",
+      "url": "https://www.fio.cz/akcie-investice/etf/vypis-etf?offset=870",
+      "documentAsOf": null,
+      "verifiedOn": "2026-10-09",
+      "scope": "VTI appears in public directory under previous name. Directory presence does not guarantee a retail account can submit a buy order."
+    }
+  ]
+}

@@ -11,6 +11,7 @@
 
 - Nevymýšlej fondy, poplatky, výnosy ani dostupnost. Údaje ověř z primárních zdrojů a ulož zdroj i datum ověření.
 - Vyřeš NYSE versus NYSE Arca a dostupnost pro české drobné investory.
+- Vybranou trojici VOO, VTI a SCHD a podmíněnou dostupnost popisuje docs/etf-research.md; data ber ze src/data/etfs.json. Zachovej zdroje, jednotky procent a oddělení data ověření od data dokumentu. NYSE Arca nepřejmenovávej na NYSE main market a z příznaku broker-dependent nedělej garantované ano. Používej aktuální název VTI a indexu po přejmenování v červenci 2026.
 - Jedna dotažená interaktivní funkce má přednost před několika nedokončenými.
 - Formulář je hotový až při skutečném uložení kontaktu a získání slíbeného obsahu. Zpracuj neplatný e-mail, chybu a opakované kliknutí.
 - Měření musí rozlišovat reklamy a ověřit záznam návštěvy, interakce, CTA, zahájení formuláře a získání kontaktu. Odhad konverze odlišuj od skutečného výsledku.

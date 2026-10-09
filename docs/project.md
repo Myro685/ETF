@@ -4,13 +4,13 @@ Zdroj: [Clientelo projekt v Notion](https://app.notion.com/p/3f4e1942c8af80ddacf
 
 Termín: **2026-10-16**. Aktualizace: **2026-10-09**.
 
-Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouze k odškrtávání dokončených bodů. Další krok: bod 3.
+Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouze k odškrtávání dokončených bodů. Další krok: bod 4.
 
 | Bod | Výsledek | Stav |
 | --- | --- | --- |
 | 1 | Návštěvník, problém, jazyk a obsah | Hotovo, schválena varianta 2 |
 | 2 | Hodnota zdarma, hodnota za e-mail, okamžik žádosti | Hotovo; nabídka schválená v docs/offer.md |
-| 3 | ETF, NYSE/Arca, dostupnost, skutečná data a zdroje | Nezahájeno |
+| 3 | ETF, NYSE/Arca, dostupnost, skutečná data a zdroje | Hotovo; VOO, VTI, SCHD, zdroje a omezení v docs/etf-research.md |
 | 4 | Dvě reklamy s textem, nadpisem a CTA v repozitáři | Nezahájeno |
 | 5 | Obsah, pořadí sekcí a vlastní vzhled pro mobil | Nezahájeno; úvodní stránka je základ |
 | 6 | Jedna interaktivní funkce s ověřenými výsledky | Nezahájeno |

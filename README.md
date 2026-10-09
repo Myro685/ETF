@@ -9,7 +9,8 @@ Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký t
 - Připravené instrukce pro AI, projektová pravidla, místo pro skills a dokumentace.
 - Veřejný repozitář [Myro685/ETF](https://github.com/Myro685/ETF), větev main napojená na origin/main; úvodní commit nahraný.
 - Schválená nabídka (bod 2): porovnání zdarma a PDF průvodce s checklistem za e-mail; formulář až po porovnání. Podrobnosti v [docs/offer.md](docs/offer.md).
-- Další krok: vybrat ETF a ověřit údaje, NYSE versus NYSE Arca a dostupnost pro českého investora (bod 3).
+- Bod 3 hotový: pro vzdělávací porovnání vybrané VOO, VTI a SCHD. Data a zdroje v [src/data/etfs.json](src/data/etfs.json), zdůvodnění a omezení v [docs/etf-research.md](docs/etf-research.md).
+- Další krok: připravit dvě varianty reklamy (bod 4).
 - Termín odevzdání: **16. října 2026**.
 
 Zadání bylo načteno z [Clientelo projektu v Notion](https://app.notion.com/p/3f4e1942c8af80ddacf7c7b070dea863). Notion nyní slouží pouze k odškrtávání bodů. Aktuální informace, rozhodnutí a podrobnosti řešení vedeme v tomto repozitáři.
@@ -52,15 +53,22 @@ Build provede kontrolu TypeScriptu a sestaví aplikaci do dist/. Preview slouž�
 | .agents/skills/ | Budoucí projektové skills |
 | docs/project.md | Zadání, priority a stav všech bodů |
 | docs/decisions.md | Rozhodnutí a jejich důvody |
+| docs/offer.md | Schválená nabídka výměnou za e-mail |
+| docs/etf-research.md | Výběr ETF, primární zdroje, burza a dostupnost |
+| src/data/etfs.json | Ověřená data ETF a odkazy na zdroje |
 | ai-log/ | Záznam spolupráce s AI a budoucí exporty |
 
 Po dokončeném kroku aktualizujeme README a příslušnou dokumentaci; v Notion pouze odškrtneme splněné body. Návrhy odlišujeme od schválených rozhodnutí. Práci ukládáme průběžnými commity.
 
 ## Data, služby a měření
 
-Konkrétní ETF ani služby zatím nejsou vybrané. Nejsou potřeba žádné proměnné prostředí. Při doplnění služeb vytvoříme .env.example pouze s názvy proměnných a bezpečnými příklady. Tajné klíče a kontakty návštěvníků nepatří do repozitáře.
+ETF pro porovnání: **VOO (0,03 %), VTI (0,03 %) a SCHD (0,06 %)** roční zveřejněné nákladovosti fondu. Nejde o celkové náklady investora. Všechny mají listing na **NYSE Arca**, která je samostatnou burzou skupiny NYSE; striktní NYSE main market výběr nesplňuje. Data ověřena 9. 10. 2026, včetně oddělených dat zdrojových dokumentů. Úplné zdroje a interpretace jsou v docs/etf-research.md a src/data/etfs.json.
 
-Před zveřejněním údajů ověříme zdroje a datum platnosti, NYSE versus NYSE Arca a dostupnost pro českého drobného investora. Očekávanou konverzi a tři hypotézy pro A/B testování doplníme po návrhu nabídky a stránky. Skutečná konverze zatím není změřená.
+Dostupnost pro český retail je **podmíněná podle brokera a účtu**: IBKR uvádí omezení bez KID, Fio umožňuje přístup k americkým ETF a ČNB rozlišuje execution-only přístup. Konkrétní nákup jednotlivých tickerů na klientském účtu nebyl otestován. Tuto informaci zobrazíme přímo u porovnání; nebudeme slibovat nákup u každého brokera. VTI používá aktuální název Vanguard Morningstar Total Stock Market ETF a Morningstar US Total Market Index, účinné od 29. 7. 2026.
+
+Externí služby zatím nejsou vybrané. Nejsou potřeba žádné proměnné prostředí. Při doplnění služeb vytvoříme .env.example pouze s názvy proměnných a bezpečnými příklady. Tajné klíče a kontakty návštěvníků nepatří do repozitáře.
+
+Před spuštěním zopakujeme kontrolu nákladovosti a dostupnosti. Očekávanou konverzi a tři hypotézy pro A/B testování doplníme po návrhu stránky. Skutečná konverze zatím není změřená.
 
 ## Spolupráce s AI
 
@@ -70,7 +78,7 @@ Obsah kontrolujeme proti zadání a schváleným rozhodnutím, zápisy do Notion
 
 ## Co zbývá
 
-Body 3–12: ověřená ETF data, dvě reklamy, obsah a vzhled, interaktivní funkce, ukládání kontaktů a doručení obsahu, měření, doplnění README, úplné AI exporty, hosting a odevzdání. Nabídka je schválená, PDF a jeho doručení ještě zbývá vytvořit. Úvodní stránka je základ projektu; formulář ani porovnávač zatím nejsou implementované.
+Body 4–12: dvě reklamy, obsah a vzhled, interaktivní funkce, ukládání kontaktů a doručení obsahu, měření, doplnění README, úplné AI exporty, hosting a odevzdání. Nabídka je schválená a výběr ETF prověřený; PDF a jeho doručení ještě zbývá vytvořit. Úvodní stránka je základ projektu; formulář ani porovnávač zatím nejsou implementované.
 
 
 ## Ověření základu (2026-10-09)

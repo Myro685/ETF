@@ -1,5 +1,15 @@
 # Rozhodnutí
 
+## 2026-10-09 — výběr ETF a interpretace zadání (výběr na pokyn uživatele)
+
+Pro vzdělávací porovnání vybrané VOO, VTI a SCHD: velké americké firmy, široký americký trh a dividendová strategie. Jde o redakční výběr pro projekt, nikoliv osobní doporučení investice. Primární zdroje a datový podklad jsou v docs/etf-research.md a src/data/etfs.json.
+
+NYSE interpretujeme jako skupinu burz včetně NYSE Arca, ale v obsahu uvádíme přesný listing NYSE Arca. Při striktním požadavku na NYSE main market je nutné výběr přehodnotit; tato interpretace nebyla potvrzena původním zadavatelem.
+
+Dostupnost nevyjadřujeme obecně jako ano/ne. Zdroje ČNB, IBKR a Fio ukazují závislost na brokerovi, KID, způsobu služby a konkrétním účtu. Nákup jednotlivých tickerů nebyl na klientském účtu otestován. Toto omezení bude viditelné u porovnání. Nepřidáváme CFD jako náhradu přímého vlastnictví ETF.
+
+VTI má od 29. 7. 2026 nový název fondu a indexu; aktuální názvy ověřené právním dodatkem mají přednost před červnovým fact sheetem. Data neobsahují rychle zastarávající ceny, výnosy ani počty pozic. Bod 3 je dokončen jako výběr a prověření z veřejných zdrojů.
+
 ## 2026-10-09 — nabídka a vedení dokumentace (schváleno uživatelem)
 
 Uživatel schválil nabídku v docs/offer.md: porovnání ETF zdarma na stránce a PDF průvodce s vysvětlením a checklistem za e-mail. O e-mail požádáme až po užitečném porovnání. Bod 2 je hotový; vytvoření PDF a doručení ještě zbývá implementovat.

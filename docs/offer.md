@@ -26,4 +26,4 @@ Návštěvník získá přehled pro pozdější návrat a konkrétní postup por
 
 ## Co zbývá
 
-PDF ani jeho doručení zatím nejsou vytvořené. Data pro obsah se musí nejprve ověřit v bodu 3. Podrobnosti nabídky a další rozhodnutí vedeme v projektových souborech; Notion slouží jen k odškrtávání bodů.
+PDF ani jeho doručení zatím nejsou vytvořené. Výběr a prověření dat z bodu 3 jsou hotové: VOO, VTI a SCHD, s podmíněnou dostupností podle brokera; zdroje a omezení v docs/etf-research.md. Podrobnosti nabídky a další rozhodnutí vedeme v projektových souborech; Notion slouží jen k odškrtávání bodů.
