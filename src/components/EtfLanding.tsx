@@ -1,6 +1,8 @@
 import { useState, type FormEvent } from "react";
 import { etfData, funds, formatDate } from "../data/etfs";
 import { SourceList } from "./SourceList";
+import { CostCalculator } from "./CostCalculator";
+import { EtfQuiz } from "./EtfQuiz";
 import "./EtfLanding.css";
 const Arrow = () => (
   <svg
@@ -77,6 +79,7 @@ export const EtfLanding = () => {
         </a>
         <nav aria-label="Sekce stránky">
           <a href="#cl-comparison">Porovnání</a>
+          <a href="#cl-calculator">Kalkulačka</a>
           <a href="#cl-sources">Zdroje</a>
           <a className="cl-nav-guide" href="#cl-guide">
             Průvodce zdarma <Arrow />
@@ -231,6 +234,7 @@ export const EtfLanding = () => {
             </div>
           </aside>
         </section>
+        <CostCalculator />
         <section
           className="cl-differences"
           aria-labelledby="cl-differences-title"
@@ -253,6 +257,7 @@ export const EtfLanding = () => {
             </p>
           </div>
         </section>
+        <EtfQuiz />
         <section
           id="cl-guide"
           className="cl-section cl-wrap cl-guide"

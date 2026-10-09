@@ -18,7 +18,9 @@ První návrh měl na mobilu přibližně 5 361 px. Na žádost uživatele byl v
 | Rychlý přehled | VOO — velké firmy, VTI — široký trh, SCHD — dividendy | Vlastní vizuální motiv má skutečný vztah k rozdílům fondů |
 | Společné porovnání | Zaměření, roční nákladovost 0,03 / 0,03 / 0,06 %, přesný listing NYSE Arca, datum ověření | Užitečné údaje dostupné před formulářem |
 | Podrobnosti a dostupnost | Rozbalitelné názvy a indexy; vysvětlení nákladovosti a závislosti nákupu na brokerovi, účtu a KID | Podrobnosti jsou dostupné; důležité omezení nákupu zůstává viditelné |
+| Kalkulačka nákladů | Hodnota v Kč, předvolby a orientační roční náklad všech tří fondů | Převést nákladovost na konkrétní částku po základním porovnání |
 | Interpretace | Krátké vysvětlení VOO, VTI a SCHD; bez hodnocení nejlepšího fondu | Samotná čísla nestačí k pochopení rozdílů |
+| Volitelný kvíz | Tři otázky, vysvětlení, zdroje a témata k připomenutí | Procvičit pojmy po jejich vysvětlení; ve výchozím stavu zavřený |
 | PDF a formulář | Obsah schváleného průvodce, jediné pole e-mail; CTA „Poslat průvodce zdarma“ | Žádost o kontakt až po poskytnuté hodnotě |
 | Souvislosti a zdroje | Dostupnost, rizika, náklady, odkazy na emitenty, SEC, NYSE, ČNB, IBKR a Fio | Podložení informací a možnost dohledat jejich kontext |
 

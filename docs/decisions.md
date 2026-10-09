@@ -1,5 +1,11 @@
 # Rozhodnutí
 
+## 2026-10-09 — kalkulačka a kvíz (výběr uživatele)
+
+Uživatel zvolil varianty 1 a 3 předchozího seznamu. Jeho přímý pokyn má přednost před obecnou preferencí jediné funkce. Implementované oba nástroje, varianta 2 vynechaná. Kalkulačka je hlavní interaktivita přímo po porovnání, kvíz volitelně rozbalitelný po interpretaci údajů. Používáme současné tokeny podle apple-design, bez nové runtime závislosti.
+
+Kalkulačka je jednoletý ilustrativní model při konstantní hodnotě, nepředpovídá výnos ani celkové náklady. Sazby z JSON, české vstupy a Kč, nula přípustná, limit 1 miliarda Kč. Kvíz ověřuje pojmy, nevybírá vhodnou investici. Oba výsledky navazují na schválený obecný průvodce; doručení PDF zůstává bodem 7. Testy a skutečný rozsah ověření v docs/interactive-feature.md. Bod 6 splněný.
+
 ## 2026-10-09 — možnosti interaktivní funkce (návrh k výběru)
 
 Na žádost uživatele připravené tři možnosti pro bod 6: ilustrativní roční náklad v Kč, porovnání zvolené dvojice a krátký vzdělávací kvíz. Podrobnosti a plán ověření v docs/interactive-feature.md. AI doporučuje první variantu kvůli konkrétnímu novému výsledku a návaznosti na současnou nabídku PDF. Uživatel zatím variantu nezvolil; žádná funkce není implementovaná a úkoly bodu 6 v Notion zůstávají neodškrtnuté.

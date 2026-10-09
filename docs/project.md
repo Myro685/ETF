@@ -4,7 +4,7 @@ Zdroj: [Clientelo projekt v Notion](https://app.notion.com/p/3f4e1942c8af80ddacf
 
 Termín: **2026-10-16**. Aktualizace: **2026-10-09**.
 
-Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouze k odškrtávání dokončených bodů. Reklamy (bod 4) odložené na pokyn uživatele. Návrh už je implementovaný v React aplikaci; následuje bod 6.
+Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouze k odškrtávání dokončených bodů. Reklamy (bod 4) odložené na pokyn uživatele. Frontend i bod 6 jsou implementované; následuje bod 7.
 
 | Bod | Výsledek | Stav |
 | --- | --- | --- |
@@ -13,7 +13,7 @@ Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouz
 | 3 | ETF, NYSE/Arca, dostupnost, skutečná data a zdroje | Hotovo; VOO, VTI, SCHD, zdroje a omezení v docs/etf-research.md |
 | 4 | Dvě reklamy s textem, nadpisem a CTA v repozitáři | Odloženo na později uživatelem |
 | 5 | Obsah, pořadí sekcí a vlastní vzhled pro mobil | Hotovo; návrh z MagicPath na pokyn uživatele převedený do React aplikace, ověření v docs/design.md |
-| 6 | Jedna interaktivní funkce s ověřenými výsledky | Tři návrhy v docs/interactive-feature.md; výběr uživatele a implementace čekají |
+| 6 | Interaktivní funkce s ověřenými výsledky | Hotovo; na výslovné přání uživatele dvě: kalkulačka a kvíz, automatické a browser testy v docs/interactive-feature.md |
 | 7 | Formulář, uložení kontaktu, ochrana údajů, doručení | Připravený frontend a validace; PDF, ukládání, doručení a informace o správci zbývají |
 | 8 | Rozlišení reklam, události trychtýře a ověření záznamu | Nezahájeno |
 | 9 | README, důvody řešení, zdroje, konverze, tři A/B hypotézy, spuštění | Rozpracováno; základ README |

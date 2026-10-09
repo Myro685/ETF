@@ -11,7 +11,7 @@ Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký t
 - Schválená nabídka (bod 2): porovnání zdarma a PDF průvodce s checklistem za e-mail; formulář až po porovnání. Podrobnosti v [docs/offer.md](docs/offer.md).
 - Bod 3 hotový: pro vzdělávací porovnání vybrané VOO, VTI a SCHD. Data a zdroje v [src/data/etfs.json](src/data/etfs.json), zdůvodnění a omezení v [docs/etf-research.md](docs/etf-research.md).
 - Bod 5 hotový; na navazující pokyn uživatele převedený návrh podle apple-design do aplikace. Specifikace a ověření v [docs/design.md](docs/design.md), původní podklady v designs/magicpath/.
-- Reklamy (bod 4) odložené na pokyn uživatele. Bod 6: [tři návrhy interaktivní funkce](docs/interactive-feature.md) připravené k výběru, zatím bez implementace.
+- Bod 6 hotový: na přání uživatele implementovaná kalkulačka ročního nákladu v Kč a tříotázkový kvíz. [Popis a ověření funkcí](docs/interactive-feature.md). Reklamy (bod 4) zůstávají odložené.
 - Termín odevzdání: **16. října 2026**.
 
 Zadání bylo načteno z [Clientelo projektu v Notion](https://app.notion.com/p/3f4e1942c8af80ddacf7c7b070dea863). Notion nyní slouží pouze k odškrtávání bodů. Aktuální informace, rozhodnutí a podrobnosti řešení vedeme v tomto repozitáři.
@@ -38,6 +38,7 @@ Vite vypíše místní adresu vývojového serveru.
 
 ```powershell
 npm run lint
+npm run test
 npm run build
 npm run preview
 ```
@@ -83,12 +84,13 @@ Obsah kontrolujeme proti zadání a schváleným rozhodnutím, zápisy do Notion
 
 ## Co zbývá
 
-Zbývá bod 6 (interaktivní funkce), vytvoření PDF, ukládání kontaktů a doručení, měření, dvě odložené reklamy a dokončení bodů 9–12. Frontend je implementovaný; veřejný hosting a celý proces získání průvodce ještě nejsou hotové.
+Zbývá vytvoření PDF, ukládání kontaktů a doručení (bod 7), měření, dvě odložené reklamy a dokončení bodů 9–12. Frontend včetně kalkulačky a kvízu je implementovaný; veřejný hosting a celý proces získání průvodce ještě nejsou hotové.
 
 
 ## Ověření webu (2026-10-09)
 
 - npm run lint: úspěšné.
+- npm run test: úspěšné; nezávislé výsledky kalkulačky, české vstupy a všech 8 kombinací odpovědí kvízu. Nativní test runner Node.js 24, bez nové závislosti.
 - npm run build: úspěšné, včetně kontroly TypeScriptu.
 - npm install: audit hlásil 0 zranitelností při instalaci.
 - Git repozitář na větvi main je propojený s https://github.com/Myro685/ETF.git; hosting zatím není založený.
