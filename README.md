@@ -86,6 +86,8 @@ Před spuštěním zopakujeme kontrolu nákladovosti a dostupnosti. Očekávanou
 
 ## Spolupráce s AI
 
+Globálně pro Codex jsou nainstalované apple-design a na pokyn uživatele také ibelick/ui-skills (7 skillů), vercel-react-view-transitions a CloudAI-X/threejs-skills (10 skillů). Jsou v C:\Users\miros\.agents\skills, nikoliv v repozitáři nebo závislostech aplikace. Instalace a omezení automatického hodnocení zaznamenané v ai-log/2026-10-09.md. Před použitím čteme konkrétní SKILL.md; instalace sama nezměnila web.
+
 Používáme Codex. AI dostala pokyn načíst Notion, navrhnout tři cílové skupiny, průběžně zapisovat hotovou práci a vytvořit React projekt s dokumentací. Uživatel schválil druhou variantu.
 
 Obsah kontrolujeme proti zadání a schváleným rozhodnutím, zápisy do Notion zpětným načtením a technické změny odpovídajícími kontrolami. Postup a omezení jsou v ai-log/. Dosavadní souhrn není úplný export konverzace; ten je ještě nutné dodat.
