@@ -7,6 +7,7 @@ Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký t
 - Schválená cílová skupina a hlavní problém (bod 1).
 - Vytvořený základ React + TypeScript + Vite a jednoduchá česká úvodní stránka.
 - Připravené instrukce pro AI, projektová pravidla, místo pro skills a dokumentace.
+- Veřejný repozitář [Myro685/ETF](https://github.com/Myro685/ETF), větev main napojená na origin/main; úvodní commit nahraný.
 - Další krok: rozhodnout, co nabídneme zdarma a co navíc po zadání e-mailu (bod 2).
 - Termín odevzdání: **16. října 2026**.
 
@@ -68,7 +69,7 @@ Obsah kontrolujeme proti zadání a schváleným rozhodnutím, zápisy do Notion
 
 ## Co zbývá
 
-Body 2–12: nabídka, ověřená ETF data, dvě reklamy, obsah a vzhled, interaktivní funkce, ukládání kontaktů a doručení obsahu, měření, doplnění README, úplné AI exporty, veřejný GitHub, hosting a odevzdání. Úvodní stránka je základ projektu; formulář ani porovnávač zatím nejsou implementované.
+Body 2–12: nabídka, ověřená ETF data, dvě reklamy, obsah a vzhled, interaktivní funkce, ukládání kontaktů a doručení obsahu, měření, doplnění README, úplné AI exporty, hosting a odevzdání. Úvodní stránka je základ projektu; formulář ani porovnávač zatím nejsou implementované.
 
 
 ## Ověření základu (2026-10-09)
@@ -76,5 +77,5 @@ Body 2–12: nabídka, ověřená ETF data, dvě reklamy, obsah a vzhled, intera
 - npm run lint: úspěšné.
 - npm run build: úspěšné, včetně kontroly TypeScriptu.
 - npm install: audit hlásil 0 zranitelností při instalaci.
-- Vytvořen samostatný lokální Git repozitář na větvi main. Veřejný remote a hosting zatím nejsou založené.
+- Git repozitář na větvi main je propojený s https://github.com/Myro685/ETF.git. Úvodní commit c5b6564 je nahraný; hosting zatím není založený.
 - Vizuální a koncové testy finální stránky budou provedené při její implementaci.

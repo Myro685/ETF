@@ -14,3 +14,6 @@ Po dokončených krocích zapisovat výsledky a stav do Notion. Udržovat README
 
 React + TypeScript + Vite s npm. Uživatel požadoval React projekt ve složce Projects. TypeScript a Vite jsou zvolené pro typovou kontrolu a jednoduchý vývojový server. Zatím bez externích služeb. Skills přidáme až podle konkrétní potřeby.
 
+## 2026-10-09 — GitHub repozitář (pokyn uživatele)
+
+Uživatel určil https://github.com/Myro685/ETF.git. Repozitář byl prázdný a jeho veřejná viditelnost byla ověřena přes GitHub API. Nastaven remote origin a tracking main → origin/main. Úvodní commit c5b6564 byl nahrán bez přepisování historie.

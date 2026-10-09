@@ -16,7 +16,7 @@ Termín: **2026-10-16**. Aktualizace: **2026-10-09**.
 | 8 | Rozlišení reklam, události trychtýře a ověření záznamu | Nezahájeno |
 | 9 | README, důvody řešení, zdroje, konverze, tři A/B hypotézy, spuštění | Rozpracováno; základ README |
 | 10 | AI pokyny, kontroly, chyby, exporty a metoda exportu | Rozpracováno; souhrn, úplné exporty chybí |
-| 11 | Veřejný GitHub, commity, hosting, mobilní a koncové testy | Rozpracováno; lokální projekt, bez remote a nasazení |
+| 11 | Veřejný GitHub, commity, hosting, mobilní a koncové testy | Rozpracováno; veřejný GitHub Myro685/ETF a úvodní commit nahraný, bez nasazení |
 | 12 | Odpověď na e-mail s GitHub, veřejným webem a omezeními | Nezahájeno |
 
 ## Priority
@@ -26,4 +26,3 @@ Jasná nabídka, ověřená data, mobilní stránka, funkční formulář, doru�
 ## Technická příprava
 
 Na žádost uživatele vytvořen projekt C:\Users\miros\Projects\clientelo: React, TypeScript, Vite, instrukce pro AI, rules, místo pro skills a dokumentace. Příprava neznamená dokončení bodů 5, 9, 10 ani 11.
-
