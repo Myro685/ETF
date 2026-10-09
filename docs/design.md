@@ -1,5 +1,7 @@
 # Obsah a design stránky — bod 5
 
+Nový návrh Atlas z 2026-10-09 je samostatně popsaný v [design-atlas.md](design-atlas.md). Následující dokument popisuje dosavadní implementaci; nový návrh zatím není přenesený do hlavní aplikace.
+
 Datum: 2026-10-09. Stav: **návrh z MagicPath na navazující pokyn uživatele implementovaný v React aplikaci**. Web běží místně, veřejný hosting zbývá. Dvě reklamy bodu 4 připravené v docs/ads.md. Následující návrhová měření popisují původní prototyp; aktuální implementace je popsaná samostatně níže.
 
 ## Návaznost reklam — aktuální úvod

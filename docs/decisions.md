@@ -1,5 +1,11 @@
 # Rozhodnutí
 
+## 2026-10-09 — Atlas, nový návrh v MagicPath (k posouzení)
+
+Na pokyn uživatele vznikl méně generický redakční vzhled: papír, serifová typografie, otevřené porovnání a statická Three.js studie se vztahem k zaměření fondů. Zachované reklamní sliby a interaktivní komponenty z aktuální aplikace. Návrh nepřidává výnosová data ani skutečné odesílání kontaktu. View Transitions nejsou pro tento jednopage návrh potřebné.
+
+Desktopová i mobilní revize sestavené a ověřené; zdroj archivovaný v designs/magicpath/atlas-2026-10-09. Podrobnosti a výkonová omezení v docs/design-atlas.md. Nový vzhled dosud nebyl uživatelem schválený pro přenos do aplikace. Poslední drobný pokus o změnu panelu průvodce zastavil limit API MagicPath; nejde o dokončenou novou revizi. Notion checklist se nemění.
+
 ## 2026-10-09 — dvě textové reklamy (návrhy, bod 4)
 
 Uživatel se vrátil k odloženému bodu 4. Připravené dvě varianty v docs/ads.md: A vysvětlení rozdílů VOO/VTI/SCHD, B orientační roční náklad v Kč. Obě slibují funkční obsah bez e-mailu; doručení PDF není součástí příslibu. Návrhy jsou k posouzení, nikoliv dodatečně připsané schválení uživatelem.

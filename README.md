@@ -4,6 +4,7 @@ Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký t
 
 ## Aktuální stav
 
+- Nový návrh **Atlas** v MagicPath: papírové tóny, redakční typografie a Three.js studie. Návrh je k posouzení; přenos do hlavní aplikace je další krok. [Specifikace a omezení](docs/design-atlas.md), spustitelný prototyp v designs/magicpath/atlas-2026-10-09/. Poslední drobnou úpravu panelu zastavil limit API MagicPath; dokončené revize jsou uložené.
 - Schválená cílová skupina a hlavní problém (bod 1).
 - Implementovaná responzivní stránka v React + TypeScript + Vite podle přepracovaného návrhu MagicPath: porovnání, vysvětlení, nabídka PDF a zdroje.
 - Připravené instrukce pro AI, projektová pravidla, místo pro skills a dokumentace.
@@ -63,6 +64,7 @@ Build provede kontrolu TypeScriptu a sestaví aplikaci do dist/. Preview slouž�
 | docs/ads.md | Dvě verze reklamy, návaznost stránky a plán rozlišení v bodu 8 |
 | docs/etf-research.md | Výběr ETF, primární zdroje, burza a dostupnost |
 | docs/design.md | Obsah, pořadí sekcí, design tokeny a kontrola návrhu |
+| docs/design-atlas.md | Nový návrh Atlas, 3D studie, ověření a stav MagicPath |
 | docs/form.md | Stav formuláře, serverové napojení, konfigurace a limity testů |
 | server/ a api/ | Místní API a připravené serverless handlery |
 | supabase/001-guide.sql | Schéma kontaktů, žádostí, oprávnění a výmaz |

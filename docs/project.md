@@ -23,6 +23,8 @@ Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouz
 
 ## Priority
 
+Na nový pokyn uživatele přepracovaný design v MagicPath do směru Atlas, včetně 3D studie a zachovaných funkcí. Dokončený návrh k posouzení a samostatný prototyp jsou popsané v docs/design-atlas.md. Hlavní aplikace používá dosavadní vzhled. Limit API zastavil až poslední drobný pokus o úpravu panelu průvodce; nové body v Notion se neodškrtávají.
+
 Jasná nabídka, ověřená data, mobilní stránka, funkční formulář, doručení a měření. Potom vizuální detaily a další interaktivita. Historii commitů a záznam práce s AI vést od začátku.
 
 ## Technická příprava
