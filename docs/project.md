@@ -23,6 +23,8 @@ Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouz
 
 ## Priority
 
+Přidané plynulé posouvání mezi sekcemi podle pokynu uživatele, s respektováním systémového omezení pohybu. Nejde o dokončení dalšího bodu checklistu.
+
 Na pokyn „přepracuj design v reactu“ Atlas implementovaný v hlavní aplikaci, včetně samostatně načítané 3D studie a zachovaných funkcí a API formuláře. Specifikace a aktuální kontroly v docs/design-atlas.md. Samostatný prototyp a limit API MagicPath patří k historii návrhu; implementace v Reactu na limitu nezávisí. Bod 5 již byl odškrtnutý, nové body v Notion se neodškrtávají.
 
 Jasná nabídka, ověřená data, mobilní stránka, funkční formulář, doručení a měření. Potom vizuální detaily a další interaktivita. Historii commitů a záznam práce s AI vést od začátku.

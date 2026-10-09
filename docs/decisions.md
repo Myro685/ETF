@@ -1,5 +1,9 @@
 # Rozhodnutí
 
+## 2026-10-09 — smooth scrolling (pokyn uživatele)
+
+Nativní scroll-behavior: smooth na kořenovém scrollovacím elementu pouze při prefers-reduced-motion: no-preference. Při omezení pohybu zůstává výchozí okamžitý přesun. Existující kotvy, historie URL a scroll-margin-top zachované. Bez JS scroll handlerů nebo nové knihovny.
+
 ## 2026-10-09 — Atlas převedený do React aplikace (pokyn uživatele)
 
 Pokyn „přepracuj design v reactu“ přijímá nový návrh Atlas pro implementaci. Hlavní aplikace používá jeho paletu, typografii, 3D studii a otevřené porovnání. Stávající data, kalkulačka, kvíz a API formuláře zachované. Prototypové vypnutí služby se nepřenáší.

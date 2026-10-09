@@ -4,6 +4,7 @@ Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký t
 
 ## Aktuální stav
 
+- Odkazy mezi sekcemi používají nativní smooth scrolling; při systémovém omezení pohybu zůstává okamžitý přesun.
 - **Atlas je implementovaný v React aplikaci** na pokyn uživatele: papírové tóny, redakční typografie a skutečná Three.js studie. Grafika se načítá samostatně při přiblížení k viewportu, formulář zachovává původní API. [Specifikace a ověření](docs/design-atlas.md); prototyp v designs/magicpath/atlas-2026-10-09/ zůstává historickým podkladem.
 - Schválená cílová skupina a hlavní problém (bod 1).
 - Implementovaná responzivní stránka v React + TypeScript + Vite podle přepracovaného návrhu MagicPath: porovnání, vysvětlení, nabídka PDF a zdroje.
