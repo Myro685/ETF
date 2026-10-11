@@ -90,6 +90,9 @@ Před spuštěním zopakujeme kontrolu nákladovosti a dostupnosti. Očekávanou
 
 ## Spolupráce s AI
 
+Dne 2026-10-11 nainstalované také emilkowalski/skills (15 skillů, původní adresa emilkowalski/skill přesměrovává) a Leonxlnx/taste-skill (13 skillů) do C:\Users\miros\.codex\skills. Použitý skill-installer s přímým stažením po selhání klonování v npx skills. Emilův apple-design je pod názvem emil-apple-design, aby zachoval stávající apple-design. Ověřených 28 nových SKILL.md. Podrobnosti v ai-log/2026-10-11.md. Instalace nezměnila web ani jeho závislosti.
+
+
 Globálně pro Codex jsou nainstalované apple-design a na pokyn uživatele také ibelick/ui-skills (7 skillů), vercel-react-view-transitions a CloudAI-X/threejs-skills (10 skillů). Jsou v C:\Users\miros\.agents\skills, nikoliv v repozitáři nebo závislostech aplikace. Instalace a omezení automatického hodnocení zaznamenané v ai-log/2026-10-09.md. Před použitím čteme konkrétní SKILL.md; instalace sama nezměnila web.
 
 Používáme Codex. AI dostala pokyn načíst Notion, navrhnout tři cílové skupiny, průběžně zapisovat hotovou práci a vytvořit React projekt s dokumentací. Uživatel schválil druhou variantu.
