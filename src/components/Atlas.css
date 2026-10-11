@@ -143,15 +143,23 @@
 .cl-study-3 { grid-template-columns: repeat(3,1fr); }
 .cl-study-3 i { background: #39725a; }
 .cl-study-3 i:nth-child(2n) { grid-column: 3; }
-/* Feedback only: no entrance hides content, no perpetual decorative motion. */
+/* Finite 3D entrance lives in marketScene; UI feedback never hides content. */
 @media (hover: hover) and (pointer: fine) {
   .cl-page .cl-button:hover, .cl-page .cl-form button:not(:disabled):hover { background: #204c37; text-decoration: none; }
   .cl-page .cl-presets button:not([aria-pressed="true"]):hover { background: #dde8df; text-decoration: none; }
   .cl-page .cl-tool-secondary:hover { background: var(--cl-surface); }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .cl-page .cl-button, .cl-page .cl-form button, .cl-page .cl-presets button, .cl-page .cl-tool-secondary { transition: transform 140ms var(--cl-ease); }
+  .cl-page .cl-button, .cl-page .cl-form button, .cl-page .cl-presets button, .cl-page .cl-tool-secondary { transition: transform 140ms var(--cl-ease), background-color 160ms ease, border-color 160ms ease; }
+  .cl-page .cl-button:focus-visible, .cl-page .cl-form button:focus-visible, .cl-page .cl-presets button:focus-visible, .cl-page .cl-tool-secondary:focus-visible { transition: none; }
   .cl-page .cl-button:active:not(:focus-visible), .cl-page .cl-form button:active:not(:disabled):not(:focus-visible), .cl-page .cl-presets button:active:not(:focus-visible), .cl-page .cl-tool-secondary:active:not(:focus-visible) { transform: scale(.97); }
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  .cl-page .cl-button svg { transition: transform 160ms var(--cl-ease); }
+  .cl-page .cl-button:focus-visible svg { transition: none; }
+  .cl-page .cl-button:hover:not(:focus-visible) svg { transform: translateX(3px); }
+  .cl-page .cl-header nav a { transition: color 160ms ease, background-color 160ms ease; }
+  .cl-page .cl-header .cl-nav-guide:hover { background: #dde8df; }
 }
 @media (max-width: 1024px) {
   .cl-wrap { width: calc(100% - 56px); }

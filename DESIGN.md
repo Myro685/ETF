@@ -173,6 +173,8 @@ Confident filled actions and quiet outlined alternatives.
 - **Primary:** accent fill, white text, control corner, minimum height (50px), weight (650) and the frontmatter padding. Mobile actions use (13px) text and (16px) horizontal padding. Form submit typography has its own existing (13px) override.
 - **Secondary:** transparent fill, ink text, control border, control corner and minimum height (44px). An inline secondary link stays underlined rather than becoming another filled button.
 - **Hover / Focus:** primary hover uses Deep Forest only within `(hover: hover) and (pointer: fine)`. Keyboard focus is a two-pixel accent outline with (4px) offset.
+- **Entrance (2026-10-11):** one finite Three.js block extrusion when visible, 650ms per block with 50ms stagger; same ease-out as --cl-ease. Pause offscreen/hidden, never replay, instant final pose with reduced motion. See docs/motion.md.
+- **Hover:** fine pointers only; 160ms ease for background/border, CTA arrow translates 3px with the existing ease-out. Focus-visible controls respond immediately.
 - **Press:** when reduced motion is not requested, transform transitions take (140ms) with `cubic-bezier(.23, 1, .32, 1)`. Active controls scale to (.97); `:focus-visible` and disabled form buttons are excluded from the press transform. Reduced-motion mode removes transitions and animation.
 - **Disabled:** the form submit has reduced opacity and the existing waiting cursor; it cannot submit during a pending request.
 

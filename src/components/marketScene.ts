@@ -46,6 +46,7 @@ export function createMarketScene(element: HTMLDivElement) {
     new MeshStandardMaterial({ color: "#39725a", roughness: 0.85 }),
   ];
   const geometry = new BoxGeometry(1, 1, 1);
+  const blocks: { mesh: Mesh; height: number; base: number; delay: number }[] = [];
   function box(
     x: number,
     y: number,
@@ -54,6 +55,7 @@ export function createMarketScene(element: HTMLDivElement) {
     h: number,
     d: number,
     material: number,
+    delay?: number,
   ) {
     const mesh = new Mesh(geometry, materials[material]);
     mesh.position.set(x, y, z);
@@ -61,12 +63,13 @@ export function createMarketScene(element: HTMLDivElement) {
     mesh.castShadow = true;
     mesh.receiveShadow = true;
     scene.add(mesh);
+    if (delay !== undefined) blocks.push({ mesh, height: h, base: y - h / 2, delay });
   }
 
   [-2.7, 0, 2.7].forEach((x) => box(x, -0.3, 0, 2.35, 0.16, 3.1, 1));
   for (let r = 0; r < 3; r++) {
     for (let c = 0; c < 2; c++) {
-      box(-2.7 + (c - 0.5) * 1.04, 0.32, r * 0.96 - 0.96, 0.92, 1.08, 0.84, 0);
+      box(-2.7 + (c - 0.5) * 1.04, 0.32, r * 0.96 - 0.96, 0.92, 1.08, 0.84, 0, (r * 2 + c) * 50);
     }
   }
   for (let r = 0; r < 4; r++) {
@@ -80,13 +83,14 @@ export function createMarketScene(element: HTMLDivElement) {
         height,
         0.59,
         (r + c) % 3 === 0 ? 0 : 1,
+        150 + (r * 3 + c) * 50,
       );
     }
   }
   for (let r = 0; r < 3; r++) {
     for (let c = 0; c < 3; c++) {
       if ((r + c) % 2 === 0)
-        box(2.7 + (c - 1) * 0.68, 0.13, r * 0.92 - 0.92, 0.54, 0.7, 0.73, 2);
+        box(2.7 + (c - 1) * 0.68, 0.13, r * 0.92 - 0.92, 0.54, 0.7, 0.73, 2, 300 + Math.floor((r * 3 + c) / 2) * 50);
     }
   }
 
@@ -98,48 +102,126 @@ export function createMarketScene(element: HTMLDivElement) {
   floor.receiveShadow = true;
   scene.add(floor);
 
+  // Finite, once-per-mount extrusion: actual mesh transforms, not DOM layout.
+  // Same strong ease-out as --cl-ease. Fifty ms stagger; 650 ms per block.
+  const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const duration = 650;
+  const total = Math.max(...blocks.map((block) => block.delay)) + duration;
+  let elapsed = motion.matches ? total : 0;
+  let lastTime: number | undefined;
   let frame = 0;
   let contextLost = false;
-  function draw() {
+  let disposed = false;
+  let visible = false;
+  let sizeDirty = true;
+
+  function easeOut(progress: number) {
+    if (progress <= 0 || progress >= 1) return progress;
+    // Invert cubic-bezier(.23, 1, .32, 1)'s x component.
+    let low = 0;
+    let high = 1;
+    for (let i = 0; i < 14; i++) {
+      const t = (low + high) / 2;
+      const x = 3 * (1 - t) ** 2 * t * 0.23 + 3 * (1 - t) * t ** 2 * 0.32 + t ** 3;
+      if (x < progress) low = t;
+      else high = t;
+    }
+    return 1 - (1 - (low + high) / 2) ** 3;
+  }
+
+  function pose() {
+    for (const { mesh, height, base, delay } of blocks) {
+      const progress = easeOut(Math.max(0, Math.min(1, (elapsed - delay) / duration)));
+      const risenHeight = height * (0.1 + 0.9 * progress);
+      mesh.scale.y = risenHeight;
+      mesh.position.y = base + risenHeight / 2;
+    }
+    element.dataset.motion = elapsed >= total ? "complete" : "entering";
+  }
+
+  function draw(time: number) {
     frame = 0;
-    if (contextLost || document.hidden) return;
-    const { width, height } = element.getBoundingClientRect();
-    if (!width || !height) return;
-    const halfWidth = 4.8;
-    const halfHeight = (halfWidth * height) / width;
-    camera.left = -halfWidth;
-    camera.right = halfWidth;
-    camera.top = halfHeight;
-    camera.bottom = -halfHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(width, height);
+    if (disposed || contextLost || document.hidden || !visible) {
+      lastTime = undefined;
+      return;
+    }
+    if (sizeDirty) {
+      const { width, height } = element.getBoundingClientRect();
+      if (!width || !height) return;
+      const halfWidth = 4.8;
+      const halfHeight = (halfWidth * height) / width;
+      camera.left = -halfWidth;
+      camera.right = halfWidth;
+      camera.top = halfHeight;
+      camera.bottom = -halfHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+      sizeDirty = false;
+    }
+    if (lastTime !== undefined) elapsed = Math.min(total, elapsed + time - lastTime);
+    lastTime = time;
+    pose();
     renderer.render(scene, camera);
     element.dataset.rendered = "true";
+    if (elapsed < total) scheduleDraw();
+    else lastTime = undefined;
   }
-  // One frame per batch of resize events, no continuous animation loop.
   function scheduleDraw() {
-    if (!frame) frame = requestAnimationFrame(draw);
+    if (!disposed && !frame && !contextLost && visible && !document.hidden)
+      frame = requestAnimationFrame(draw);
   }
-  const observer = new ResizeObserver(scheduleDraw);
+  function pause() {
+    cancelAnimationFrame(frame);
+    frame = 0;
+    lastTime = undefined;
+  }
+  const observer = new ResizeObserver(() => {
+    sizeDirty = true;
+    scheduleDraw();
+  });
   observer.observe(element);
+  const viewport = new IntersectionObserver((entries) => {
+    visible = entries.some((entry) => entry.isIntersecting);
+    if (visible) scheduleDraw();
+    else pause();
+  });
+  viewport.observe(element);
+  const visibilityChanged = () => {
+    if (document.hidden) pause();
+    else scheduleDraw();
+  };
+  const preferenceChanged = () => {
+    // Enabling reduced motion completes the illustration; disabling never replays it.
+    if (motion.matches) {
+      elapsed = total;
+      pose();
+      scheduleDraw();
+    }
+  };
   const lost = (event: Event) => {
     event.preventDefault();
     contextLost = true;
+    pause();
     element.dataset.rendered = "false";
   };
   const restored = () => {
     contextLost = false;
+    sizeDirty = true;
     scheduleDraw();
   };
   renderer.domElement.addEventListener("webglcontextlost", lost);
   renderer.domElement.addEventListener("webglcontextrestored", restored);
-  document.addEventListener("visibilitychange", scheduleDraw);
-  scheduleDraw();
+  document.addEventListener("visibilitychange", visibilityChanged);
+  motion.addEventListener("change", preferenceChanged);
+  pose();
 
   return () => {
+    disposed = true;
     observer.disconnect();
-    cancelAnimationFrame(frame);
-    document.removeEventListener("visibilitychange", scheduleDraw);
+    viewport.disconnect();
+    pause();
+    document.removeEventListener("visibilitychange", visibilityChanged);
+    motion.removeEventListener("change", preferenceChanged);
     renderer.domElement.removeEventListener("webglcontextlost", lost);
     renderer.domElement.removeEventListener("webglcontextrestored", restored);
     geometry.dispose();

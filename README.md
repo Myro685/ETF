@@ -4,6 +4,8 @@ Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký t
 
 ## Aktuální stav
 
+- **Jemné animace (2026-10-11):** jednorázové vysunutí 3D bloků, 50ms stagger, 650 ms na blok, celkem 1,35 s. Hover barvy a šipky 160 ms, stisk 140 ms; omezení pohybu a okamžité klávesové ovládání respektované. [Specifikace a ověření](docs/motion.md).
+
 - Odkazy mezi sekcemi používají nativní smooth scrolling; při systémovém omezení pohybu zůstává okamžitý přesun.
 - **Design přepracovaný přímo v Reactu (2026-10-11)** podle emil-design-eng, design-taste-frontend a impeccable: Manrope, zelenobílá paleta, nový úvod, kalkulačka a jednotné ovládání. Skutečná Three.js studie a API formuláře zachované. [Aktuální návrh a ověření](docs/design-2026-10-11.md); Atlas a MagicPath jsou historické podklady v [docs/design-atlas.md](docs/design-atlas.md).
 - Schválená cílová skupina a hlavní problém (bod 1).

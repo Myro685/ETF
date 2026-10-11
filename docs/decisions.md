@@ -1,5 +1,10 @@
 # Rozhodnutí
 
+## 2026-10-11 — střídmé animace (pokyn uživatele)
+
+Použité emil-design-eng a animate. Jednorázové vysunutí skutečných 3D bloků při vstupu do viewportu, jemné CSS přechody barvy a šipky; bez další knihovny. Konečná rAF sekvence nahrazuje dřívější plně statickou scénu, po dokončení se opět renderuje jen na vyžádání. Pozastavení mimo viewport, respektování omezení pohybu, okamžité klávesové stavy a úklid zdrojů. Specifikace a skutečný rozsah ověření v docs/motion.md. Notion checklist beze změny.
+
+
 ## 2026-10-11: redesign přímo v kódu (pokyn uživatele)
 
 Uživatel vyvolal emil-design-eng, design-taste-frontend a impeccable a autorizoval přepracování webu přímo v Reactu. Implementační volba: lokální Manrope, zelenobílá paleta, dvě hlavní řádky úvodu, otevřené porovnání, seskupená kalkulačka a řádkový výklad. Wordmark, kotvy, ověřená data, výpočty a API zachované. Formulář zůstává nedokončený v rozsahu bodu 7.
