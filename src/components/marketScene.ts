@@ -41,9 +41,9 @@ export function createMarketScene(element: HTMLDivElement) {
   scene.add(light);
 
   const materials = [
-    new MeshStandardMaterial({ color: "#242a23", roughness: 0.84 }),
-    new MeshStandardMaterial({ color: "#d9d7c7", roughness: 0.9 }),
-    new MeshStandardMaterial({ color: "#70794c", roughness: 0.85 }),
+    new MeshStandardMaterial({ color: "#203a30", roughness: 0.84 }),
+    new MeshStandardMaterial({ color: "#e0e8e1", roughness: 0.9 }),
+    new MeshStandardMaterial({ color: "#39725a", roughness: 0.85 }),
   ];
   const geometry = new BoxGeometry(1, 1, 1);
   function box(

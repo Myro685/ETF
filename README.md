@@ -5,14 +5,14 @@ Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký t
 ## Aktuální stav
 
 - Odkazy mezi sekcemi používají nativní smooth scrolling; při systémovém omezení pohybu zůstává okamžitý přesun.
-- **Atlas je implementovaný v React aplikaci** na pokyn uživatele: papírové tóny, redakční typografie a skutečná Three.js studie. Grafika se načítá samostatně při přiblížení k viewportu, formulář zachovává původní API. [Specifikace a ověření](docs/design-atlas.md); prototyp v designs/magicpath/atlas-2026-10-09/ zůstává historickým podkladem.
+- **Design přepracovaný přímo v Reactu (2026-10-11)** podle emil-design-eng, design-taste-frontend a impeccable: Manrope, zelenobílá paleta, nový úvod, kalkulačka a jednotné ovládání. Skutečná Three.js studie a API formuláře zachované. [Aktuální návrh a ověření](docs/design-2026-10-11.md); Atlas a MagicPath jsou historické podklady v [docs/design-atlas.md](docs/design-atlas.md).
 - Schválená cílová skupina a hlavní problém (bod 1).
 - Implementovaná responzivní stránka v React + TypeScript + Vite podle přepracovaného návrhu MagicPath: porovnání, vysvětlení, nabídka PDF a zdroje.
 - Připravené instrukce pro AI, projektová pravidla, místo pro skills a dokumentace.
 - Veřejný repozitář [Myro685/ETF](https://github.com/Myro685/ETF), větev main napojená na origin/main; úvodní commit nahraný.
 - Schválená nabídka (bod 2): porovnání zdarma a PDF průvodce s checklistem za e-mail; formulář až po porovnání. Podrobnosti v [docs/offer.md](docs/offer.md).
 - Bod 3 hotový: pro vzdělávací porovnání vybrané VOO, VTI a SCHD. Data a zdroje v [src/data/etfs.json](src/data/etfs.json), zdůvodnění a omezení v [docs/etf-research.md](docs/etf-research.md).
-- Bod 5 hotový; nový vzhled Atlas převedený z MagicPath do aplikace. Aktuální ověření v [docs/design-atlas.md](docs/design-atlas.md), historie struktury a předchozího vzhledu v [docs/design.md](docs/design.md).
+- Bod 5 hotový; aktuální přepracování v [docs/design-2026-10-11.md](docs/design-2026-10-11.md), historie struktury v [docs/design.md](docs/design.md).
 - Bod 4 hotový jako příprava návrhů: [dvě textové reklamy](docs/ads.md) s nadpisem a CTA, zaměřené na rozdíly fondů a náklady v Kč. Úvod stránky navazuje na oba sliby; kampaň není spuštěná a návrhy čekají na posouzení uživatelem.
 - Bod 6 hotový: na přání uživatele implementovaná kalkulačka ročního nákladu v Kč a tříotázkový kvíz. [Popis a ověření funkcí](docs/interactive-feature.md).
 - Bod 7 rozpracovaný: formulář s validačními a síťovými stavy, ochranou proti dvojkliku a připraveným Supabase/Resend API. [Nastavení a zbývající kroky](docs/form.md). Skutečný sběr a odesílání čekají na služby, PDF a údaje správce.

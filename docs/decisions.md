@@ -1,5 +1,11 @@
 # Rozhodnutí
 
+## 2026-10-11: redesign přímo v kódu (pokyn uživatele)
+
+Uživatel vyvolal emil-design-eng, design-taste-frontend a impeccable a autorizoval přepracování webu přímo v Reactu. Implementační volba: lokální Manrope, zelenobílá paleta, dvě hlavní řádky úvodu, otevřené porovnání, seskupená kalkulačka a řádkový výklad. Wordmark, kotvy, ověřená data, výpočty a API zachované. Formulář zůstává nedokončený v rozsahu bodu 7.
+
+Stisk má 140ms odezvu transform při povoleném pohybu, hover omezený na přesné ukazatele. Focus stavy nemají stiskový pohyb. 3D stále bez animační smyčky. Jednotné ikony Radix a Manrope jako připnuté závislosti. Impeccable launcher nemohl vytvořit engine cache; použitý jeho fallback na přímé čtení kontextu. Seed, detektor ani schválený obrazový návrh se nepředstírají. Nezávislá kontrola požadovala plochou digitální obálku místo imitace fyzické knihy, opraveno. Detailní evidence v docs/design-2026-10-11.md.
+
 ## 2026-10-09 — smooth scrolling (pokyn uživatele)
 
 Nativní scroll-behavior: smooth na kořenovém scrollovacím elementu pouze při prefers-reduced-motion: no-preference. Při omezení pohybu zůstává výchozí okamžitý přesun. Existující kotvy, historie URL a scroll-margin-top zachované. Bez JS scroll handlerů nebo nové knihovny.

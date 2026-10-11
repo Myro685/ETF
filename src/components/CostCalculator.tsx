@@ -23,7 +23,6 @@ export function CostCalculator() {
       className="cl-section cl-wrap"
       aria-labelledby="cl-calculator-title"
     >
-      <p className="cl-eyebrow">Vyzkoušejte si • bez e-mailu</p>
       <h2 id="cl-calculator-title">Malé procento. Konkrétní částka.</h2>
       <p className="cl-tool-lead">
         Zadejte hodnotu investice a porovnejte orientační roční náklad fondů v
@@ -112,7 +111,7 @@ export function CostCalculator() {
         . <a href="#cl-sources">Zdroje údajů</a>
       </p>
       <a href="#cl-guide" className="cl-tool-link">
-        Jak náklady číst? Podívejte se, co bude v průvodci →
+        Jak náklady číst? Podívejte se, co bude v průvodci
       </a>
     </section>
   );

@@ -1,11 +1,12 @@
+@import "@fontsource-variable/manrope";
 :root {
   font-family:
     system-ui,
     -apple-system,
     "Segoe UI",
     sans-serif;
-  color: #252a23;
-  background: #f4f2e9;
+  color: #202e27;
+  background: #fcfdfb;
   color-scheme: light;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -28,6 +29,8 @@ p {
   margin: 0;
 }
 ::selection {
-  background: #d9dec9;
-  color: #252a23;
+  background: #d5e9db;
+  color: #202e27;
 }
+
+:root { scrollbar-color: #84988b #fcfdfb; }

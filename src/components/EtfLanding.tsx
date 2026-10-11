@@ -1,3 +1,9 @@
+import {
+  ArrowRightIcon,
+  ArrowDownIcon,
+  ChevronDownIcon,
+  CheckIcon,
+} from "@radix-ui/react-icons";
 import { etfData, funds, formatDate } from "../data/etfs";
 import { SourceList } from "./SourceList";
 import { CostCalculator } from "./CostCalculator";
@@ -6,23 +12,7 @@ import { GuideForm } from "./GuideForm";
 import "./EtfLanding.css";
 import { MarketSculpture } from "./MarketSculpture";
 import "./Atlas.css";
-const Arrow = () => (
-  <svg
-    aria-hidden="true"
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-  >
-    <path
-      d="M5 12h14m-6-6 6 6-6 6"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
+const Arrow = () => <ArrowRightIcon aria-hidden="true" width={20} height={20} />;
 export const EtfLanding = () => {
   return (
     <div className="cl-page" lang="cs">
@@ -30,7 +20,7 @@ export const EtfLanding = () => {
         Přejít na obsah
       </a>
       <header className="cl-header cl-wrap">
-        <a href="#cl-main" className="cl-brand" aria-label="Clientelo — úvod">
+        <a href="#cl-main" className="cl-brand" aria-label="Clientelo: úvod">
           clientelo<span className="cl-brand-dot">.</span>
         </a>
         <nav aria-label="Sekce stránky">
@@ -45,7 +35,6 @@ export const EtfLanding = () => {
       <main id="cl-main">
         <section className="cl-hero cl-wrap" aria-labelledby="cl-title">
           <div className="cl-hero-copy">
-            <p className="cl-eyebrow">První nákup začíná porovnáním</p>
             <h1 id="cl-title">
               Než koupíte ETF,
               <br />
@@ -53,14 +42,14 @@ export const EtfLanding = () => {
             </h1>
             <p className="cl-lead">
               Porovnejte zaměření a roční nákladovost tří ETF. V kalkulačce
-              uvidíte orientační náklad fondu v Kč — zdarma, bez e-mailu.
+              uvidíte orientační náklad v Kč. Zdarma, bez e-mailu.
             </p>
             <div className="cl-hero-actions">
               <a className="cl-button" href="#cl-comparison">
                 Porovnat ETF <Arrow />
               </a>
               <a className="cl-secondary" href="#cl-calculator">
-                Porovnat náklady v Kč <span aria-hidden="true">↓</span>
+                Porovnat náklady v Kč <ArrowDownIcon aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -73,7 +62,6 @@ export const EtfLanding = () => {
         >
           <div className="cl-section-heading">
             <div>
-              <p className="cl-eyebrow">Porovnání bez e-mailu</p>
               <h2 id="cl-comparison-title">Rozdíly na jednom místě.</h2>
             </div>
             <p>
@@ -130,7 +118,7 @@ export const EtfLanding = () => {
             <summary>
               Celé názvy fondů a sledované indexy{" "}
               <span className="cl-expand-icon" aria-hidden="true">
-                +
+                <ChevronDownIcon />
               </span>
             </summary>
             <div className="cl-fund-detail-grid">
@@ -148,7 +136,7 @@ export const EtfLanding = () => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    {f.ticker} — zdroj emitenta ↗
+                    {f.ticker}: zdroj emitenta
                   </a>
                 </div>
               ))}
@@ -170,7 +158,7 @@ export const EtfLanding = () => {
                 klíčových informací). Konkrétní nákup{" "}
                 {funds.map((f) => f.ticker).join(", ")} na českém retailovém
                 účtu nebyl otestován.{" "}
-                <a href="#cl-context">Proč na tom záleží ↓</a>
+                <a href="#cl-context">Proč na tom záleží</a>
               </p>
             </div>
           </aside>
@@ -181,7 +169,6 @@ export const EtfLanding = () => {
           aria-labelledby="cl-differences-title"
         >
           <div className="cl-wrap cl-section">
-            <p className="cl-eyebrow">Jak údaje číst</p>
             <h2 id="cl-differences-title">Co si z porovnání odnést</h2>
             <div className="cl-lessons">
               {funds.map((f) => (
@@ -213,19 +200,6 @@ export const EtfLanding = () => {
                   <br />
                   nákupem.
                 </p>
-                <svg
-                  className="cl-book-art"
-                  width="160"
-                  height="70"
-                  viewBox="0 0 160 70"
-                  fill="none"
-                >
-                  <path
-                    d="M0 60C30 60 30 10 60 10s30 50 60 50 30-50 40-50M0 45c30 0 30-20 60-20s30 20 60 20 30-20 40-20"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                  />
-                </svg>
               </div>
               <div className="cl-book-bottom">
                 <span>VOO · VTI · SCHD</span>
@@ -237,7 +211,6 @@ export const EtfLanding = () => {
             </span>
           </div>
           <div className="cl-guide-copy">
-            <p className="cl-eyebrow">Praktický průvodce zdarma</p>
             <h2 id="cl-guide-title">
               Rozdíly si uložte.
               <br />
@@ -248,16 +221,15 @@ export const EtfLanding = () => {
               vrátit se k podstatnému.
             </p>
             <ul className="cl-checklist">
-              <li>Podrobnější vysvětlení rozdílů mezi fondy</li>
-              <li>Příklad pro pochopení ročních poplatků</li>
-              <li>Checklist toho, co ověřit u brokera</li>
+              <li><CheckIcon aria-hidden="true" />Podrobnější vysvětlení rozdílů mezi fondy</li>
+              <li><CheckIcon aria-hidden="true" />Příklad pro pochopení ročních poplatků</li>
+              <li><CheckIcon aria-hidden="true" />Checklist toho, co ověřit u brokera</li>
             </ul>
             <GuideForm />
           </div>
         </section>
         <section id="cl-context" className="cl-context">
           <div className="cl-wrap cl-section">
-            <p className="cl-eyebrow">Důležité souvislosti</p>
             <h2>Ještě před nákupem</h2>
             <div className="cl-context-grid">
               <div>

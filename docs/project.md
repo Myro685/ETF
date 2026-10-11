@@ -2,7 +2,7 @@
 
 Zdroj: [Clientelo projekt v Notion](https://app.notion.com/p/3f4e1942c8af80ddacf7c7b070dea863). Toto je pracovní souhrn checklistu. Původní e-mail se zadáním B zatím nebyl načten.
 
-Termín: **2026-10-16**. Aktualizace: **2026-10-09**.
+Termín: **2026-10-16**. Aktualizace: **2026-10-11**.
 
 Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouze k odškrtávání dokončených bodů. Uživatel se vrátil k reklamám: dva návrhy bodu 4 připravené; frontend i bod 6 implementované. Bod 7 zůstává rozpracovaný.
 
@@ -12,7 +12,7 @@ Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouz
 | 2 | Hodnota zdarma, hodnota za e-mail, okamžik žádosti | Hotovo; nabídka schválená v docs/offer.md |
 | 3 | ETF, NYSE/Arca, dostupnost, skutečná data a zdroje | Hotovo; VOO, VTI, SCHD, zdroje a omezení v docs/etf-research.md |
 | 4 | Dvě reklamy s textem, nadpisem a CTA v repozitáři | Hotovo jako příprava návrhů; docs/ads.md, návaznost úvodu stránky ověřená; kampaň nespuštěná, návrhy k posouzení |
-| 5 | Obsah, pořadí sekcí a vlastní vzhled pro mobil | Hotovo; nový Atlas z MagicPath na pokyn uživatele implementovaný v React aplikaci, ověření v docs/design-atlas.md |
+| 5 | Obsah, pořadí sekcí a vlastní vzhled pro mobil | Hotovo; aktuální redesign přímo v Reactu podle tří skillů, ověření v docs/design-2026-10-11.md |
 | 6 | Interaktivní funkce s ověřenými výsledky | Hotovo; na výslovné přání uživatele dvě: kalkulačka a kvíz, automatické a browser testy v docs/interactive-feature.md |
 | 7 | Formulář, uložení kontaktu, ochrana údajů, doručení | Formulář a serverové API implementované a lokálně testované; skutečné služby, PDF, údaje správce a koncový test zbývají; docs/form.md |
 | 8 | Rozlišení reklam, události trychtýře a ověření záznamu | Nezahájeno |
@@ -22,6 +22,8 @@ Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouz
 | 12 | Odpověď na e-mail s GitHub, veřejným webem a omezeními | Nezahájeno |
 
 ## Priority
+
+2026-10-11: přepracování přímo v Reactu podle tří vyvolaných skillů. Lokální Manrope, jednotná paleta a ovládání, lepší hierarchie, zachované funkce a ověřená data. Aktuální specifikace a kontroly v docs/design-2026-10-11.md. Neuzavírá žádný další bod checklistu; Notion se nemění.
 
 Přidané plynulé posouvání mezi sekcemi podle pokynu uživatele, s respektováním systémového omezení pohybu. Nejde o dokončení dalšího bodu checklistu.
 

@@ -45,7 +45,6 @@ export function MarketSculpture() {
     <figure className="cl-sculpture">
       <div className="cl-sculpture-head">
         <span>Tři pohledy na americký trh</span>
-        <span>Studie 01—03</span>
       </div>
       <div className="cl-sculpture-canvas" ref={host} aria-hidden="true">
         <div className="cl-sculpture-fallback">
@@ -62,7 +61,7 @@ export function MarketSculpture() {
         {funds.map((fund, index) => (
           <span key={fund.ticker}>
             <b>
-              0{index + 1} / {fund.ticker}
+              {fund.ticker}
             </b>
             {index === 2 ? "Dividendový výběr" : fund.short}
           </span>

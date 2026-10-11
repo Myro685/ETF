@@ -1,5 +1,7 @@
 # Návrh Atlas — přepracování v MagicPath
 
+Historický návrh. Aktuální vzhled od 2026-10-11 je popsaný v [design-2026-10-11.md](design-2026-10-11.md); níže uvedené tokeny a měření patří k předchozí implementaci.
+
 Datum: 2026-10-09. Stav: **Atlas implementovaný v hlavní React aplikaci** na navazující pokyn uživatele „přepracuj design v reactu“. Níže uvedená historie prototypu a MagicPath zůstává pro dohledání podkladů.
 
 ## Aktuální implementace v Reactu

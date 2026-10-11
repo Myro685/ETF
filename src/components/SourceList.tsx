@@ -24,7 +24,7 @@ export function SourceList() {
         {sources.map((source) => (
           <li key={source.id}>
             <a href={source.url} target="_blank" rel="noreferrer">
-              {source.title} ↗
+              {source.title.replaceAll(" — ", ": ")}
             </a>
             <span>
               {source.documentAsOf && (

@@ -1,3 +1,4 @@
+import { ChevronDownIcon } from "@radix-ui/react-icons";
 import { useRef, useState, type FormEvent } from "react";
 import { quizQuestions, summarizeQuiz, type QuizAnswers } from "../data/quiz";
 import { getSource } from "../data/etfs";
@@ -40,10 +41,9 @@ export function EtfQuiz() {
       <details className="cl-quiz-disclosure">
         <summary>
           <span>
-            <span className="cl-eyebrow">3 otázky • bez e-mailu</span>
             <h2 id="cl-quiz-title">Rozumíte rozdílům? Zkuste si kvíz.</h2>
           </span>
-          <span className="cl-quiz-open">Otevřít kvíz</span>
+          <ChevronDownIcon className="cl-disclosure-chevron" aria-hidden="true" />
         </summary>
         <div className="cl-quiz-body">
           <p className="cl-tool-lead">
@@ -64,7 +64,7 @@ export function EtfQuiz() {
                 <ul className="cl-quiz-review">
                   {result.review.map((q) => (
                     <li key={q.id}>
-                      <a href={q.anchor}>{q.topic} →</a>
+                      <a href={q.anchor}>{q.topic}</a>
                     </li>
                   ))}
                 </ul>
@@ -90,7 +90,7 @@ export function EtfQuiz() {
                 </button>
               </div>
               <a className="cl-tool-link" href="#cl-guide">
-                Vysvětlení a checklist na později? Prohlédněte si průvodce →
+                Vysvětlení a checklist na později? Prohlédněte si průvodce
               </a>
             </div>
           ) : (
@@ -148,7 +148,7 @@ export function EtfQuiz() {
                     </strong>
                     <p>{question.explanation}</p>
                     <a href={question.anchor}>
-                      Vrátit se k vysvětlení na stránce →
+                      Vrátit se k vysvětlení na stránce
                     </a>
                     <details>
                       <summary>Podklady k odpovědi</summary>
@@ -160,7 +160,7 @@ export function EtfQuiz() {
                               target="_blank"
                               rel="noreferrer"
                             >
-                              {getSource(id).title} ↗
+                              {getSource(id).title.replaceAll(" — ", ": ")}
                             </a>
                           </li>
                         ))}

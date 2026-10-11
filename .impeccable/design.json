@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-11T16:21:44Z",
+  "title": "Design System: Clientelo",
+  "extensions": {
+    "colorMeta": {
+      "background": {
+        "role": "neutral",
+        "displayName": "Green White",
+        "tonalRamp": [
+          "oklch(15% 0.0028 128.49)",
+          "oklch(26% 0.0028 128.49)",
+          "oklch(37% 0.0028 128.49)",
+          "oklch(48% 0.0028 128.49)",
+          "oklch(59% 0.0028 128.49)",
+          "oklch(70% 0.0028 128.49)",
+          "oklch(83% 0.0028 128.49)",
+          "oklch(95% 0.0028 128.49)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Pale Green",
+        "tonalRamp": [
+          "oklch(15% 0.0085 145.51)",
+          "oklch(26% 0.0085 145.51)",
+          "oklch(37% 0.0085 145.51)",
+          "oklch(48% 0.0085 145.51)",
+          "oklch(59% 0.0085 145.51)",
+          "oklch(70% 0.0085 145.51)",
+          "oklch(83% 0.0085 145.51)",
+          "oklch(95% 0.0085 145.51)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Dark Green Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0229 162.83)",
+          "oklch(26% 0.0229 162.83)",
+          "oklch(37% 0.0229 162.83)",
+          "oklch(48% 0.0229 162.83)",
+          "oklch(59% 0.0229 162.83)",
+          "oklch(70% 0.0229 162.83)",
+          "oklch(83% 0.0229 162.83)",
+          "oklch(95% 0.0229 162.83)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Quiet Green",
+        "tonalRamp": [
+          "oklch(15% 0.0252 162.24)",
+          "oklch(26% 0.0252 162.24)",
+          "oklch(37% 0.0252 162.24)",
+          "oklch(48% 0.0252 162.24)",
+          "oklch(59% 0.0252 162.24)",
+          "oklch(70% 0.0252 162.24)",
+          "oklch(83% 0.0252 162.24)",
+          "oklch(95% 0.0252 162.24)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Forest Green",
+        "tonalRamp": [
+          "oklch(15% 0.0670 161.66)",
+          "oklch(26% 0.0670 161.66)",
+          "oklch(37% 0.0670 161.66)",
+          "oklch(48% 0.0670 161.66)",
+          "oklch(59% 0.0670 161.66)",
+          "oklch(70% 0.0670 161.66)",
+          "oklch(83% 0.0670 161.66)",
+          "oklch(95% 0.0670 161.66)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Green Divider",
+        "tonalRamp": [
+          "oklch(15% 0.0170 151.08)",
+          "oklch(26% 0.0170 151.08)",
+          "oklch(37% 0.0170 151.08)",
+          "oklch(48% 0.0170 151.08)",
+          "oklch(59% 0.0170 151.08)",
+          "oklch(70% 0.0170 151.08)",
+          "oklch(83% 0.0170 151.08)",
+          "oklch(95% 0.0170 151.08)"
+        ]
+      },
+      "on-accent": {
+        "role": "neutral",
+        "displayName": "White on Green",
+        "tonalRamp": [
+          "oklch(15% 0.0000 0)",
+          "oklch(26% 0.0000 0)",
+          "oklch(37% 0.0000 0)",
+          "oklch(48% 0.0000 0)",
+          "oklch(59% 0.0000 0)",
+          "oklch(70% 0.0000 0)",
+          "oklch(83% 0.0000 0)",
+          "oklch(95% 0.0000 0)"
+        ]
+      },
+      "control-border": {
+        "role": "neutral",
+        "displayName": "Control Green",
+        "tonalRamp": [
+          "oklch(15% 0.0297 157.01)",
+          "oklch(26% 0.0297 157.01)",
+          "oklch(37% 0.0297 157.01)",
+          "oklch(48% 0.0297 157.01)",
+          "oklch(59% 0.0297 157.01)",
+          "oklch(70% 0.0297 157.01)",
+          "oklch(83% 0.0297 157.01)",
+          "oklch(95% 0.0297 157.01)"
+        ]
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Deep Forest",
+        "tonalRamp": [
+          "oklch(15% 0.0613 160.64)",
+          "oklch(26% 0.0613 160.64)",
+          "oklch(37% 0.0613 160.64)",
+          "oklch(48% 0.0613 160.64)",
+          "oklch(59% 0.0613 160.64)",
+          "oklch(70% 0.0613 160.64)",
+          "oklch(83% 0.0613 160.64)",
+          "oklch(95% 0.0613 160.64)"
+        ]
+      },
+      "preset-hover": {
+        "role": "neutral",
+        "displayName": "Preset Wash",
+        "tonalRamp": [
+          "oklch(15% 0.0168 151.09)",
+          "oklch(26% 0.0168 151.09)",
+          "oklch(37% 0.0168 151.09)",
+          "oklch(48% 0.0168 151.09)",
+          "oklch(59% 0.0168 151.09)",
+          "oklch(70% 0.0168 151.09)",
+          "oklch(83% 0.0168 151.09)",
+          "oklch(95% 0.0168 151.09)"
+        ]
+      },
+      "error": {
+        "role": "neutral",
+        "displayName": "Error Red",
+        "tonalRamp": [
+          "oklch(15% 0.1402 28.02)",
+          "oklch(26% 0.1402 28.02)",
+          "oklch(37% 0.1402 28.02)",
+          "oklch(48% 0.1402 28.02)",
+          "oklch(59% 0.1402 28.02)",
+          "oklch(70% 0.1402 28.02)",
+          "oklch(83% 0.1402 28.02)",
+          "oklch(95% 0.1402 28.02)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero heading; responsive sizes remain in Atlas.css."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Base small headings; lesson and contextual titles have local exceptions."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Base content typography; supporting text uses 14–16px."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Form controls and concise labels."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "Preserved Clientelo identity only."
+      }
+    },
+    "shadows": [
+      {
+        "name": "quiz-selection-stroke",
+        "value": "inset 0 0 0 1px var(--cl-accent)",
+        "purpose": "Selected radio-option boundary, not lifted depth."
+      }
+    ],
+    "motion": [
+      {
+        "name": "press-duration",
+        "value": "140ms",
+        "purpose": "Transform transition on interactive buttons when motion is permitted."
+      },
+      {
+        "name": "press-ease",
+        "value": "cubic-bezier(.23, 1, .32, 1)",
+        "purpose": "Quick tactile press response."
+      },
+      {
+        "name": "press-scale",
+        "value": "scale(.97)",
+        "purpose": "Active button feedback excluding focus-visible and disabled state."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "1024px"
+      },
+      {
+        "name": "mobile",
+        "value": "767px"
+      },
+      {
+        "name": "narrow",
+        "value": "360px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Filled action with fine-pointer hover and reduced-motion-aware press feedback.",
+      "html": "<button class=\"ds-primary\">Porovnat ETF <svg width=\"17\" height=\"17\" viewBox=\"0 0 15 15\" fill=\"none\" aria-hidden=\"true\"><path d=\"M1 7.5h12m-4-4 4 4-4 4\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;gap:18px;font-family:\"Manrope Variable\",sans-serif;background:var(--cl-accent,#285a43);color:#fff;border:0;border-radius:8px;min-height:50px;padding:13px 20px;font-size:14px;font-weight:650;white-space:nowrap;cursor:pointer}.ds-primary:disabled{opacity:.65;cursor:wait}.ds-primary:focus-visible{outline:2px solid var(--cl-accent,#285a43);outline-offset:4px;}@media(hover:hover) and (pointer:fine){.ds-primary:not(:disabled):hover{background:#204c37}}@media(prefers-reduced-motion:no-preference){.ds-primary{transition:transform 140ms cubic-bezier(.23,1,.32,1)}.ds-primary:active:not(:focus-visible):not(:disabled){transform:scale(.97)}}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none;animation:none}}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Outlined alternative for a tool action.",
+      "html": "<button class=\"ds-secondary\">Zkusit znovu</button>",
+      "css": ".ds-secondary{font-family:\"Manrope Variable\",sans-serif;min-height:44px;padding:8px 10px;border:1px solid #84988b;border-radius:8px;background:transparent;color:var(--cl-ink,#202e27);font-size:12px;cursor:pointer}.ds-secondary:focus-visible{outline:2px solid var(--cl-accent,#285a43);outline-offset:4px;}@media(hover:hover) and (pointer:fine){.ds-secondary:hover{background:var(--cl-surface,#eef3ee)}}@media(prefers-reduced-motion:no-preference){.ds-secondary{transition:transform 140ms cubic-bezier(.23,1,.32,1)}.ds-secondary:active:not(:focus-visible):not(:disabled){transform:scale(.97)}}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none;animation:none}}"
+    },
+    {
+      "name": "Email Field",
+      "kind": "input",
+      "refersTo": "input-email",
+      "description": "Labeled email field with visible focus and invalid state.",
+      "html": "<label class=\"ds-field-label\" for=\"ds-email\">E-mail pro doručení průvodce</label><input class=\"ds-email\" id=\"ds-email\" type=\"email\" autocomplete=\"email\" placeholder=\"vas@email.cz\">",
+      "css": ".ds-field-label{display:block;font-family:\"Manrope Variable\",sans-serif;font-size:12px;font-weight:550;color:var(--cl-ink,#202e27);margin-bottom:9px}.ds-email{font-family:\"Manrope Variable\",sans-serif;min-height:52px;min-width:0;padding:14px 17px;font-size:16px;border:1px solid #84988b;border-radius:8px;background:var(--cl-bg,#fcfdfb);color:var(--cl-ink,#202e27);caret-color:var(--cl-accent,#285a43)}.ds-email::placeholder{color:var(--cl-muted,#52635a)}.ds-email:hover{border-color:#84988b}.ds-email:focus-visible{outline:2px solid var(--cl-accent,#285a43);outline-offset:4px;}.ds-email[aria-invalid=\"true\"]{border:2px solid #9b332b}.ds-email[readonly]{background:var(--cl-surface,#eef3ee)}"
+    },
+    {
+      "name": "Amount Preset",
+      "kind": "chip",
+      "description": "A real toggle button for a calculator amount; selected state uses the filled action palette.",
+      "html": "<button class=\"ds-preset\" aria-pressed=\"false\">100 000 Kč</button>",
+      "css": ".ds-preset{font-family:\"Manrope Variable\",sans-serif;min-height:44px;padding:8px 10px;border:1px solid #84988b;border-radius:8px;background:transparent;color:var(--cl-ink,#202e27);font-size:12px;cursor:pointer}.ds-preset[aria-pressed=\"true\"]{background:var(--cl-accent,#285a43);color:white;border-color:var(--cl-accent,#285a43)}.ds-preset:focus-visible{outline:2px solid var(--cl-accent,#285a43);outline-offset:4px;}@media(hover:hover) and (pointer:fine){.ds-preset:not([aria-pressed=\"true\"]):hover{background:#dde8df}}@media(prefers-reduced-motion:no-preference){.ds-preset{transition:transform 140ms cubic-bezier(.23,1,.32,1)}.ds-preset:active:not(:focus-visible):not(:disabled){transform:scale(.97)}}@media(prefers-reduced-motion:reduce){.ds-preset{transition:none;animation:none}}@media(forced-colors:active){.ds-preset[aria-pressed=\"true\"]{outline:2px solid Highlight}}"
+    },
+    {
+      "name": "Functional Group",
+      "kind": "card",
+      "refersTo": "surface-group",
+      "description": "Flat tonal grouping for related controls and explanations.",
+      "html": "<section class=\"ds-group\" aria-labelledby=\"ds-group-title\"><h3 class=\"ds-group-title\" id=\"ds-group-title\">Roční náklady v Kč</h3><p class=\"ds-group-copy\">Porovnejte částky pro stejnou hodnotu investice.</p></section>",
+      "css": ".ds-group{font-family:\"Manrope Variable\",sans-serif;background:var(--cl-surface,#eef3ee);color:var(--cl-ink,#202e27);border:0;border-radius:16px;padding:32px;box-shadow:none}.ds-group-title{margin:0;font-size:18px;font-weight:600;line-height:1.4;letter-spacing:-.4px}.ds-group-copy{margin:12px 0 0;color:var(--cl-muted,#52635a);font-size:14px;line-height:1.8}@media(max-width:767px){.ds-group{padding:24px 20px}}"
+    },
+    {
+      "name": "Section Navigation",
+      "kind": "nav",
+      "description": "Quiet section links and a pale guide action; the guide action survives at mobile width.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Sekce stránky\"><a class=\"ds-nav-link\" href=\"#cl-comparison\">Porovnání</a><a class=\"ds-nav-link\" href=\"#cl-calculator\">Kalkulačka</a><a class=\"ds-nav-guide\" href=\"#cl-guide\">Průvodce zdarma</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:28px;font-family:\"Manrope Variable\",sans-serif;font-size:13px;font-weight:550;color:var(--cl-ink,#202e27)}.ds-nav-link,.ds-nav-guide{display:inline-flex;align-items:center;min-height:44px;color:inherit;text-decoration:none}.ds-nav-guide{padding-inline:16px;border-radius:8px;background:var(--cl-surface,#eef3ee);color:var(--cl-accent,#285a43)}.ds-nav-link:hover,.ds-nav-guide:hover{text-decoration:underline}.ds-nav-link:focus-visible{outline:2px solid var(--cl-accent,#285a43);outline-offset:4px;}.ds-nav-guide:focus-visible{outline:2px solid var(--cl-accent,#285a43);outline-offset:4px;}@media(max-width:767px){.ds-nav-link{display:none}.ds-nav-guide{font-size:12px;padding-inline:12px}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Porozumění před rozhodnutím",
+    "overview": "Clientelo uses a light green-white canvas, dark green text and quiet tonal groups to make comparisons easy to read. Content has one contemporary sans-serif voice; the preserved serif wordmark supplies the recognizable brand identity. The density is moderate, with open rows for related facts and rounded surfaces for related controls.\n\nThis is a source-derived record of the implemented redesign. The user authorized the redesign and its audience and offer; the individual visual tokens are implementation decisions, not separately approved colors. `src/components/Atlas.css`, loaded after the base and tool styles, is the current visual authority. The documentation was produced manually from source because the Impeccable engine could not initialize its cache; this pass did not sample browser computed styles or run the engine's validator.",
+    "keyCharacteristics": [
+      "One green accent for actions, selection and orientation.",
+      "Locally hosted Manrope Variable content typography and a Georgia wordmark.",
+      "Open comparison rows; tonal surfaces for functional groups.",
+      "Small rounded controls and larger rounded groups.",
+      "Brief press feedback with visible keyboard focus and reduced-motion support."
+    ],
+    "rules": [
+      {
+        "name": "The Action Green Rule",
+        "body": "Use the accent for actionable or orienting content; group backgrounds use the pale surface rather than a saturated fill.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Content Voice Rule",
+        "body": "Keep display and body content in Manrope Variable; reserve Georgia for the wordmark.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tonal Group Rule",
+        "body": "Define related content with the pale surface or a divider; do not add lifted shadows to ordinary groups.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use the recorded green roles consistently across controls, explanatory text and functional groups.",
+      "Do keep Manrope Variable for content and Georgia for the preserved wordmark.",
+      "Do keep comparison values aligned, use tabular figures and let long results wrap.",
+      "Do preserve visible keyboard focus, native control semantics and reduced-motion behavior.",
+      "Do use actual SVG icons and keep the PDF cover flat."
+    ],
+    "donts": [
+      "Don't reintroduce the legacy blue palette, pill buttons or lifted group shadows from the superseded base stylesheet.",
+      "Don't promote dormant eyebrow or glyph-icon CSS into reusable component rules.",
+      "Don't use compact source or figure metadata sizes for substantive body copy.",
+      "Don't hide content behind entrance animation or add perpetual decorative motion."
+    ]
+  }
+}
