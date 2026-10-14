@@ -1,6 +1,6 @@
 # Nabídka výměnou za e-mail — bod 2
 
-Stav: **schváleno uživatelem, bod 2 hotový**. Datum schválení: 2026-10-09. Tento dokument popisuje zvolenou nabídku; vytvoření PDF a implementace doručení teprve následují.
+Stav: **schváleno uživatelem, bod 2 hotový**. Datum schválení: 2026-10-09. Tento dokument popisuje zvolenou nabídku; PDF vytvořené 14. 10. 2026, serverová implementace připravená; aktivace skutečných služeb a doručení zbývá.
 
 ## Zdarma na stránce
 
@@ -26,4 +26,4 @@ Návštěvník získá přehled pro pozdější návrat a konkrétní postup por
 
 ## Co zbývá
 
-PDF ani jeho doručení zatím nejsou vytvořené. Výběr a prověření dat z bodu 3 jsou hotové: VOO, VTI a SCHD, s podmíněnou dostupností podle brokera; zdroje a omezení v docs/etf-research.md. Podrobnosti nabídky a další rozhodnutí vedeme v projektových souborech; Notion slouží jen k odškrtávání bodů.
+PDF je vytvořené v public/guides/pruvodce-etf-2026-10-14.pdf. Skutečné doručení čeká na aktivaci služeb podle docs/guide-activation.md. Výběr a prověření dat z bodu 3 jsou hotové: VOO, VTI a SCHD, s podmíněnou dostupností podle brokera; zdroje a omezení v docs/etf-research.md. Podrobnosti nabídky a další rozhodnutí vedeme v projektových souborech; Notion slouží jen k odškrtávání bodů.

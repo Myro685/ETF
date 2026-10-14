@@ -104,3 +104,7 @@ Uživatel určil https://github.com/Myro685/ETF.git. Repozitář byl prázdný a
 ## 2026-10-14 — projektové skilly (pokyn uživatele)
 
 Spuštěné tři požadované npx instalace z kořene Clientelo. Skills CLI bez globálního přepínače používá projektový rozsah, Impeccable má výslovně scope=project. Uložené zdrojové skilly, lockfile a projektové hooks; stahovaný windows-x64 engine 0.1.14 je lokální a ignorovaný Gitem. Existující designový kontext se znovu neinicializuje.
+
+## 2026-10-14 — pokračování bodu 7 (pokyn a odpovědi uživatele)
+
+Uživatel zvolil Supabase + Resend, účty ještě nemá. Poskytl Miroslav Grund a kontaktní e-mail pro zveřejnění u správce. Vlastní odesílací doménu nesdělil. Připravené skutečné čtyřstránkové PDF, návrh informací a postup aktivace. Soukromá konfigurace zůstává GUIDE_ENABLED=false. Právní/provozní skutečnosti se nevymýšlejí; návrh není publikovaná hotová informační stránka. Zveřejnění kontaktního e-mailu neopravňuje samo o sobě odeslat testovací e-mail. Bod 7 není dokončený, Notion proto neměníme. Přidána místní kontrola připravenosti bez výpisu tajných hodnot. Lint ignoruje externí vendored skilly, jejichž nainstalované skripty spouštěly nesouvisející varování.

@@ -17,7 +17,7 @@ Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký t
 - Bod 5 hotový; aktuální přepracování v [docs/design-2026-10-11.md](docs/design-2026-10-11.md), historie struktury v [docs/design.md](docs/design.md).
 - Bod 4 hotový jako příprava návrhů: [dvě textové reklamy](docs/ads.md) s nadpisem a CTA, zaměřené na rozdíly fondů a náklady v Kč. Úvod stránky navazuje na oba sliby; kampaň není spuštěná a návrhy čekají na posouzení uživatelem.
 - Bod 6 hotový: na přání uživatele implementovaná kalkulačka ročního nákladu v Kč a tříotázkový kvíz. [Popis a ověření funkcí](docs/interactive-feature.md).
-- Bod 7 rozpracovaný: formulář s validačními a síťovými stavy, ochranou proti dvojkliku a připraveným Supabase/Resend API. [Nastavení a zbývající kroky](docs/form.md). Skutečný sběr a odesílání čekají na služby, PDF a údaje správce.
+- Bod 7 rozpracovaný: formulář s validačními a síťovými stavy, ochranou proti dvojkliku a připraveným Supabase/Resend API. [Nastavení a zbývající kroky](docs/form.md). Čtyřstránkové PDF je hotové; správce a kontakt jsou známé. Skutečný sběr a doručení čekají na účty Supabase/Resend, odesílací doménu, veřejné URL a finální informace o zpracování. [Aktivace](docs/guide-activation.md).
 - Termín odevzdání: **16. října 2026**.
 
 Zadání bylo načteno z [Clientelo projektu v Notion](https://app.notion.com/p/3f4e1942c8af80ddacf7c7b070dea863). Notion nyní slouží pouze k odškrtávání bodů. Aktuální informace, rozhodnutí a podrobnosti řešení vedeme v tomto repozitáři.
@@ -60,7 +60,7 @@ Build provede kontrolu TypeScriptu a sestaví aplikaci do dist/. Preview slouž�
 | src/ | React aplikace a styly |
 | AGENTS.md | Vstupní instrukce pro AI |
 | .agents/rules/project.md | Pravidla implementace a dokumentace |
-| .agents/skills/ | Budoucí projektové skills |
+| .agents/skills/ | Nainstalované projektové skilly pro Codex |
 | docs/project.md | Zadání, priority a stav všech bodů |
 | docs/decisions.md | Rozhodnutí a jejich důvody |
 | docs/offer.md | Schválená nabídka výměnou za e-mail |
@@ -103,7 +103,7 @@ Obsah kontrolujeme proti zadání a schváleným rozhodnutím, zápisy do Notion
 
 ## Co zbývá
 
-Zbývá vytvoření PDF, ukládání kontaktů a doručení (bod 7), měření a dokončení bodů 9–12. Dvě reklamy jsou připravené k posouzení. Frontend včetně kalkulačky a kvízu je implementovaný; veřejný hosting a celý proces získání průvodce ještě nejsou hotové.
+PDF je vytvořené; zbývá aktivace skutečného ukládání kontaktů a doručení (bod 7), měření a dokončení bodů 9–12. Dvě reklamy jsou připravené k posouzení. Frontend včetně kalkulačky a kvízu je implementovaný; veřejný hosting a celý proces získání průvodce ještě nejsou hotové.
 
 
 ## Ověření webu (2026-10-09)
@@ -129,3 +129,11 @@ npx skills add https://github.com/Leonxlnx/taste-skill --skill gpt-taste -a code
 ```
 
 Projektový `apple-design` pochází z Emilova balíčku; dřívější globální skill stejného jména má jiný původ. Instalace neprovádí redesign ani inicializaci stávajícího designového kontextu.
+
+### Kontrola doručení a PDF
+
+`npm run check:guide` načte soukromou `.env.local` a vypíše chybějící nastavení bez hodnot klíčů. Jde o místní kontrolu, nikoliv důkaz skutečného doručení. [Postup aktivace](docs/guide-activation.md) a [návrh informací o zpracování](docs/privacy-notice-draft.md) popisují zbývající kroky.
+
+Průvodce je v `public/guides/pruvodce-etf-2026-10-14.pdf` a build jej kopíruje do `dist/guides/`. Čtyři strany obsahují interpretaci fondů, příklady poplatků, checklist a klikatelné zdroje. Zdrojový generátor `scripts/generate-guide.py` používá stejná data jako web; vyžaduje Python + reportlab a Arial (`--font-dir` určuje adresář s arial.ttf/arialbd.ttf). PDF není nutné generovat při každém buildu. Vydání a data ověření nejsou automaticky dnešní; při změně obsahu aktualizovat zdroje, datum i název souboru vědomě.
+
+Ověření 14. 10. 2026: 11 testů prošlo, PDF vykresleno a zkontrolováno na všech čtyřech stranách včetně českých znaků a 8 odkazů. Živý test Supabase/Resend čeká na založení účtů. Lint ignoruje externí skripty nainstalovaných skillů; aplikační, serverový a vlastní skriptový kód zůstává kontrolovaný.

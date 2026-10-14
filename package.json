@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "check:guide": "node --env-file-if-exists=.env.local scripts/check-guide.ts",
     "dev:api": "node --env-file-if-exists=.env.local server/dev.ts",
     "build": "tsc -b && vite build",
     "lint": "oxlint",

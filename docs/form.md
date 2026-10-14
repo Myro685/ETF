@@ -1,6 +1,6 @@
 # Formulář a doručení — bod 7
 
-Datum: 2026-10-09. **Hotová implementace formuláře a připravené serverové napojení; skutečné služby a doručení zatím nejsou aktivované.** Uživatel požádal zaměřit se na formulář. K úplnému bodu 7 zbývá skutečný Supabase projekt, Resend s ověřeným odesílatelem, PDF, údaje správce, publikované informace o zpracování a koncový test.
+Aktualizace: 2026-10-14. **Hotová implementace formuláře a připravené serverové napojení; skutečné služby a doručení zatím nejsou aktivované.** Uživatel požádal zaměřit se na formulář. PDF je nyní vytvořené a správce i zveřejnitelný kontakt jsou známé. Uživatel zvolil Supabase + Resend, ale účty ještě nemá. K úplnému bodu 7 zbývají účty, ověřená odesílací doména, veřejné URL, dokončené informace o zpracování a živý koncový test. Postup v docs/guide-activation.md.
 
 ## Chování návštěvníka
 
@@ -46,3 +46,9 @@ Oddělená tests/form-preview.html (pouze Vite vývoj, není vstupem do produkč
 - [Supabase: Cron](https://supabase.com/docs/guides/cron) — pravidelný výmaz.
 - [GDPR, článek 13 — EUR-Lex](https://eur-lex.europa.eu/eli/reg/2016/679/oj) — požadované informace při získávání údajů; konkrétní znění musí odpovídat provozovateli.
 - [PGlite](https://pglite.dev/docs/) — PostgreSQL pro lokální integrační testy, ne úložiště návštěvníků.
+
+## Příprava k aktivaci 14. 10. 2026
+
+Hotové PDF `public/guides/pruvodce-etf-2026-10-14.pdf` obsahuje 4 strany; generátor čte data z etfs.json. Údaje VOO, VTI a SCHD znovu ověřené z primárních zdrojů 14. 10. 2026, bez změny finančních údajů aplikace. Dostupnost stále odkazuje na rešerši 9. 10. 2026 a není account-level nákupním testem. Všechny strany vizuálně ověřené, 8 klikacích odkazů. První sazba vytvořila zbytečnou pátou stranu; zdroje zhuštěné a finální PDF ověřené jako čtyřstránkové. Opraveno také escapování ampersandu v S&P.
+
+Přidaná kontrola `npm run check:guide` a dvě testové situace pro nepřipravené prostředí, nevypsání tajemství a nevhodného produkčního odesílatele. Celkem 11 testů prošlo. Výsledek kontroly při tomto stavu správně hlásí chybějící služby. V `.env.local` jsou jen vypnutý režim a známé údaje správce; soubor je ignorovaný Gitem. Návrh informací v docs/privacy-notice-draft.md čeká na skutečné provozní údaje a není publikovaný jako dokončené znění. Nic se reálně neodeslalo ani neuložilo u poskytovatelů. Zbývající checkboxy Notion zůstávají otevřené.
