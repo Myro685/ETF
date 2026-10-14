@@ -36,3 +36,5 @@ Jasná nabídka, ověřená data, mobilní stránka, funkční formulář, doru�
 Na žádost uživatele vytvořen projekt C:\Users\miros\Projects\clientelo: React, TypeScript, Vite, instrukce pro AI, rules, místo pro skills a dokumentace. Nyní obsahuje implementovanou stránku. Dokončení frontendu neznamená hotové doručení průvodce, měření ani hosting.
 
 Na pokyn uživatele doplněné střídmé animace úvodních 3D bloků a ovládacích prvků podle emil-design-eng a animate. Specifikace a ověření v docs/motion.md. Jde o doladění bodu 5; nové body v Notion se neodškrtávají.
+
+2026-10-14: nainstalované projektové skilly pro Codex: emilkowalski/skills (15), Impeccable a gpt-taste. Instalace ověřená; žádný další bod Notion checklistu se tím neuzavírá.

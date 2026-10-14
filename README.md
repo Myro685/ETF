@@ -117,3 +117,15 @@ Zbývá vytvoření PDF, ukládání kontaktů a doručení (bod 7), měření a
 - Ověřené kotvy, detaily, zdroje, údaje a klávesnice. Nový formulář: samostatné testovací scénáře pro čekání a dvojklik, potvrzení, chybu a retry, bez skutečného odesílání. Hlavní web ověřený v nenastaveném režimu; skutečné uložení v Supabase a doručení e-mailu ještě nejsou ověřené.
 - Atlas používá světlou papírovou paletu; předchozí automatická tmavá varianta se nepoužívá. Konzole bez zachycených chyb a varování. Zvětšení 200 % a plný test screen readeru zbývají. Doručení PDF nelze koncově otestovat před bodem 7.
 - Hlavní JS Atlasu 256,60 kB / gzip 80,91 kB; 3D chunk 529,07 kB / gzip 131,40 kB se načítá odděleně. Vite stále upozorňuje na velikost 3D chunku. LCP na skutečném mobilním připojení zatím nebylo změřené.
+
+## Projektové skilly (2026-10-14)
+
+Pro Codex jsou v `.agents/skills` nainstalované všechny skilly z `emilkowalski/skills` (15), Impeccable s enginem 0.1.14 a `gpt-taste` z `Leonxlnx/taste-skill`. Impeccable má projektové hooks v `.codex/hooks.json`; zdroje a hashe skills CLI eviduje `skills-lock.json`. Lokální binární engine se neukládá do Gitu. Obnovení instalace z kořene projektu:
+
+```powershell
+npx skills add emilkowalski/skills -a codex --yes
+npx impeccable install --providers=codex --scope=project
+npx skills add https://github.com/Leonxlnx/taste-skill --skill gpt-taste -a codex --yes
+```
+
+Projektový `apple-design` pochází z Emilova balíčku; dřívější globální skill stejného jména má jiný původ. Instalace neprovádí redesign ani inicializaci stávajícího designového kontextu.

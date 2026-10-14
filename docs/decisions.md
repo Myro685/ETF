@@ -100,3 +100,7 @@ React + TypeScript + Vite s npm. Uživatel požadoval React projekt ve složce P
 ## 2026-10-09 — GitHub repozitář (pokyn uživatele)
 
 Uživatel určil https://github.com/Myro685/ETF.git. Repozitář byl prázdný a jeho veřejná viditelnost byla ověřena přes GitHub API. Nastaven remote origin a tracking main → origin/main. Úvodní commit c5b6564 byl nahrán bez přepisování historie.
+
+## 2026-10-14 — projektové skilly (pokyn uživatele)
+
+Spuštěné tři požadované npx instalace z kořene Clientelo. Skills CLI bez globálního přepínače používá projektový rozsah, Impeccable má výslovně scope=project. Uložené zdrojové skilly, lockfile a projektové hooks; stahovaný windows-x64 engine 0.1.14 je lokální a ignorovaný Gitem. Existující designový kontext se znovu neinicializuje.

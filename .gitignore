@@ -28,3 +28,6 @@ dist-ssr
 .env.*
 !.env.example
 private-data/
+
+# Downloaded platform-specific Impeccable engine (reinstall with npx impeccable install)
+.agents/skills/impeccable/scripts/bin/
