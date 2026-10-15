@@ -129,7 +129,7 @@ check:guide vypisuje jen názvy chybějících kontrol bez hodnot. Kontroluje m�
 ## Co je ověřené a co zbývá
 
 - Frontend, kalkulačka, kvíz, informace o fondech a čtyřstránkové PDF jsou implementované. PDF má české znaky a klikatelné primární zdroje; [generátor](scripts/generate-guide.py) používá data projektu, vyžaduje Python, reportlab a Arial. PDF není nutné generovat při každém buildu.
-- **18 automatických testů prošlo** při poslední změně kódu 15. 10. 2026. Pokrývají výpočty, vstupy, klientské chyby, HTTP, OAuth, MIME, skutečné PostgreSQL migrace v PGlite, kvóty, souběh, nejistý výsledek, výmaz, soukromí konfigurace, režimy formuláře a kompilovaný Vercel handler. Simulovaný provider v testech není doklad příjmu zprávy.
+- **23 automatických testů prošlo** při poslední změně kódu 15. 10. 2026. Pokrývají výpočty, vstupy, klientské chyby, HTTP, OAuth, MIME, skutečné PostgreSQL migrace v PGlite, kvóty, souběh, nejistý výsledek, výmaz, soukromí konfigurace, režimy formuláře, kompilovaný Vercel handler a měření (souhlas, atribuce, zápis, deduplikace, konverze a retence). Simulovaný provider v testech není doklad příjmu zprávy.
 - Skutečný formulářový test uživatel potvrdil včetně potvrzení, e-mailu a PDF. V Supabase následně ověřený jeden kontakt, jedna žádost a zaznamenané přijetí Gmailem. Interní test nepočítáme do konverze.
 - Produkční API 200, available=true, demoOnly=false, aktuální informační stránka dostupná. Na živém webu ověřené prázdné upravitelné pole; následná kontrola se syntetickou adresou nebyla odeslaná.
 - Dřívější browser kontrola šířek 320, 390, 768 a 1 440 px je zaznamenaná v docs/design.md; neznamená dokončené testování měření ani plný screen reader audit. Pohyb respektuje prefers-reduced-motion.

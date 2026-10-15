@@ -31,7 +31,7 @@ Použít pouze adresu, jejíž příjemce test výslovně vyžádal. Zveřejněn
 | Veřejný režim | available=true, demoOnly=false, prázdné upravitelné pole. Syntetická browser kontrola pole nebyla odeslaná. |
 | Informace o zpracování | /ochrana-udaju.html, verze 2026-10-15-v1; doplněný text nenahrazuje doložení podmínek poskytovatelů. |
 | Retence | Aktivní hodinový Cron 0 * * * *; přímo ověřený běh 15. 10. 2026 12:00 Europe/Prague Succeeded. |
-| Automatické kontroly | 18 testů, lint a build při poslední změně kódu prošly. |
+| Automatické kontroly | 23 testů, lint a build při poslední změně kódu prošly. |
 | Konečné uzavření bodu 7 | Čeká na doložení/posouzení smluvních a provozních podmínek podle privacy-operations.md. |
 
 ## Notion

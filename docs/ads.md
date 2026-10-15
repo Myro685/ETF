@@ -41,9 +41,9 @@ Obě varianty mohou vstupovat na kořenovou adresu webu. Pro lokální posouzen�
 
 ## Rozlišení a budoucí test
 
-Pro bod 8 navrhujeme označení `utm_campaign=etf_porovnani`, `utm_content=ad_a_rozdily` a `utm_content=ad_b_naklady`. `utm_source` a `utm_medium` se doplní podle skutečného kanálu. Jde o plán; aplikace zatím nezaznamenává zdroj návštěvy ani analytické události.
+Pro bod 8 navrhujeme označení `utm_campaign=etf_porovnani`, `utm_content=ad_a_rozdily` a `utm_content=ad_b_naklady`. `utm_source` a `utm_medium` se doplní podle skutečného kanálu. Realizované v bodu 8, pouze po souhlasu návštěvníka. Hotové veřejné odkazy a přehled událostí jsou v [measurement.md](measurement.md).
 
-Hypotéza: A přivede lidi, kteří hledají přehled; B může lépe motivovat k použití kalkulačky díky konkrétnímu výsledku. Úspěch posoudíme podle skutečně získaných kontaktů vůči návštěvám z jednotlivých reklam, nikoli jen podle kliknutí. Zatím nemáme měření ani vítěze. Při budoucím porovnání zachovat stejnou stránku, publikum, kanál a vizuál, aby se lišil zejména text.
+Hypotéza: A přivede lidi, kteří hledají přehled; B může lépe motivovat k použití kalkulačky díky konkrétnímu výsledku. Úspěch posoudíme podle skutečně získaných kontaktů vůči návštěvám z jednotlivých reklam, nikoli jen podle kliknutí. Měření je zavedené, ale zatím nemáme obchodní data ani vítěze. Při budoucím porovnání zachovat stejnou stránku, publikum, kanál a vizuál, aby se lišil zejména text.
 
 ## Kontrola návrhů
 
@@ -53,4 +53,4 @@ Hypotéza: A přivede lidi, kteří hledají přehled; B může lépe motivovat 
 - Reklamy neuvádějí sazby, ceny, počty pozic ani výkonnost, které by se musely průběžně aktualizovat. Data na stránce zůstávají ve společném src/data/etfs.json; podklady v [etf-research.md](etf-research.md).
 - Úvod stránky a obě cesty ověřené v živém prohlížeči; technická kontrola zaznamenaná v ai-log/2026-10-09.md.
 
-Před případným spuštěním zbývá veřejná adresa, měření a kontrola formátu a pravidel zvoleného reklamního kanálu. Připravené texty nejsou schválením konkrétní platformou.
+Veřejná adresa a měření jsou připravené. Před případným spuštěním zbývá kontrola formátu a pravidel zvoleného reklamního kanálu a otevřené provozní podmínky bodu 7. Připravené texty nejsou schválením konkrétní platformou.

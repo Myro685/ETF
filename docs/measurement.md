@@ -50,3 +50,8 @@ Podklad k zabezpečení RPC: [Supabase database functions](https://supabase.com/
 ## Ověření
 
 Automatické testy pokrývají souhlas/odmítnutí/odvolání, StrictMode a reload, atribuci, síťovou chybu, odmítnutí osobních údajů a skutečné PostgreSQL zápisy, deduplikaci, ověření konverze, veřejná oprávnění a retenci. Testy doručení používají syntetická data bez skutečných e-mailů. Produkční ověření se zaznamená do ai-log; kontrolní relace se vyloučí z obchodního reportu.
+
+
+### Produkční kontrola 15. 10. 2026
+
+Nasazený commit 264bb0c. Živé API skutečně zapsalo události pro reklamu A i B; následným soukromým čtením potvrzený kompletní set sedmi událostí pro kontrolní relaci A. Form_success a contact_acquired ověřené proti již dříve dokončené testovací žádosti provozovatele, ne novým odesláním. Dvojí požadavek nezvýšil počet, neexistující requestId dostal HTTP 409 a nevytvořil konverzi. Živý prohlížeč: před souhlasem a po odmítnutí žádná další relace v DB; po povolení skutečné ovládání zapsalo page_view, calculator_use, guide_cta a form_start. Tato relace i API kontrolní relace jsou vyřazené z operátorského reportu. Souhlas po kontrole odvolaný. Veřejná informační stránka vrací 200 a obsahuje 2026-10-15-m1. 23 testů, build a lint prošly. Notion všech šest checkboxů bodu 8 odškrtnutých a znovu načtením ověřených. Report po vyloučení kontrolních návštěv nemá zatím obchodní data; konverze není známá. Job retence při migraci vytvořený (schedule=2); přirozený produkční běh tohoto nového jobu nebyl při této kontrole doložený. Samotná mazací funkce ověřená v PostgreSQL testu.
