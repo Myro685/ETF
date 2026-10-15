@@ -32,3 +32,9 @@ Vercel DPA výslovně vymezuje Pro/Enterprise, zatímco obecné podmínky odkazu
 Po automatickém nasazení veřejné GET /ochrana-udaju.html vrací 200 a ověřenou verzi 2026-10-15-demo-v1. V Notion odškrtnuté informace o zpracování pro uživatelem zvolený demo rozsah; skutečné uložení a celá cesta doručení zůstávají otevřené do živého formulářového testu. Nový skutečný e-mail zatím neposlaný.
 
 Po potvrzení doplnění demo nastavení uživatel provedl redeploy. Po obnovení Vercel UI ověřena přítomnost všech 15 produkčních proměnných; jejich tajné hodnoty nebyly čtené. Deployment 504dcff Ready, veřejné config API však stále available=false. Přidaná diagnostika do runtime logu obsahuje pouze fixní názvy nevyhovujících kontrol z checkGuideReadiness, žádné hodnoty, tokeny, tělo požadavku nebo e-mail. Živý formulář se zatím neodesílal a bod 7 zůstává rozpracovaný.
+
+## 15. 10. 2026 — demo aktivní, připravený koncový test
+
+Po novém automatickém deploymentu se aktuální hodnoty projevily: available=true a demoOnly=true. Původní uživatelský redeploy měl ještě nenastavenou konfiguraci; konkrétní chybnou hodnotu nelze zpětně určit. Živá odpověď odhalila PRIVACY_POLICY_URL na úvodní stránku. Opravený pouze tento veřejný odkaz přes Vercel UI, zachované Production a Secret, bez čtení nebo úprav autentizačních klíčů. Následný redeploy a veřejný GET ověřily správnou /ochrana-udaju.html a verzi.
+
+Živý přímý POST se syntetickou cizí adresou odmítnutý 403 demo_only; žádný skutečný e-mail ani zápis tímto testem nevznikl. Read-only HEAD počtů v Supabase: 0 kontaktů a 0 žádostí pro testovací adresu správce, bez načítání kontaktních řádků. Živý formulář v prohlížeči předvyplněný, readonly, se správným odkazem a tlačítkem Poslat testovací průvodce; tlačítko nebylo stisknuté. Uživatel jej použije pro skutečný koncový test. Notion zbývající dva checkboxy bodu 7 nadále otevřené. 18 testů, lint a build prošly i s bezpečnou serverovou diagnostikou.

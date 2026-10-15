@@ -1,6 +1,6 @@
 # Clientelo
 
-Veřejná stránka: https://etf-gold.vercel.app/ (Vercel Hobby). Frontend a PDF ověřené bez přihlášení 15. 10. 2026. Uživatel zvolil ukázku pro hodnocení: připravený formulář přijímá pouze testovací adresu správce a čeká na aktivaci demo nastavení; [nasazení a ověření](docs/deployment.md).
+Veřejná stránka: https://etf-gold.vercel.app/ (Vercel Hobby). Frontend a PDF ověřené bez přihlášení 15. 10. 2026. Uživatel zvolil ukázku pro hodnocení: formulář je aktivní v demo režimu a přijímá pouze testovací adresu správce; [nasazení a ověření](docs/deployment.md).
 
 Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký trh. Pomůže návštěvníkovi pochopit rozdíly mezi fondy a nabídne mu užitečný doplňující obsah výměnou za e-mail.
 
@@ -157,3 +157,5 @@ Supabase připojení ověřené 15. 10. 2026: API schématu HTTP 200, tabulky a 
 Uživatel zvolil demo, nikoliv veřejný sběr kontaktů. GUIDE_DEMO_MODE=true serverově přijímá jen PRIVACY_CONTACT_EMAIL; jinou adresu odmítne před databází i poskytovatelem. Formulář předvyplní tuto zveřejněnou adresu správce a zamkne pole, vysvětlí omezení a po úspěchu nabídne PDF. Veřejné informace jsou v /ochrana-udaju.html, verze 2026-10-15-demo-v1. Při změně režimu je nutné znovu vyřešit smluvní podmínky a informační povinnosti pro skutečné návštěvníky. Gmail kopie bude provozovatel podle svého potvrzení trvale mazat nejpozději po 30 dnech.
 
 Produkční API po uživatelském importu proměnných a redeployi vrací HTTP 200, available=false. V UI zkontrolovaná existence 11 Secret položek Production bez čtení hodnot; chyběl MAIL_PROVIDER. Čtyři doplňující položky jsou připravené v ignorované .env.vercel-demo.local; aktivace GUIDE_ENABLED je zvláštní poslední krok. Následuje skutečný test celého formuláře s databázovým zápisem.
+
+Produkční kontrola 15. 10. 2026: config API 200, available=true, demoOnly=true, správná informační URL /ochrana-udaju.html a verze 2026-10-15-demo-v1. Přímý požadavek se syntetickou cizí adresou odmítnutý HTTP 403 demo_only. Read-only kontrola před skutečným formulářovým testem: žádný uložený kontakt ani žádost provozovatele. Následuje uživatelské odeslání přes živý formulář, kontrola databáze a potvrzení přijetí PDF.
