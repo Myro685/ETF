@@ -85,3 +85,9 @@ select cron.schedule(
 ```
 
 Úloha každou hodinu trvale odstraňuje kontakty, jejichž 30denní expirace uplynula, a navázané žádosti. Neodstraňuje odeslané zprávy z Gmailu. Zatím není doložené její vytvoření nebo úspěšný běh; nelze ji uvádět jako aktivní. Zdroj: https://supabase.com/docs/guides/cron/install a https://supabase.com/docs/guides/cron/quickstart (kontrola 15. 10. 2026).
+
+## Veřejné PDF a retence — 15. 10. 2026
+
+Uživatel výslovně schválil publikaci průvodce v samostatném veřejném bucketu clientelo-public svého Supabase projektu. Skript `node --env-file=.env.local scripts/publish-guide.ts` vytvořil tento bucket pouze pro PDF a nahrál připravené vydání bez přepisování. Stažení bez přihlášení ověřilo MIME i shodný SHA-256; GUIDE_DOWNLOAD_URL je uložené v ignorované konfiguraci. Kontaktní tabulky ani jejich oprávnění nebyly změněné.
+
+Uživatel potvrdil nastavení hodinového Cronu a region Europe. Samostatné ověření aktivní úlohy a historie čeká na výsledek read-only `supabase/verify-retention.sql`; navigace do Cron přehledu v prohlížeči se vracela do Database. Výmaz syntetického expirovaného kontaktu dosud neověřený. GUIDE_ENABLED zůstává false; žádný e-mail neodeslaný.

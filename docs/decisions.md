@@ -120,3 +120,7 @@ Uživatel potvrdil propojení; ověřený soukromý token a živé obnovení bez
 ## 2026-10-15 — první nastavení Supabase
 
 Uživatel potvrdil vytvoření projektu. Pro postup po krocích připravený jediný atomický setup-new-project.sql odvozený z obou migrací. Slouží pouze novému prázdnému projektu a odmítne existující tabulky. Spuštění na živém Supabase zatím nepotvrzené; klíče ani kontakty se do souboru nevkládají.
+
+## 2026-10-15 — veřejné PDF v Supabase Storage (schváleno uživatelem)
+
+Uživatel výslovně schválil nový veřejný bucket clientelo-public pro připravený čtyřstránkový průvodce. Publikováno pouze toto PDF, ověřená totožnost veřejného souboru a uložený odkaz v soukromé konfiguraci. Kontaktní data se do bucketu nenahrávají. Existující soubory skript nepřepisuje a existujícím privátním bucketům nemění oprávnění. Region Europe je informace uživatele, nikoliv ověřená přesná lokalita. Potvrzené vytvoření Cronu se odlišuje od dosud neověřeného běhu.

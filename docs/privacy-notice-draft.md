@@ -18,7 +18,7 @@ Poskytnutí e-mailu je dobrovolné a základní porovnání zůstává přístup
 
 ## Poskytovatelé a uchování
 
-Zvolené služby jsou Supabase pro databázi a Google Gmail API pro vyžádaný e-mail. Gmail účet je propojený, Supabase projekt je vytvořený a serverové připojení ověřené. Před publikací posoudit konkrétní roli a podmínky Googlu pro zvolený osobní účet; nepředpokládat automaticky stejné zpracovatelské podmínky jako u firemní služby. Před zveřejněním doplnit skutečné smluvní subjekty, zvolený region Supabase, poskytovatele hostingu, relevantní další zpracovatele a případné předávání mimo EHP včetně použitého mechanismu a způsobu získání jeho kopie.
+Zvolené služby jsou Supabase pro databázi a Google Gmail API pro vyžádaný e-mail. Gmail účet je propojený, Supabase projekt je vytvořený a serverové připojení ověřené. Před publikací posoudit konkrétní roli a podmínky Googlu pro zvolený osobní účet; nepředpokládat automaticky stejné zpracovatelské podmínky jako u firemní služby. Před zveřejněním doplnit skutečné smluvní subjekty, přesné umístění Supabase (uživatel uvedl Europe), poskytovatele hostingu, relevantní další zpracovatele a případné předávání mimo EHP včetně použitého mechanismu a způsobu získání jeho kopie.
 
 Implementace navrhuje výmaz kontaktu a souvisejících žádostí po 30 dnech od poslední nové žádosti; hodinová údržba znamená výmaz při nejbližším následujícím běhu. Opakování stejného identifikátoru žádosti lhůtu neprodlužuje. Tento příslib lze publikovat teprve po aktivaci a ověření údržby. Doby uchování odeslané pošty v Gmailu, hostingu, logách a zálohách je nutné doplnit samostatně podle skutečného tarifu a konfigurace. Výmaz v hlavní databázi neznamená okamžitý výmaz záloh nebo již doručené zprávy z cizí schránky.
 
@@ -31,7 +31,7 @@ Tento formulář neprovádí automatizované rozhodování s právními nebo obd
 ## Před publikací zbývá
 
 - Potvrdit právní základ pro vyřízení žádosti a vyřešit případné samostatné bezpečnostní logy.
-- Založit účty, potvrdit smluvní subjekty/zpracovatelské podmínky a region.
+- Účty jsou založené; uživatel uvedl region Europe. Potvrdit smluvní subjekty/zpracovatelské podmínky a přesné umístění.
 - Doplnit hosting, uchování u všech poskytovatelů a případná předávání.
 - Aktivovat retenci a ověřit její běh na syntetickém expirovaném kontaktu.
 - Z dokumentu odstranit pracovní instrukce a publikovat finální informace na HTTPS URL. Nastavit identickou verzi v prostředí; změny verze odmítnou starý otevřený formulář.
