@@ -96,7 +96,7 @@
 #cl-quiz { padding-top: 10px; }
 .cl-page .cl-quiz-disclosure { border-block: 1px solid var(--cl-line); }
 .cl-quiz-disclosure > summary { gap: 22px; padding-block: 26px; }
-.cl-quiz-disclosure > summary::after { content: none; }
+.cl-quiz-disclosure > summary::after, .cl-quiz-disclosure[open] > summary::after { content: none; }
 .cl-page .cl-quiz-disclosure h2 { font-size: 26px; }
 .cl-disclosure-chevron { flex-shrink: 0; width: 22px; height: 22px; color: var(--cl-accent); }
 .cl-quiz-disclosure[open] .cl-disclosure-chevron { transform: rotate(180deg); }
@@ -143,6 +143,18 @@
   .cl-page .cl-tool-secondary:hover { background: var(--cl-surface); }
 }
 @media (prefers-reduced-motion: no-preference) {
+  .cl-disclosure-chevron, .cl-fund-details .cl-expand-icon { transition: transform 220ms var(--cl-ease); }
+  @supports (interpolate-size: allow-keywords) {
+    .cl-page details { interpolate-size: allow-keywords; }
+    .cl-page details::details-content {
+      block-size: 0;
+      opacity: 0;
+      overflow: clip;
+      transition: block-size 260ms var(--cl-ease), opacity 180ms ease, content-visibility 260ms;
+      transition-behavior: allow-discrete;
+    }
+    .cl-page details[open]::details-content { block-size: auto; opacity: 1; }
+  }
   .cl-page .cl-button, .cl-page .cl-form button, .cl-page .cl-presets button, .cl-page .cl-tool-secondary { transition: transform 140ms var(--cl-ease), background-color 160ms ease, border-color 160ms ease; }
   .cl-page .cl-button:focus-visible, .cl-page .cl-form button:focus-visible, .cl-page .cl-presets button:focus-visible, .cl-page .cl-tool-secondary:focus-visible { transition: none; }
   .cl-page .cl-button:active:not(:focus-visible), .cl-page .cl-form button:active:not(:disabled):not(:focus-visible), .cl-page .cl-presets button:active:not(:focus-visible), .cl-page .cl-tool-secondary:active:not(:focus-visible) { transform: scale(.97); }
