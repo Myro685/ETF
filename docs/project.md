@@ -18,7 +18,7 @@ Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouz
 | 8 | Rozlišení reklam, události trychtýře a ověření záznamu | Nezahájeno |
 | 9 | README, důvody řešení, zdroje, konverze, tři A/B hypotézy, spuštění | Rozpracováno; základ README |
 | 10 | AI pokyny, kontroly, chyby, exporty a metoda exportu | Rozpracováno; souhrn, úplné exporty chybí |
-| 11 | Veřejný GitHub, commity, hosting, mobilní a koncové testy | Rozpracováno; GitHub Myro685/ETF, ověřený responzivní frontend; hosting a koncové testy doručení zbývají |
+| 11 | Veřejný GitHub, commity, hosting, mobilní a koncové testy | Rozpracováno; GitHub Myro685/ETF, ověřený responzivní frontend; veřejný frontend na https://etf-gold.vercel.app/ ověřený; oprava sestavení API a produkční konfigurace rozpracované, koncové testy zbývají |
 | 12 | Odpověď na e-mail s GitHub, veřejným webem a omezeními | Nezahájeno |
 
 ## Priority

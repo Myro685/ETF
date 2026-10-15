@@ -1,5 +1,7 @@
 # Clientelo
 
+Veřejná stránka: https://etf-gold.vercel.app/ (Vercel Hobby). Frontend a PDF ověřené bez přihlášení 15. 10. 2026. Formulář čeká na produkční konfiguraci a finální informace o zpracování; [nasazení a ověření](docs/deployment.md).
+
 Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký trh. Pomůže návštěvníkovi pochopit rozdíly mezi fondy a nabídne mu užitečný doplňující obsah výměnou za e-mail.
 
 ## Aktuální stav
@@ -103,7 +105,7 @@ Obsah kontrolujeme proti zadání a schváleným rozhodnutím, zápisy do Notion
 
 ## Co zbývá
 
-PDF je vytvořené; zbývá aktivace skutečného ukládání kontaktů a doručení (bod 7), měření a dokončení bodů 9–12. Dvě reklamy jsou připravené k posouzení. Frontend včetně kalkulačky a kvízu je implementovaný; veřejný hosting a celý proces získání průvodce ještě nejsou hotové.
+PDF je vytvořené; zbývá aktivace skutečného ukládání kontaktů a doručení (bod 7), měření a dokončení bodů 9–12. Dvě reklamy jsou připravené k posouzení. Frontend včetně kalkulačky a kvízu je implementovaný; veřejný frontend je nasazený; celý proces získání průvodce ještě není hotový.
 
 
 ## Ověření webu (2026-10-09)

@@ -132,3 +132,7 @@ Po uživatelském potvrzení kontroly retence připravený konkrétní náhled j
 ## 2026-10-15 — další krok: hosting
 
 Uživatel si založí účet Vercel samostatně a poté se ozve. Žádné nasazení, propojení GitHub oprávnění nebo přenos serverových klíčů na hosting tímto krokem neproběhly. Po návratu dokončit skutečné provozní údaje pro informační stránku, soukromou konfiguraci hostingu a celý test formulář → Supabase → Gmail → PDF.
+
+## 15. 10. 2026 — první Vercel nasazení
+
+Uživatel dodal etf-gold.vercel.app. Veřejným GET bez autentizace ověřený frontend i PDF. Konfigurační API vracelo 500; read-only Vercel runtime log odhalil import server/http.ts z emitovaného JS. Kořenová konfigurace doplněná o přepis přípon, protože Vercel nepoužívá project references. Nový test skutečně spouští emitované API. 17 testů, lint a build prošly. Soukromá produkční konfigurace připravená lokálně, nikoliv nahraná na hosting. Notion pouze dva checkboxy bodu 11 (nasazení a veřejná dostupnost), zpětné načtení ověřené. Celý bod 7 a koncové testy zůstávají otevřené. Podrobnosti v docs/deployment.md.
