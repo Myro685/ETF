@@ -2,7 +2,7 @@
 <html lang="cs">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Jak ukázkový web Clientelo zachází s údaji při testu doručení průvodce ETF.">
+<meta name="description" content="Jak Clientelo zpracovává e-mailovou adresu pro doručení vyžádaného průvodce ETF.">
 <meta name="robots" content="noindex">
 <title>Jak zpracováváme údaje | Clientelo</title>
 <style>
@@ -12,28 +12,29 @@
 <body><main>
 <a href="/">← Zpět na porovnání ETF</a>
 <h1>Jak zpracováváme údaje</h1>
-<p class="meta">Clientelo · Verze 2026-10-15-demo-v1 · Platnost od 15. října 2026</p>
-<p class="intro">Tento web je ukázkový projekt pro hodnocení. Formulář slouží k předvedení doručení průvodce na testovací adresu provozovatele.</p>
-<div class="notice"><strong>Vlastní e-mail do ukázky nezadávejte.</strong> Pole je předvyplněné testovací adresou. Server přijme pouze tuto adresu; jiný kontakt odmítne před uložením nebo odesláním. Po úspěšném testu si můžete PDF stáhnout přímo ze stránky.</div>
+<p class="meta">Clientelo · Verze 2026-10-15-v1 · Platnost od 15. října 2026</p>
+<p class="intro">Formulář na webu Clientelo slouží k doručení vyžádaného Průvodce porovnáním ETF a k vyřízení vaší žádosti.</p>
+<div class="notice"><strong>Jedna žádost, jeden průvodce.</strong> E-mail použijeme pro vyžádané doručení a vyřízení žádosti. Zadáním adresy se nepřihlašujete k newsletteru ani marketingovým zprávám.</div>
 <h2>Kdo web provozuje</h2>
 <p>Správcem údajů pro provoz tohoto webu je Miroslav Grund. Dotazy a žádosti k osobním údajům posílejte na <a href="mailto:miroslavgrund68@gmail.com">miroslavgrund68@gmail.com</a>.</p>
-<h2>Co se při testu uloží</h2>
-<p>Do databáze se uloží testovací e-mail provozovatele, čas a identifikátor žádosti, verze těchto informací, doba platnosti kontaktu a údaje o stavu doručení včetně identifikátoru zprávy. Slouží k provedení a ověření testu, omezení opakovaných žádostí a řešení chyb. Nevzniká přihlášení k newsletteru a kontakty se nepoužívají k reklamě.</p>
+<h2>K čemu e-mail slouží a co ukládáme</h2>
+<p>Ukládáme vaši e-mailovou adresu, čas a identifikátor žádosti, verzi těchto informací, dobu platnosti kontaktu a údaje o stavu doručení včetně identifikátoru zprávy. Tyto údaje umožňují průvodce doručit, vyřídit žádost a řešit případné opakování nebo chybu. Právním základem vyřízení služby, o kterou výslovně žádáte, je čl. 6 odst. 1 písm. b) GDPR. Omezení zneužití a evidence technických chyb slouží oprávněnému zájmu na bezpečném fungování služby podle čl. 6 odst. 1 písm. f) GDPR.</p>
 <p>Výsledky kalkulačky ani odpovědi v kvízu do databáze kontaktů neukládáme. Aplikační kód do provozních logů nevypisuje obsah formuláře ani přístupové klíče.</p>
+<p>Poskytnutí e-mailu je dobrovolné. Bez něj nelze průvodce doručit do schránky; porovnání, kalkulačku i kvíz můžete používat bez zadání adresy. Po úspěšném odeslání je průvodce dostupný také k přímému stažení.</p>
 <h2>Technické údaje návštěvníka</h2>
 <p>Při načtení webu a volání API mohou poskytovatelé infrastruktury zpracovávat IP adresu, čas, požadovanou cestu, údaje o prohlížeči a výsledek požadavku. Účelem je doručení stránky, zabezpečení, omezení zneužití a diagnostika. Provozovatel pro tento účel vychází z oprávněného zájmu podle čl. 6 odst. 1 písm. f) GDPR na bezpečném a funkčním webu. Samostatné zpracování poskytovatelů popisují jejich níže odkazované podmínky.</p>
-<p>Web nyní nepoužívá analytické ani reklamní cookies a nemá zapnuté měření návštěvnosti. Testovací formulář neprovádí profilování ani automatizované rozhodování s právními nebo obdobně významnými účinky.</p>
+<p>Web nyní nepoužívá analytické ani reklamní cookies a nemá zapnuté měření návštěvnosti. Formulář neprovádí profilování ani automatizované rozhodování s právními nebo obdobně významnými účinky.</p>
 <h2>Které služby používáme</h2>
 <ul>
-<li><strong>Vercel</strong> poskytuje hosting stránky a API. Technické údaje mohou procházet jeho globální infrastrukturou. <a href="https://vercel.com/legal/privacy-notice">Informace Vercelu o soukromí</a>.</li>
-<li><strong>Supabase</strong> ukládá testovací žádosti v projektu zvoleném v regionu Europe a poskytuje veřejné PDF. Kontaktní tabulky jsou neveřejné; veřejné je pouze úložiště dokumentů. <a href="https://supabase.com/privacy">Informace Supabase o soukromí</a>.</li>
-<li><strong>Google Gmail</strong> odešle testovací zprávu provozovateli. Používá se osobní Gmail účet s oprávněním aplikace pouze k odesílání. <a href="https://policies.google.com/privacy">Informace Googlu o soukromí</a>.</li>
+<li><strong>Vercel Inc.</strong> poskytuje hosting stránky a API. Technické údaje mohou procházet jeho globální infrastrukturou. <a href="https://vercel.com/legal/privacy-notice">Informace Vercelu o soukromí</a>.</li>
+<li><strong>Supabase Pte. Ltd.</strong> ukládá kontakty a žádosti v projektu zvoleném v regionu Europe a poskytuje veřejné PDF. Kontaktní tabulky jsou neveřejné; veřejné je pouze úložiště dokumentů. <a href="https://supabase.com/privacy">Informace Supabase o soukromí</a>.</li>
+<li><strong>Google Gmail</strong> předá vyžádanou zprávu na adresu, kterou zadáte. Pro uživatele v EHP poskytuje spotřebitelské služby Google Ireland Limited. Používá se osobní Gmail účet s oprávněním aplikace pouze k odesílání. <a href="https://policies.google.com/privacy">Informace Googlu o soukromí</a>.</li>
 </ul>
-<p>Provozovatel tímto netvrdí, že všechna data zůstávají v EU. Poskytovatelé mohou využívat zpracování mimo Evropský hospodářský prostor; informace o příslušných subjektech, zemích a ochranných opatřeních jsou v jejich pravidlech. Google popisuje mechanismy předávání na stránce <a href="https://policies.google.com/privacy/frameworks">Předávání údajů</a>. O další informace k provozu této ukázky můžete požádat správce na uvedeném kontaktu.</p>
+<p>Služby využívají také infrastrukturu mimo Evropský hospodářský prostor. Supabase ve svém <a href="https://supabase.com/legal/customer-resources/data-processing-addendum">dodatku o zpracování údajů</a> upravuje standardní smluvní doložky Evropské komise pro příslušná předávání. Google popisuje použitelné mechanismy včetně rámců ochrany údajů a standardních smluvních doložek na stránce <a href="https://policies.google.com/privacy/frameworks">Předávání údajů</a>. Informace o samostatném zpracování technických údajů Vercelu a jeho předávání jsou v jeho <a href="https://vercel.com/legal/privacy-notice">oznámení o soukromí</a>. O další informace a kopii použitých záruk můžete požádat správce na uvedeném kontaktu.</p>
 <h2>Jak dlouho údaje zůstávají uložené</h2>
-<p>Testovací kontakt a související žádosti v hlavní databázi expirují po 30 dnech od poslední nové žádosti. Hodinová údržba je odstraní při nejbližším následujícím běhu. Opakování stejného identifikátoru žádosti lhůtu neprodlužuje. Provozovatel se zavázal trvale mazat kopie testovacích zpráv ze svého Gmailu nejpozději po 30 dnech.</p>
-<p>Výmaz v hlavní databázi nezaručuje současný výmaz všech technických záznamů poskytovatelů. Rozhraní Runtime Logs na současném Vercel Hobby tarifu zpřístupňuje poslední hodinu logů; jde o rozsah dostupný v rozhraní, nikoli záruku celkové doby uchování všech bezpečnostních údajů Vercelu. Další uchování poskytovatelů se řídí jejich pravidly. Provozovatel v této ukázce nezavedl vlastní exporty databáze kontaktů ani archiv odeslaných zpráv.</p>
+<p>Kontakt a související žádosti v hlavní databázi expirují po 30 dnech od poslední nové žádosti. Hodinová údržba je odstraní při nejbližším následujícím běhu. Opakování stejného identifikátoru žádosti lhůtu neprodlužuje. Provozovatel se zavázal trvale mazat kopie odeslaných zpráv ze svého Gmailu nejpozději po 30 dnech.</p>
+<p>Výmaz v hlavní databázi nezaručuje současný výmaz všech technických záznamů poskytovatelů. Rozhraní Runtime Logs na současném Vercel Hobby tarifu zpřístupňuje poslední hodinu logů; jde o rozsah dostupný v rozhraní, nikoli záruku celkové doby uchování všech bezpečnostních údajů Vercelu. Další uchování poskytovatelů se řídí jejich pravidly. Provozovatel nezavedl vlastní exporty databáze kontaktů ani archiv odeslaných zpráv.</p>
 <h2>Vaše práva</h2>
 <p>Pokud se vás zpracování týká, můžete za podmínek GDPR požádat o přístup, opravu, výmaz, omezení zpracování a případně přenositelnost. Proti zpracování založenému na oprávněném zájmu můžete vznést námitku. Žádosti řeší správce na výše uvedeném e-mailu; může potřebovat přiměřeně ověřit totožnost. Stížnost můžete podat u <a href="https://uoou.gov.cz/">Úřadu pro ochranu osobních údajů</a>.</p>
-<footer>Tato verze se vztahuje na ukázkový provoz s testovací adresou provozovatele. Před skutečným sběrem kontaktů návštěvníků musí provozovatel upravit účely, podmínky poskytovatelů a tyto informace.</footer>
+<footer>Verze 2026-10-15-v1. Předchozí <a href="/privacy/2026-10-15-demo-v1.html">informace pro omezený testovací režim</a> zůstávají dostupné.</footer>
 </main></body></html>

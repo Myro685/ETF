@@ -28,4 +28,8 @@ test("Evaluation mode rejects arbitrary visitor addresses before any storage, PD
   const acceptedAddress = await handleGuide(request(" OPERATOR@example.invalid "), env, fetcher);
   assert.notEqual(acceptedAddress.body.code, "demo_only");
   assert.ok(requests > 0, "Only the exact normalized operator address may reach the pipeline");
+  const previous = requests;
+  const publicMode = await handleGuide(request("visitor@example.invalid"), { ...env, GUIDE_DEMO_MODE: "false" }, fetcher);
+  assert.notEqual(publicMode.body.code, "demo_only");
+  assert.ok(requests > previous, "Public mode accepts other valid addresses into the delivery pipeline");
 });

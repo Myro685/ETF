@@ -1,6 +1,6 @@
 # Clientelo
 
-Veřejná stránka: https://etf-gold.vercel.app/ (Vercel Hobby). Frontend a PDF ověřené bez přihlášení 15. 10. 2026. Uživatel zvolil ukázku pro hodnocení: formulář je aktivní v demo režimu a přijímá pouze testovací adresu správce; [nasazení a ověření](docs/deployment.md).
+Veřejná stránka: https://etf-gold.vercel.app/ (Vercel Hobby). Frontend a PDF ověřené bez přihlášení 15. 10. 2026. Uživatel požaduje otevřené zadání e-mailu: připravený přechod z dema na veřejný režim; [nasazení a ověření](docs/deployment.md).
 
 Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký trh. Pomůže návštěvníkovi pochopit rozdíly mezi fondy a nabídne mu užitečný doplňující obsah výměnou za e-mail.
 
@@ -19,7 +19,7 @@ Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký t
 - Bod 5 hotový; aktuální přepracování v [docs/design-2026-10-11.md](docs/design-2026-10-11.md), historie struktury v [docs/design.md](docs/design.md).
 - Bod 4 hotový jako příprava návrhů: [dvě textové reklamy](docs/ads.md) s nadpisem a CTA, zaměřené na rozdíly fondů a náklady v Kč. Úvod stránky navazuje na oba sliby; kampaň není spuštěná a návrhy čekají na posouzení uživatelem.
 - Bod 6 hotový: na přání uživatele implementovaná kalkulačka ročního nákladu v Kč a tříotázkový kvíz. [Popis a ověření funkcí](docs/interactive-feature.md).
-- Bod 7 rozpracovaný: formulář s validačními a síťovými stavy, ochranou proti dvojkliku a připraveným Supabase/Resend API. [Nastavení a zbývající kroky](docs/form.md). Čtyřstránkové PDF je hotové; správce a kontakt jsou známé. Uživatel nyní volí Gmail API bez vlastní domény; Gmail OAuth propojené, obnovení tokenu ověřené a serverový transport implementovaný; Uživatel potvrdil příjem jedné schválené testovací zprávy; otevření PDF z e-mailu zatím výslovně nepotvrdil. Supabase API je připojené a veřejné PDF ověřené. Zbývají ověření retence, finální informace o zpracování a skutečný koncový test. [Propojení Gmailu](docs/gmail-setup.md). [Aktivace](docs/guide-activation.md).
+- Bod 7: skutečný formulářový test prošel, v Supabase ověřený 1 kontakt / 1 žádost a zaznamenané přijetí Gmailem. Uživatel potvrdil potvrzení na stránce, přijatý e-mail a PDF. Nově požaduje libovolné adresy; technický přechod a nové informace jsou připravené. Smluvní pokrytí veřejného sběru pro Vercel Hobby a osobní Gmail zůstává otevřené; neoznačujeme je jako právně dokončené.
 - Termín odevzdání: **16. října 2026**.
 
 Zadání bylo načteno z [Clientelo projektu v Notion](https://app.notion.com/p/3f4e1942c8af80ddacf7c7b070dea863). Notion nyní slouží pouze k odškrtávání bodů. Aktuální informace, rozhodnutí a podrobnosti řešení vedeme v tomto repozitáři.
@@ -152,10 +152,14 @@ Supabase připojení ověřené 15. 10. 2026: API schématu HTTP 200, tabulky a 
 
 15. 10. 2026: uživatel potvrdil úspěšné spuštění kontroly retence; konkrétní řádky výsledku nebyly předané. Připravený `node --env-file=.env.local scripts/test-gmail.ts` zobrazí náhled zprávy bez síťových požadavků. Varianta `--send` je pouze pro výslovně schválený jednorázový test na kontaktní adresu správce, s lokální ochranou proti opakování. Po výslovném pokynu uživatele Gmail přijal jednu skutečnou testovací zprávu; uživatel následně potvrdil příjem ve schránce; otevření PDF z e-mailu zatím výslovně nepotvrdil. Sběr zůstává vypnutý.
 
-## Ukázkový provoz pro hodnocení (15. 10. 2026)
+## Historie ukázkového provozu pro hodnocení (15. 10. 2026)
 
 Uživatel zvolil demo, nikoliv veřejný sběr kontaktů. GUIDE_DEMO_MODE=true serverově přijímá jen PRIVACY_CONTACT_EMAIL; jinou adresu odmítne před databází i poskytovatelem. Formulář předvyplní tuto zveřejněnou adresu správce a zamkne pole, vysvětlí omezení a po úspěchu nabídne PDF. Veřejné informace jsou v /ochrana-udaju.html, verze 2026-10-15-demo-v1. Při změně režimu je nutné znovu vyřešit smluvní podmínky a informační povinnosti pro skutečné návštěvníky. Gmail kopie bude provozovatel podle svého potvrzení trvale mazat nejpozději po 30 dnech.
 
 Produkční API po uživatelském importu proměnných a redeployi vrací HTTP 200, available=false. V UI zkontrolovaná existence 11 Secret položek Production bez čtení hodnot; chyběl MAIL_PROVIDER. Čtyři doplňující položky jsou připravené v ignorované .env.vercel-demo.local; aktivace GUIDE_ENABLED je zvláštní poslední krok. Následuje skutečný test celého formuláře s databázovým zápisem.
 
 Produkční kontrola 15. 10. 2026: config API 200, available=true, demoOnly=true, správná informační URL /ochrana-udaju.html a verze 2026-10-15-demo-v1. Přímý požadavek se syntetickou cizí adresou odmítnutý HTTP 403 demo_only. Read-only kontrola před skutečným formulářovým testem: žádný uložený kontakt ani žádost provozovatele. Následuje uživatelské odeslání přes živý formulář, kontrola databáze a potvrzení přijetí PDF.
+
+## Zadání libovolné e-mailové adresy (15. 10. 2026)
+
+Na výslovný pokyn uživatele se režim mění na GUIDE_DEMO_MODE=false. Pole bude prázdné a upravitelné, server již nebude omezovat adresáta na správce. Platí dosavadní validace, kvóty, RLS a ochrana před duplicitním odesláním. Nová informace má verzi 2026-10-15-v1; původní demo informace zůstávají v public/privacy/2026-10-15-demo-v1.html. Zveřejnění informací není potvrzením smluvního pokrytí všech poskytovatelů. Pro skutečný veřejný sběr stále zbývá dořešit podmínky Vercel Hobby a osobního Gmailu, přenosy a doložení skutečné retence.
