@@ -1,5 +1,6 @@
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { handleGuide } from "./guide.ts";
+import { checkGuideReadiness } from "./guide-readiness.ts";
 export async function guideHttp(
   kind: "config" | "submit",
   request: IncomingMessage & { body?: unknown },
@@ -43,6 +44,11 @@ export async function guideHttp(
       },
       process.env,
     );
+    if (kind === "config" && request.method === "GET" && result.body.available === false) {
+      // Only fixed check names: never log environment values, tokens or request bodies.
+      const failed = checkGuideReadiness(process.env).filter(check => !check.ok).map(check => check.name);
+      console.warn("Guide unavailable; failed setup checks:", failed.join(", "));
+    }
     if (result.status === 405)
       response.setHeader("Allow", kind === "config" ? "GET" : "POST");
     if (result.status === 429) response.setHeader("Retry-After", "3600");

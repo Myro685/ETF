@@ -30,3 +30,5 @@ Vercel DPA výslovně vymezuje Pro/Enterprise, zatímco obecné podmínky odkazu
 18 automatických testů, lint/build a vizuální kontrola syntetické demo scény prošly. Zamčené pole, výslovné vysvětlení a přechod do potvrzení s PDF ověřené v prohlížeči bez živého send.
 
 Po automatickém nasazení veřejné GET /ochrana-udaju.html vrací 200 a ověřenou verzi 2026-10-15-demo-v1. V Notion odškrtnuté informace o zpracování pro uživatelem zvolený demo rozsah; skutečné uložení a celá cesta doručení zůstávají otevřené do živého formulářového testu. Nový skutečný e-mail zatím neposlaný.
+
+Po potvrzení doplnění demo nastavení uživatel provedl redeploy. Po obnovení Vercel UI ověřena přítomnost všech 15 produkčních proměnných; jejich tajné hodnoty nebyly čtené. Deployment 504dcff Ready, veřejné config API však stále available=false. Přidaná diagnostika do runtime logu obsahuje pouze fixní názvy nevyhovujících kontrol z checkGuideReadiness, žádné hodnoty, tokeny, tělo požadavku nebo e-mail. Živý formulář se zatím neodesílal a bod 7 zůstává rozpracovaný.
