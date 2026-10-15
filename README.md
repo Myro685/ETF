@@ -147,3 +147,5 @@ Gmail transport je implementovaný (15. 10. 2026); vyžaduje obě SQL migrace v 
 Pro nový prázdný Supabase projekt lze místo samostatného spouštění dvou migrací vložit do SQL editoru celý supabase/setup-new-project.sql. Je atomický, neobsahuje klíče a odmítne opakované vytvoření existujících tabulek. Nespouštějte oba postupy.
 
 Supabase připojení ověřené 15. 10. 2026: API schématu HTTP 200, tabulky a potřebné serverové funkce dostupné. Živé uložení kontaktu a doručení čekají na retenci, finální informace, veřejné URL a akceptační test.
+
+15. 10. 2026: uživatel potvrdil úspěšné spuštění kontroly retence; konkrétní řádky výsledku nebyly předané. Připravený `node --env-file=.env.local scripts/test-gmail.ts` zobrazí náhled zprávy bez síťových požadavků. Varianta `--send` je pouze pro výslovně schválený jednorázový test na kontaktní adresu správce, s lokální ochranou proti opakování. Žádná zpráva zatím neodeslaná; sběr zůstává vypnutý.

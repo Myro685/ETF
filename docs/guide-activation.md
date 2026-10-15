@@ -91,3 +91,7 @@ select cron.schedule(
 Uživatel výslovně schválil publikaci průvodce v samostatném veřejném bucketu clientelo-public svého Supabase projektu. Skript `node --env-file=.env.local scripts/publish-guide.ts` vytvořil tento bucket pouze pro PDF a nahrál připravené vydání bez přepisování. Stažení bez přihlášení ověřilo MIME i shodný SHA-256; GUIDE_DOWNLOAD_URL je uložené v ignorované konfiguraci. Kontaktní tabulky ani jejich oprávnění nebyly změněné.
 
 Uživatel potvrdil nastavení hodinového Cronu a region Europe. Samostatné ověření aktivní úlohy a historie čeká na výsledek read-only `supabase/verify-retention.sql`; navigace do Cron přehledu v prohlížeči se vracela do Database. Výmaz syntetického expirovaného kontaktu dosud neověřený. GUIDE_ENABLED zůstává false; žádný e-mail neodeslaný.
+
+## Kontrola retence a příprava Gmail testu — 15. 10. 2026
+
+Uživatel potvrdil „Hotovo, prošlo“ po verify-retention.sql. Jde o uživatelské potvrzení úspěšné kontroly, nikoliv samostatně pozorované active/succeeded řádky nebo test skutečného výmazu. Připravený scripts/test-gmail.ts používá stejný MIME generátor jako aplikace. Bez argumentu pouze vypíše adresáta, předmět a tělo; --send je vyhrazené schválenému jednorázovému testu na kontaktní adresu správce. Lokální exkluzivní claim v ignorované private-data zabrání druhému pokusu po timeoutu či chybě. Do Supabase nezapisuje a formulář neaktivuje; ani úspěšný test odesílatele sám neuzavře bod 7.
