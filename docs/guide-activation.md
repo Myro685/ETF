@@ -59,3 +59,5 @@ Oficiální dokumentace: [Supabase API keys](https://supabase.com/docs/guides/ap
 ## Navazující změna 15. 10. 2026
 
 Uživatel nemá vlastní doménu a pokračuje cestou Gmail API. Místní propojení připravené v docs/gmail-setup.md. Původní Resend kroky výše jsou alternativní cesta; pro zvolenou Gmail cestu není ověření vlastní domény podmínkou. Supabase, informace o zpracování a živé ověření stále zbývají.
+
+Gmail OAuth je nyní skutečně propojené a obnovení tokenu ověřené. Nový Gmail transport i kontrola konfigurace připravené. V Supabase jsou potřeba dvě migrace v pořadí: 001-guide.sql, 002-gmail.sql. Původní Resend doména není podmínkou zvolené Gmail cesty. GUIDE_ENABLED zůstává false; nebyl odeslaný žádný skutečný e-mail.

@@ -184,6 +184,7 @@ test("Real PostgreSQL migration: contacts, retries, rate limit, grants, delivery
         "utf8",
       ),
     );
+    await db.exec(await readFile(new URL("../supabase/002-gmail.sql", import.meta.url), "utf8"));
     const mailBodies: string[] = [];
     const mailKeys: string[] = [];
     let rejectMail = true;

@@ -29,6 +29,7 @@ export function FormPreview() {
         setCalls((value) => value + 1);
         if (mode === "failure") throw new GuideError("delivery_failed");
         if (mode === "network") throw new GuideError("network");
+        if (mode === "uncertain") throw new GuideError("delivery_uncertain");
         if (mode === "slow")
           await new Promise<void>((resolve) => {
             finish.current = resolve;
@@ -57,6 +58,7 @@ export function FormPreview() {
           <option value="success">Úspěch</option>
           <option value="failure">Chyba odeslání</option>
           <option value="network">Výpadek sítě</option>
+          <option value="uncertain">Nejisté přijetí Gmailem</option>
           <option value="slow">Čekání</option>
           <option value="unavailable">Není nastaveno</option>
         </select>

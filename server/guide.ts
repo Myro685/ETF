@@ -1,4 +1,5 @@
 import { normalizeEmail, isSafeLink } from "../src/utils/email.ts";
+import { readGmailCredentials, gmailAccessToken, buildGuideMime, type GmailCredentials } from "./gmail-delivery.ts";
 
 export type Environment = Record<string, string | undefined>;
 export type PublicPrivacy = {
@@ -12,6 +13,8 @@ type Configuration = {
   supabaseUrl: string;
   supabaseKey: string;
   resendKey: string;
+  gmail: GmailCredentials | null;
+  provider: "resend" | "gmail";
   from: string;
   guideUrl: string;
   privacy: PublicPrivacy;
@@ -20,11 +23,14 @@ export function readConfiguration(env: Environment): Configuration | null {
   const origin = env.APP_ORIGIN;
   const from = normalizeEmail(env.GUIDE_FROM_EMAIL);
   const contact = normalizeEmail(env.PRIVACY_CONTACT_EMAIL);
+  const provider = env.MAIL_PROVIDER || "resend";
+  const gmail = readGmailCredentials(env);
   if (
     !origin ||
     !isSafeLink(env.SUPABASE_URL) ||
     !env.SUPABASE_SECRET_KEY ||
-    !env.RESEND_API_KEY ||
+    !["resend", "gmail"].includes(provider) ||
+    (provider === "gmail" ? !gmail : !env.RESEND_API_KEY) ||
     !from ||
     !isSafeLink(env.GUIDE_DOWNLOAD_URL) ||
     !env.PRIVACY_CONTROLLER_NAME?.trim() ||
@@ -44,7 +50,9 @@ export function readConfiguration(env: Environment): Configuration | null {
     from,
     supabaseUrl: env.SUPABASE_URL.replace(/\/$/, ""),
     supabaseKey: env.SUPABASE_SECRET_KEY,
-    resendKey: env.RESEND_API_KEY,
+    resendKey: env.RESEND_API_KEY || "",
+    gmail,
+    provider: provider as "resend" | "gmail",
     guideUrl: env.GUIDE_DOWNLOAD_URL,
     privacy: {
       controller: env.PRIVACY_CONTROLLER_NAME.trim(),
@@ -67,6 +75,7 @@ export async function handleGuide(
   input: ApiInput,
   env: Environment,
   fetcher: typeof fetch = fetch,
+  accessToken: typeof gmailAccessToken = gmailAccessToken,
 ): Promise<ApiOutput> {
   const config = readConfiguration(env);
   const error = (status: number, code: string): ApiOutput => ({
@@ -158,7 +167,7 @@ export async function handleGuide(
     contact_email: string;
   };
   try {
-    const raw = await rpc("register_guide_request", {
+    const raw = await rpc(config.provider === "gmail" ? "register_gmail_guide_request" : "register_guide_request", {
       p_id: requestId,
       p_email: email,
       p_notice_version: config.privacy.version,
@@ -199,6 +208,38 @@ export async function handleGuide(
     };
   // Frozen payload from storage keeps retries identical for the provider's idempotency key.
   let mailId: string;
+  if (config.provider === "gmail") {
+    if (job.from_email !== config.from) return error(409, "invalid_request");
+    let token: string;
+    try { token = await accessToken(config.gmail!); }
+    catch { return error(502, "delivery_failed"); }
+    let claim: Record<string, unknown>;
+    try {
+      const raw = await rpc("claim_gmail_guide_request", { p_id: requestId });
+      if (!raw || typeof raw !== "object") throw new Error("Invalid claim response");
+      claim = raw as Record<string, unknown>;
+    }
+    catch { return error(503, "delivery_uncertain"); }
+    if (claim?.claimed === false && typeof claim.mail_id === "string" && claim.mail_id)
+      return { status: 200, body: { accepted: true, downloadUrl: job.download_url } };
+    if (claim?.claimed !== true) return error(409, "delivery_uncertain");
+    // Gmail has no Resend-style idempotency key. Keep the database claim after any
+    // send failure/timeout/crash; a repeated HTTP request must never send a second copy.
+    try {
+      const raw = buildGuideMime({ from: job.from_email, to: email, replyTo: job.contact_email, url: job.download_url, requestId });
+      const response = await fetcher("https://gmail.googleapis.com/gmail/v1/users/me/messages/send", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+        body: JSON.stringify({ raw: Buffer.from(raw).toString("base64url") }),
+        signal: AbortSignal.timeout(10_000),
+      });
+      if (!response.ok) return error(502, "delivery_uncertain");
+      const result = await response.json();
+      if (!result || typeof result !== "object" || !("id" in result) || typeof result.id !== "string" || !result.id)
+        return error(502, "delivery_uncertain");
+      mailId = result.id;
+    } catch { return error(502, "delivery_uncertain"); }
+  } else {
   try {
     const response = await fetcher("https://api.resend.com/emails", {
       method: "POST",
@@ -230,6 +271,7 @@ export async function handleGuide(
   } catch {
     return error(502, "delivery_failed");
   }
+  }
   try {
     const completion = await rpc("complete_guide_request", {
       p_id: requestId,
@@ -243,7 +285,7 @@ export async function handleGuide(
     )
       throw new Error("Invalid completion response");
   } catch {
-    return error(503, "delivery_failed");
+    return error(503, config.provider === "gmail" ? "delivery_uncertain" : "delivery_failed");
   }
   return {
     status: 200,

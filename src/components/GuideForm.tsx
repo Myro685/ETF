@@ -8,7 +8,7 @@ import {
 } from "../services/guide";
 import "./GuideForm.css";
 
-type Status = "idle" | "invalid" | "sending" | "error" | "success";
+type Status = "idle" | "invalid" | "sending" | "error" | "uncertain" | "success";
 export function GuideForm({
   service = guideService,
 }: {
@@ -58,7 +58,7 @@ export function GuideForm({
   }
   async function submit(event: FormEvent) {
     event.preventDefault();
-    if (inFlight.current || status === "success") return;
+    if (inFlight.current || status === "success" || status === "uncertain") return;
     if (!validate()) {
       emailField.current?.focus();
       return;
@@ -90,7 +90,7 @@ export function GuideForm({
       if (!mounted.current) return;
       const code = error instanceof GuideError ? error.code : "unexpected";
       if (code === "expired") request.current = null;
-      setStatus(code === "invalid_email" ? "invalid" : "error");
+      setStatus(code === "invalid_email" ? "invalid" : code === "delivery_uncertain" ? "uncertain" : "error");
       setMessage(guideMessages[code] || guideMessages.unexpected);
       if (code === "invalid_email") emailField.current?.focus();
     } finally {
@@ -168,10 +168,12 @@ export function GuideForm({
               <button
                 type="submit"
                 className="cl-button"
-                disabled={!configuration || status === "sending"}
+                disabled={!configuration || status === "sending" || status === "uncertain"}
               >
                 {status === "sending"
                   ? "Odesíláme…"
+                  : status === "uncertain"
+                    ? "Žádost čeká na ověření"
                   : configuration?.available
                     ? status === "error"
                       ? "Zkusit odeslat znovu"
@@ -181,11 +183,12 @@ export function GuideForm({
             </div>
             <div
               id="cl-form-status"
-              className={"cl-form-status " + status}
+              className={"cl-form-status " + (status === "uncertain" ? "error" : status)}
               role="status"
               aria-atomic="true"
             >
               {message}
+              {status === "uncertain" && privacy && <> <a href={`mailto:${privacy.contact}`}>Kontaktovat správce</a></>}
             </div>
             <p id="cl-form-note" className="cl-form-note">
               E-mail použijeme pro doručení průvodce a vyřízení vaší žádosti.

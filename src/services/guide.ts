@@ -24,6 +24,8 @@ export const guideMessages: Record<string, string> = {
   storage_failed: "Kontakt se nepodařilo uložit. Zkuste odeslání znovu.",
   delivery_failed:
     "Žádost je uložená, ale odeslání e-mailu se nezdařilo. Zkuste to znovu; stejnou žádost neopakujeme jako nový kontakt.",
+  delivery_uncertain:
+    "Žádost je uložená, ale přijetí e-mailu nelze potvrdit. Zkontrolujte schránku a spam. Stejnou žádost z bezpečnostních důvodů znovu neodesíláme; pokud zpráva nepřijde, kontaktujte správce.",
   network:
     "Spojení se přerušilo. Ověřte připojení a zkuste to znovu. Výsledek odeslání zatím nelze potvrdit.",
   timeout:

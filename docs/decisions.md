@@ -112,3 +112,7 @@ Uživatel zvolil Supabase + Resend, účty ještě nemá. Poskytl Miroslav Grund
 ## 2026-10-15 — Gmail API místo požadavku na vlastní doménu
 
 Uživatel pokračoval průvodcem pro Gmail: potvrdil zapnuté API, OAuth konfiguraci a stažení webového JSONu. Jediný stažený soubor odpovídal projektu a redirectu; zkopírovaný do ignorované private-data bez výpisu obsahu. Přidaný connect:gmail s oficiální Google knihovnou, minimálním send scope, PKCE a jednorázovým state. Uživatel musí sám udělit živý souhlas. Tato utilita neposílá zprávu ani neaktivuje formulář. Dosavadní Resend transport zatím nebyl nahrazen; jeho idempotenci nelze automaticky přenést na Gmail. Detailní stav v docs/gmail-setup.md.
+
+## 2026-10-15 — propojený Gmail a databázová ochrana odeslání
+
+Uživatel potvrdil propojení; ověřený soukromý token a živé obnovení bez send. Implementovaný Gmail transport jako zvolená cesta, původní Resend zachovaný alternativně. Obě SQL migrace povinné. Gmail send nemá nativní idempotenci, proto jediný databázově převzatý pokus a při nejasném výsledku ruční ověření místo automatického opakování. Omezení a evidence v docs/gmail-setup.md. Kontakty zůstávají vypnuté; čekáme na skutečný Supabase projekt, informace o zpracování, veřejné PDF a autorizovaný akceptační test.

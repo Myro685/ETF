@@ -17,7 +17,7 @@ Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký t
 - Bod 5 hotový; aktuální přepracování v [docs/design-2026-10-11.md](docs/design-2026-10-11.md), historie struktury v [docs/design.md](docs/design.md).
 - Bod 4 hotový jako příprava návrhů: [dvě textové reklamy](docs/ads.md) s nadpisem a CTA, zaměřené na rozdíly fondů a náklady v Kč. Úvod stránky navazuje na oba sliby; kampaň není spuštěná a návrhy čekají na posouzení uživatelem.
 - Bod 6 hotový: na přání uživatele implementovaná kalkulačka ročního nákladu v Kč a tříotázkový kvíz. [Popis a ověření funkcí](docs/interactive-feature.md).
-- Bod 7 rozpracovaný: formulář s validačními a síťovými stavy, ochranou proti dvojkliku a připraveným Supabase/Resend API. [Nastavení a zbývající kroky](docs/form.md). Čtyřstránkové PDF je hotové; správce a kontakt jsou známé. Uživatel nyní volí Gmail API bez vlastní domény; připravené místní OAuth propojení, živý souhlas a napojení Gmail transportu zbývá. Skutečný sběr a doručení dále čekají na Supabase, veřejné URL a finální informace o zpracování. [Propojení Gmailu](docs/gmail-setup.md). [Aktivace](docs/guide-activation.md).
+- Bod 7 rozpracovaný: formulář s validačními a síťovými stavy, ochranou proti dvojkliku a připraveným Supabase/Resend API. [Nastavení a zbývající kroky](docs/form.md). Čtyřstránkové PDF je hotové; správce a kontakt jsou známé. Uživatel nyní volí Gmail API bez vlastní domény; Gmail OAuth propojené, obnovení tokenu ověřené a serverový transport implementovaný; skutečné odeslání zatím neproběhlo. Skutečný sběr a doručení dále čekají na Supabase, veřejné URL a finální informace o zpracování. [Propojení Gmailu](docs/gmail-setup.md). [Aktivace](docs/guide-activation.md).
 - Termín odevzdání: **16. října 2026**.
 
 Zadání bylo načteno z [Clientelo projektu v Notion](https://app.notion.com/p/3f4e1942c8af80ddacf7c7b070dea863). Notion nyní slouží pouze k odškrtávání bodů. Aktuální informace, rozhodnutí a podrobnosti řešení vedeme v tomto repozitáři.
@@ -141,3 +141,5 @@ Ověření 14. 10. 2026: 11 testů prošlo, PDF vykresleno a zkontrolováno na v
 Pro jednorázové propojení odesílacího Gmail účtu slouží npm run connect:gmail. Podrobný postup a omezení testovacího OAuth jsou v docs/gmail-setup.md. Tento příkaz neodešle žádný e-mail a sám neaktivuje formulář.
 
 Oprava 15. 10. 2026: spuštění Gmail OAuth ověřené i skutečným formulářovým POSTem v Chromu, nejen HTTP testem. Podrobnosti v docs/gmail-setup.md.
+
+Gmail transport je implementovaný (15. 10. 2026); vyžaduje obě SQL migrace v supabase/ v pořadí 001 a 002. MAIL_PROVIDER=gmail používá soukromé GMAIL_* klíče. Příkaz check:guide nyní rozlišuje Gmail a Resend; Gmail nevyžaduje vlastní doménu. 16 testů prošlo, nový nejistý stav ověřený v prohlížeči. Podrobnosti a záměrná absence automatického opakování po nejasném send v docs/gmail-setup.md.

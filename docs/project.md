@@ -14,7 +14,7 @@ Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouz
 | 4 | Dvě reklamy s textem, nadpisem a CTA v repozitáři | Hotovo jako příprava návrhů; docs/ads.md, návaznost úvodu stránky ověřená; kampaň nespuštěná, návrhy k posouzení |
 | 5 | Obsah, pořadí sekcí a vlastní vzhled pro mobil | Hotovo; aktuální redesign přímo v Reactu podle tří skillů, ověření v docs/design-2026-10-11.md |
 | 6 | Interaktivní funkce s ověřenými výsledky | Hotovo; na výslovné přání uživatele dvě: kalkulačka a kvíz, automatické a browser testy v docs/interactive-feature.md |
-| 7 | Formulář, uložení kontaktu, ochrana údajů, doručení | Formulář a serverové API implementované a lokálně testované; PDF hotové, správce a kontakt známé, nyní zvoleno odesílání přes Gmail API; místní OAuth helper připraven, živé propojení a transport zbývá; Supabase, finální informace a koncový test stále zbývají; docs/gmail-setup.md |
+| 7 | Formulář, uložení kontaktu, ochrana údajů, doručení | Formulář a serverové API implementované a lokálně testované; PDF hotové, správce a kontakt známé, nyní zvoleno odesílání přes Gmail API; OAuth propojené a transport implementovaný, obnovení tokenu ověřené; skutečná zpráva neodeslaná; Supabase, finální informace a koncový test stále zbývají; docs/gmail-setup.md |
 | 8 | Rozlišení reklam, události trychtýře a ověření záznamu | Nezahájeno |
 | 9 | README, důvody řešení, zdroje, konverze, tři A/B hypotézy, spuštění | Rozpracováno; základ README |
 | 10 | AI pokyny, kontroly, chyby, exporty a metoda exportu | Rozpracováno; souhrn, úplné exporty chybí |
