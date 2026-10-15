@@ -1,0 +1,133 @@
+{
+  "exported_at_utc": "2026-10-15T19:40:57.182227+00:00",
+  "method": "scripts/export-ai.py; visible user/assistant response_item messages; no reconstruction",
+  "scope": "Point-in-time redacted text export; excludes tools, internal instructions, reasoning, event duplicates, images and later messages.",
+  "sources": [
+    {
+      "label": "clientelo-start",
+      "source_file": "rollout-2026-10-09T09-56-09-01a11fa9-9196-7390-a990-c3fea149c070.jsonl",
+      "source_sha256": "d77515b4ff97892b75bc8ca6a2d3636780e43b57f4f350d7723f5c06e49ec7d3",
+      "source_bytes": 2307541,
+      "messages": 33,
+      "roles": {
+        "user": 10,
+        "assistant": 23
+      },
+      "first_message": "2026-10-09T07:58:32.409Z",
+      "last_message": "2026-10-09T09:27:46.041Z",
+      "redactions": {
+        "ambient_browser_context": 2,
+        "automatic_context": 3
+      },
+      "excluded_records": {
+        "session_meta": 1,
+        "event_msg": 254,
+        "non_public_message": 16,
+        "automatic_context_only": 3,
+        "world_state": 6,
+        "turn_context": 11,
+        "response_item": 163,
+        "token_usage_record": 71,
+        "compacted": 1
+      },
+      "outputs": {
+        "clientelo-start.md": "49e55ad25fd78f1bee63d8afa57baaedc4022d3344a53b7e58e254e201cde44f",
+        "clientelo-start.jsonl": "99b76241a0c942649b30a4c1d9a9c9234ca25be93e11179a3aa80307d54ad5dd"
+      }
+    },
+    {
+      "label": "clientelo-main",
+      "source_file": "rollout-2026-10-09T11-27-53-01a11fa9-9196-7390-a990-c3fea149c070_01a11ffd-9100-7c12-89ec-c625055826fd.jsonl",
+      "source_sha256": "df3966b773cb5aee09a887f922bce8267259aeca5ae8c37a752388eb57a437a3",
+      "source_bytes": 41632640,
+      "messages": 214,
+      "roles": {
+        "user": 53,
+        "assistant": 161
+      },
+      "first_message": "2026-10-09T09:27:55.485Z",
+      "last_message": "2026-10-15T19:40:45.107Z",
+      "redactions": {
+        "email": 6,
+        "ambient_browser_context": 27,
+        "automatic_context": 14
+      },
+      "excluded_records": {
+        "session_meta": 1,
+        "event_msg": 2655,
+        "non_public_message": 52,
+        "world_state": 18,
+        "turn_context": 52,
+        "response_item": 1936,
+        "token_usage_record": 714,
+        "automatic_context_only": 14,
+        "compacted": 7,
+        "inter_agent_communication_metadata": 8
+      },
+      "outputs": {
+        "clientelo-main.md": "a0eb031f8d046ab858617e16f5af392abaa2e35f0df0e60780d2f9da73e8cc35",
+        "clientelo-main.jsonl": "23bcd3843f670dc09c022be9abf087756ace0fbdf92522e04d7768913f0b9dc5"
+      }
+    },
+    {
+      "label": "finish-review",
+      "source_file": "rollout-2026-10-11T18-14-03-01a12bbe-240b-79c0-acb1-484f85245531.jsonl",
+      "source_sha256": "d4650ef604b0ef7fd6ae5eb4f612c8a230169f888bc491829811238b13c353f4",
+      "source_bytes": 953360,
+      "messages": 4,
+      "roles": {
+        "assistant": 4
+      },
+      "first_message": "2026-10-11T16:14:58.540Z",
+      "last_message": "2026-10-11T16:20:06.821Z",
+      "redactions": {
+        "automatic_context": 1
+      },
+      "excluded_records": {
+        "session_meta": 1,
+        "event_msg": 46,
+        "non_public_message": 3,
+        "automatic_context_only": 1,
+        "world_state": 1,
+        "turn_context": 4,
+        "inter_agent_communication_metadata": 4,
+        "response_item": 28,
+        "token_usage_record": 13
+      },
+      "outputs": {
+        "finish-review.md": "08c33d808da0a17434ca9004275ea24e77ff11a73ba8a18ed30cbaf8f9dc9c95",
+        "finish-review.jsonl": "f6f6446c5773ce6b9dcfda9cef6d3e7dd592465f220d9c61fe61ec8963123d5e"
+      }
+    },
+    {
+      "label": "design-documenter",
+      "source_file": "rollout-2026-10-11T18-17-18-01a12bc1-1c79-7a00-9f75-63bd24caf69c.jsonl",
+      "source_sha256": "69f446ed50bb66c6e21e4a343a77c3bbaa350de13d4a49dbad57932bf55e6ab2",
+      "source_bytes": 574941,
+      "messages": 1,
+      "roles": {
+        "assistant": 1
+      },
+      "first_message": "2026-10-11T16:23:02.334Z",
+      "last_message": "2026-10-11T16:23:02.334Z",
+      "redactions": {
+        "automatic_context": 1
+      },
+      "excluded_records": {
+        "session_meta": 1,
+        "event_msg": 41,
+        "non_public_message": 3,
+        "automatic_context_only": 1,
+        "world_state": 1,
+        "turn_context": 1,
+        "inter_agent_communication_metadata": 2,
+        "response_item": 40,
+        "token_usage_record": 15
+      },
+      "outputs": {
+        "design-documenter.md": "6339e42aa77d41db8561a4d8b8e9294555e3dca91bffb589921f89447bc5c257",
+        "design-documenter.jsonl": "a68db1d175add5dc13b77873e98c1ce7c17ab1b25ecbc465d45c10b757770d13"
+      }
+    }
+  ]
+}

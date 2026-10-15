@@ -135,14 +135,16 @@ check:guide vypisuje jen názvy chybějících kontrol bez hodnot. Kontroluje m�
 - Dřívější browser kontrola šířek 320, 390, 768 a 1 440 px je zaznamenaná v docs/design.md; neznamená dokončené testování měření ani plný screen reader audit. Pohyb respektuje prefers-reduced-motion.
 - **Bod 7:** hotovo v rozsahu zadání — formulář, uložení a doručení, účel a doba uchování u pole, správce a veřejné informace dostupné také z patičky. Otevřené smluvní/provozní otázky pro ostrý veřejný provoz jsou samostatně v [docs/privacy-operations.md](docs/privacy-operations.md); odškrtnutí bodu není potvrzení právní shody.
 - **Bod 8:** vlastní měření se souhlasem, rozlišením reklam, událostmi a soukromým reportem. SQL migrace `003-measurement.sql` následuje po nastavení formuláře. Podrobnosti a ověření v [docs/measurement.md](docs/measurement.md). Skutečná obchodní konverze zatím není známá; A/B hypotézy nejsou spuštěné.
-- **Body 10–12:** úplné exporty AI konverzací, závěrečná kontrola tajných údajů v historii, souhrnný test nasazeného webu včetně měření a odevzdání ještě nejsou hotové. Původní zadávací e-mail nebyl načtený a odevzdávací zpráva nebyla odeslaná.
+- **Bod 10:** skutečné redigované textové exporty od začátku projektu a dvou pomocných agentů v [ai-log/exports](ai-log/exports/README.md). Obsahují původní zprávy, časové údaje a manifest; metoda i vynechané části jsou výslovně popsané.
+- **Bod 11:** hotovo v rozsahu nasazení a kontrol; 23 testů, mobilní web, navigace, formulářové stavy, dostupnost PDF a zápis měření ověřené. Audit dosažitelné Git historie i exportů bez nálezů aplikačních klíčů či kontaktů návštěvníků. [Závěrečný protokol a omezení](docs/final-verification.md).
+- **Bod 12:** odevzdání zbývá. Původní e-mailová schránka nebyla načtená a odevzdávací zpráva nebyla odeslaná.
 - Vite upozorňuje na samostatný 3D chunk přibližně 530 kB. Mobilní LCP v reálné síti není změřené. Žádná placená reklama neběží.
 
 ## Spolupráce s AI a orientace v repozitáři
 
 Používáme Codex. AI dostala pokyny načíst Notion zadání, připravit varianty cílové skupiny, vytvořit React projekt, rozvíjet schválený vzhled, průběžně ověřovat fakta a zapisovat stav do souborů. Uživatel schvaloval cílovou skupinu, nabídku, vzhled a změny režimu formuláře. Projektové instrukce jsou v AGENTS.md a .agents/rules/project.md; před použitím konkrétního skillu čteme jeho SKILL.md.
 
-Výstupy kontrolujeme proti zadání, primárním zdrojům, automatickým testům a v prohlížeči; skutečné doručení potvrzuje uživatel, databázové přijetí ověřujeme samostatně. Konkrétní opravy AI (například politika Origin u OAuth nebo přípony importů na Vercelu) a omezení kontrol jsou v [ai-log](ai-log/). Zápisy jsou pravdivé pracovní souhrny, **ne úplný export konverzace**. Úplné exporty a způsob jejich pořízení zbývají v bodu 10. Historii instalací a použitých designových skillů zachovávají ai-log a docs/design-2026-10-11.md.
+Výstupy kontrolujeme proti zadání, primárním zdrojům, automatickým testům a v prohlížeči; skutečné doručení potvrzuje uživatel, databázové přijetí ověřujeme samostatně. Konkrétní opravy AI (například politika Origin u OAuth nebo přípony importů na Vercelu) a omezení kontrol jsou v [ai-log](ai-log/). Denní zápisy jsou pravdivé pracovní souhrny. Odděleně jsou nyní uložené [skutečné exporty dialogu](ai-log/exports/README.md) z místních souborů Codexu, nikoli rekonstrukce modelem. Zveřejněná textová verze má označené redakce a neobsahuje interní instrukce, uvažování, surové nástroje ani binární přílohy; přesné zdroje a rozsah uvádí manifest. Historii instalací a použitých designových skillů zachovávají ai-log a docs/design-2026-10-11.md.
 
 | Umístění | Účel |
 | --- | --- |
@@ -154,6 +156,6 @@ Výstupy kontrolujeme proti zadání, primárním zdrojům, automatickým testů
 | docs/ | Podrobnosti nabídky, reklam, dat, vzhledu, formuláře a provozu |
 | tests/ | Syntetické automatické testy a lokální náhled formuláře |
 | .agents/, AGENTS.md | Pravidla a projektové skilly |
-| ai-log/ | Souhrny spolupráce a místo pro budoucí exporty |
+| ai-log/ | Denní souhrny a exports/ se skutečnými redigovanými textovými zprávami a manifestem |
 
 Tajné konfigurace, OAuth soubory, soukromé záznamy zpráv a data kontaktů se do repozitáře neukládají. Podrobný stav všech bodů je v [přehledu projektu](docs/project.md).
