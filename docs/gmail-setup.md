@@ -31,3 +31,9 @@ Dále zbývá Supabase, skutečné ukládání kontaktů, finální informace o 
 13 testů včetně dosavadních funkcí. Nové testy ověřují minimální scope, PKCE/state/offline parametry, kanonický endpoint, Host/Origin, prošlý a neplatný callback, odmítnutí širšího přístupu, neuložení access tokenu a odmítnutí replay. Používají syntetické údaje, bez skutečného Google token exchange. První HTTP test předával Host přes fetch, které jej nepřeneslo; opravená testovací doprava používá nativní HTTP. Lint a TypeScript build prošly. Živý souhlas musí provést uživatel.
 
 Podklady: [Google web-server OAuth](https://developers.google.com/identity/protocols/oauth2/web-server), [Gmail scopes](https://developers.google.com/workspace/gmail/api/auth/scopes), [platnost refresh tokenů](https://developers.google.com/identity/protocols/oauth2#expiration). Kontrola 15. 10. 2026.
+
+## Oprava spuštění v Chromu 15. 10. 2026
+
+Uživatel narazil na „Neplatný začátek propojení“. Původní globální Referrer-Policy: no-referrer v Chromu potlačí Origin běžného POST formuláře na null, což kolidovalo s ochranou start endpointu. Úvod nyní používá same-origin; callback s autorizačním kódem nadále používá no-referrer. Kontroly Host, Origin, ticket, PKCE a state se nevypínají. Testy kontrolují obě hlavičky i odmítnutí null Origin.
+
+Původní vlastní proces zastavený a spuštěná opravená verze. Skutečný Chrome formulář ověřený: kliknutí úspěšně otevřelo accounts.google.com s výběrem účtu pro Clientelo. Udělení oprávnění zůstává uživateli; v okamžiku kontroly nebyl token vytvořený ani e-mail odeslaný. 13 testů prošlo. MDN popisuje souvislost Referrer-Policy a Origin u formulářových POSTů: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Origin.

@@ -49,11 +49,13 @@ test("OAuth callback rejects CSRF, expired or extra-scope grants and never persi
   try {
     const page = await request("/");
     assert.equal(page.headers.get("cache-control"), "no-store");
+    assert.equal(page.headers.get("referrer-policy"), "same-origin", "native browser POST must retain its Origin");
     const html = await page.text();
     const start = html.match(/action="([^"]+)"/)![1];
     const authorize = () => request(start, { method: "POST", headers: { Origin: "http://127.0.0.1:5175" } });
     assert.equal((await request("/", { headers: { Host: "attacker.invalid" } })).status, 403);
     assert.equal((await request(start, { method: "POST", headers: { Origin: "https://attacker.invalid" } })).status, 403);
+    assert.equal((await request(start, { method: "POST", headers: { Origin: "null" } })).status, 403);
     assert.equal((await authorize()).status, 303);
     assert.equal((await request("/oauth/callback?state=wrong&code=synthetic")).status, 403);
     assert.equal(exchanges, 0);
@@ -69,6 +71,7 @@ test("OAuth callback rejects CSRF, expired or extra-scope grants and never persi
     const callback = `/oauth/callback?state=${state}&code=synthetic`;
     const success = await request(callback);
     assert.equal(success.status, 303);
+    assert.equal(success.headers.get("referrer-policy"), "no-referrer", "authorization code must not leak through navigation");
     assert.equal(success.headers.get("location"), "/");
     assert.deepEqual(saved, { refresh_token: "synthetic-refresh", scope: GMAIL_SCOPE, token_type: "Bearer" });
     const beforeReplay = exchanges;

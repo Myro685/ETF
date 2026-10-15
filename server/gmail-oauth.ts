@@ -60,7 +60,9 @@ export function createGmailOAuthServer({ adapter, save, onConnected = () => {}, 
   let connected = false;
   return createServer(async (request, response) => {
     response.setHeader("Cache-Control", "no-store");
-    response.setHeader("Referrer-Policy", "no-referrer");
+    // no-referrer makes Chromium send Origin: null on ordinary form POSTs,
+    // which would reject our own start form. Keep origin for local navigation.
+    response.setHeader("Referrer-Policy", "same-origin");
     response.setHeader("X-Content-Type-Options", "nosniff");
     response.setHeader("Content-Security-Policy", "default-src 'none'; style-src 'unsafe-inline'; form-action 'self' https://accounts.google.com; frame-ancestors 'none'; base-uri 'none'");
     const end = (status: number, text: string) => {
@@ -100,6 +102,8 @@ export function createGmailOAuthServer({ adapter, save, onConnected = () => {}, 
       return;
     }
     if (url.pathname === "/oauth/callback") {
+      // This URL can contain an authorization code; never forward its referrer.
+      response.setHeader("Referrer-Policy", "no-referrer");
       if (request.method !== "GET") return end(405, "Nepovolená metoda.");
       if (!pending || now() > pending.expires || !matches(url.searchParams.get("state"), pending.state))
         return end(403, "Neplatné nebo prošlé propojení. Vraťte se na http://127.0.0.1:5175/ a začněte znovu.");

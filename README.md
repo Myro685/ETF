@@ -139,3 +139,5 @@ Průvodce je v `public/guides/pruvodce-etf-2026-10-14.pdf` a build jej kopíruje
 Ověření 14. 10. 2026: 11 testů prošlo, PDF vykresleno a zkontrolováno na všech čtyřech stranách včetně českých znaků a 8 odkazů. Živý test Supabase/Resend čeká na založení účtů. Lint ignoruje externí skripty nainstalovaných skillů; aplikační, serverový a vlastní skriptový kód zůstává kontrolovaný.
 
 Pro jednorázové propojení odesílacího Gmail účtu slouží npm run connect:gmail. Podrobný postup a omezení testovacího OAuth jsou v docs/gmail-setup.md. Tento příkaz neodešle žádný e-mail a sám neaktivuje formulář.
+
+Oprava 15. 10. 2026: spuštění Gmail OAuth ověřené i skutečným formulářovým POSTem v Chromu, nejen HTTP testem. Podrobnosti v docs/gmail-setup.md.
