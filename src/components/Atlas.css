@@ -37,7 +37,7 @@
 .cl-page .cl-presets button:hover, .cl-page .cl-tool-secondary:hover { text-decoration: none; }
 .cl-sculpture { margin: 0; min-width: 0; background: var(--cl-surface); border-radius: 16px; padding: 22px; }
 .cl-sculpture-head { color: var(--cl-muted); font-size: 13px; font-weight: 550; }
-.cl-sculpture-canvas { height: 250px; position: relative; }
+.cl-sculpture-canvas { width: 100%; aspect-ratio: 2.2; min-height: 175px; position: relative; overflow: hidden; }
 .cl-sculpture-canvas canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
 .cl-sculpture-canvas[data-rendered="true"] .cl-sculpture-fallback { visibility: hidden; }
 .cl-sculpture-canvas[data-rendered="false"] canvas { visibility: hidden; }
@@ -134,15 +134,8 @@
 .cl-footer { border-top: 1px solid var(--cl-line); padding-block: 26px; font-size: 12px; color: var(--cl-muted); }
 .cl-page :focus-visible { outline: 2px solid var(--cl-accent); outline-offset: 4px; }
 .cl-page [id] { scroll-margin-top: 24px; }
-.cl-sculpture-fallback { display: flex; justify-content: space-around; align-items: center; height: 100%; gap: 6%; padding: 24px 4%; }
-.cl-study { display: grid; grid-template-columns: repeat(2,1fr); gap: 5px; width: 28%; transform: rotate(-12deg) skew(12deg); }
-.cl-study i { display: block; aspect-ratio: 1; background: #203a30; }
-.cl-study-2 { grid-template-columns: repeat(3,1fr); gap: 4px; }
-.cl-study-2 i { background: #cad8cb; }
-.cl-study-2 i:nth-child(3n) { background: #203a30; }
-.cl-study-3 { grid-template-columns: repeat(3,1fr); }
-.cl-study-3 i { background: #39725a; }
-.cl-study-3 i:nth-child(2n) { grid-column: 3; }
+.cl-sculpture-fallback { position: absolute; inset: 0; }
+.cl-sculpture-preview { display: block; width: 100%; height: 100%; }
 /* Finite 3D entrance lives in marketScene; UI feedback never hides content. */
 @media (hover: hover) and (pointer: fine) {
   .cl-page .cl-button:hover, .cl-page .cl-form button:not(:disabled):hover { background: #204c37; text-decoration: none; }
@@ -167,7 +160,6 @@
   .cl-hero { gap: 26px; padding-block: 52px; }
   .cl-page h1 { font-size: 43px; }
   .cl-sculpture { padding: 18px; }
-  .cl-sculpture-canvas { height: 225px; }
   .cl-page .cl-calculator-panel { gap: 28px; padding: 26px; }
   .cl-page .cl-guide { gap: 40px; }
   .cl-page .cl-form-row { flex-wrap: wrap; }
@@ -186,7 +178,6 @@
   .cl-page .cl-button { font-size: 13px; padding-inline: 16px; gap: 12px; }
   .cl-secondary { font-size: 12px; }
   .cl-sculpture { padding: 20px; }
-  .cl-sculpture-canvas { height: 200px; }
   .cl-section { padding-block: 44px; }
   .cl-page h2 { font-size: 28px; }
   .cl-section-heading { margin-bottom: 24px; }
@@ -226,7 +217,6 @@
   .cl-wrap { width: calc(100% - 32px); }
   .cl-page h1 { font-size: 29px; }
   .cl-sculpture { padding: 16px; }
-  .cl-sculpture-canvas { height: 175px; }
   .cl-hero-actions { gap: 8px; }
   .cl-page .cl-cost-values dd { font-size: 19px; }
 }
@@ -235,6 +225,6 @@
 }
 @media (forced-colors: active) {
   .cl-page :focus-visible { outline-color: Highlight; }
-  .cl-study i { background: CanvasText; }
+  .cl-sculpture-preview path { fill: CanvasText; stroke: Canvas; }
   .cl-page .cl-form input[aria-invalid="true"] { border-color: Highlight; }
 }

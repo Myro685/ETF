@@ -1,6 +1,7 @@
 import {
   AmbientLight,
   BoxGeometry,
+  Box3,
   DirectionalLight,
   Mesh,
   MeshStandardMaterial,
@@ -11,6 +12,7 @@ import {
   ShadowMaterial,
   SRGBColorSpace,
   WebGLRenderer,
+  Vector3,
 } from "three";
 
 // Imported only when the illustration approaches the viewport.
@@ -94,6 +96,26 @@ export function createMarketScene(element: HTMLDivElement) {
     }
   }
 
+  // Fit the complete, fully raised illustration rather than a fixed width.
+  // The shadow floor is deliberately excluded from these bounds.
+  camera.updateMatrixWorld();
+  const viewBounds = new Box3();
+  scene.traverse((object) => {
+    if (!(object instanceof Mesh)) return;
+    const bounds = new Box3().setFromObject(object);
+    for (const x of [bounds.min.x, bounds.max.x]) {
+      for (const y of [bounds.min.y, bounds.max.y]) {
+        for (const z of [bounds.min.z, bounds.max.z]) {
+          viewBounds.expandByPoint(new Vector3(x, y, z).applyMatrix4(camera.matrixWorldInverse));
+        }
+      }
+    }
+  });
+  const horizontalExtent = (viewBounds.max.x - viewBounds.min.x) / 2;
+  const verticalExtent = (viewBounds.max.y - viewBounds.min.y) / 2;
+  const centerX = (viewBounds.max.x + viewBounds.min.x) / 2;
+  const centerY = (viewBounds.max.y + viewBounds.min.y) / 2 - 0.12;
+
   const floorGeometry = new PlaneGeometry(200, 200);
   const floorMaterial = new ShadowMaterial({ opacity: 0.15 });
   const floor = new Mesh(floorGeometry, floorMaterial);
@@ -148,12 +170,12 @@ export function createMarketScene(element: HTMLDivElement) {
     if (sizeDirty) {
       const { width, height } = element.getBoundingClientRect();
       if (!width || !height) return;
-      const halfWidth = 4.8;
+      const halfWidth = Math.max(horizontalExtent * 1.12, verticalExtent * (width / height) * 1.18);
       const halfHeight = (halfWidth * height) / width;
-      camera.left = -halfWidth;
-      camera.right = halfWidth;
-      camera.top = halfHeight;
-      camera.bottom = -halfHeight;
+      camera.left = centerX - halfWidth;
+      camera.right = centerX + halfWidth;
+      camera.top = centerY + halfHeight;
+      camera.bottom = centerY - halfHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(width, height);
       sizeDirty = false;
