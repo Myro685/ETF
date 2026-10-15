@@ -145,3 +145,5 @@ Oprava 15. 10. 2026: spuštění Gmail OAuth ověřené i skutečným formulář
 Gmail transport je implementovaný (15. 10. 2026); vyžaduje obě SQL migrace v supabase/ v pořadí 001 a 002. MAIL_PROVIDER=gmail používá soukromé GMAIL_* klíče. Příkaz check:guide nyní rozlišuje Gmail a Resend; Gmail nevyžaduje vlastní doménu. 16 testů prošlo, nový nejistý stav ověřený v prohlížeči. Podrobnosti a záměrná absence automatického opakování po nejasném send v docs/gmail-setup.md.
 
 Pro nový prázdný Supabase projekt lze místo samostatného spouštění dvou migrací vložit do SQL editoru celý supabase/setup-new-project.sql. Je atomický, neobsahuje klíče a odmítne opakované vytvoření existujících tabulek. Nespouštějte oba postupy.
+
+Supabase připojení ověřené 15. 10. 2026: API schématu HTTP 200, tabulky a potřebné serverové funkce dostupné. Živé uložení kontaktu a doručení čekají na retenci, finální informace, veřejné URL a akceptační test.

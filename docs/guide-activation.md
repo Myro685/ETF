@@ -69,3 +69,19 @@ Uživatel potvrdil vytvoření nového Supabase projektu. Pro první nastavení 
 V SQL editoru nového projektu vytvořit nový dotaz, vložit celý obsah a spustit Run. Úspěch: Success / No rows returned, v public dvě nové tabulky guide_contacts a guide_requests. Teprve potvrzení výsledku znamená provedenou migraci; zatím je zaznamenané pouze vytvoření projektu podle uživatele. Potom doplnit serverový secret key soukromě do konfigurace a nastavit/ověřit hodinovou retenci.
 
 Uživatel 15. 10. 2026 potvrdil úspěšné spuštění SQL. Schéma zatím nebylo ověřené přes API; dalším krokem je soukromé doplnění SUPABASE_URL a SUPABASE_SECRET_KEY do .env.local. Formulář zůstává vypnutý.
+
+## Živé připojení ověřené — 15. 10. 2026
+
+Uživatel doplnil URL a serverový klíč do .env.local. Read-only načtení OpenAPI schématu přes serverový klíč vrátilo HTTP 200 a potvrdilo dostupnost obou tabulek a funkcí register_gmail_guide_request, claim_gmail_guide_request, complete_guide_request a purge_expired_guide_contacts. Hodnoty klíčů ani kontakty se nevypsaly. Nebyl vložený kontakt ani odeslaná zpráva.
+
+Dalším ručním krokem je v Integrations > Cron zapnout pg_cron a v SQL editoru naplánovat:
+
+```sql
+select cron.schedule(
+  'clientelo-contact-retention',
+  '0 * * * *',
+  'select public.purge_expired_guide_contacts()'
+);
+```
+
+Úloha každou hodinu trvale odstraňuje kontakty, jejichž 30denní expirace uplynula, a navázané žádosti. Neodstraňuje odeslané zprávy z Gmailu. Zatím není doložené její vytvoření nebo úspěšný běh; nelze ji uvádět jako aktivní. Zdroj: https://supabase.com/docs/guides/cron/install a https://supabase.com/docs/guides/cron/quickstart (kontrola 15. 10. 2026).
