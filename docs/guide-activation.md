@@ -95,3 +95,5 @@ Uživatel potvrdil nastavení hodinového Cronu a region Europe. Samostatné ov�
 ## Kontrola retence a příprava Gmail testu — 15. 10. 2026
 
 Uživatel potvrdil „Hotovo, prošlo“ po verify-retention.sql. Jde o uživatelské potvrzení úspěšné kontroly, nikoliv samostatně pozorované active/succeeded řádky nebo test skutečného výmazu. Připravený scripts/test-gmail.ts používá stejný MIME generátor jako aplikace. Bez argumentu pouze vypíše adresáta, předmět a tělo; --send je vyhrazené schválenému jednorázovému testu na kontaktní adresu správce. Lokální exkluzivní claim v ignorované private-data zabrání druhému pokusu po timeoutu či chybě. Do Supabase nezapisuje a formulář neaktivuje; ani úspěšný test odesílatele sám neuzavře bod 7.
+
+15. 10. 2026: uživatel výslovně schválil konkrétní test slovy „pošli“. Jediné spuštění scripts/test-gmail.ts --send uspělo, Gmail vrátil platné ID. Claim i výsledek jsou pouze v ignorované private-data, hodnoty tokenů ani ID nejsou zveřejněné. Žádný zápis do Supabase nebo aktivace formuláře. Čekáme na uživatelské potvrzení příjmu a otevření PDF; nejde ještě o koncový test formuláře. Notion se proto nemění.

@@ -125,6 +125,6 @@ Uživatel potvrdil vytvoření projektu. Pro postup po krocích připravený jed
 
 Uživatel výslovně schválil nový veřejný bucket clientelo-public pro připravený čtyřstránkový průvodce. Publikováno pouze toto PDF, ověřená totožnost veřejného souboru a uložený odkaz v soukromé konfiguraci. Kontaktní data se do bucketu nenahrávají. Existující soubory skript nepřepisuje a existujícím privátním bucketům nemění oprávnění. Region Europe je informace uživatele, nikoliv ověřená přesná lokalita. Potvrzené vytvoření Cronu se odlišuje od dosud neověřeného běhu.
 
-## 2026-10-15 — samostatný test odesílatele (připraveno, čeká na schválení)
+## 2026-10-15 — samostatný test odesílatele (schváleno a odesláno)
 
-Po uživatelském potvrzení kontroly retence připravený konkrétní náhled jedné zprávy s veřejným PDF. Adresátem je kontaktní adresa správce ze soukromé konfigurace, nikoliv návštěvník. Test odděluje ověření Gmail doručení od dosud nedokončeného veřejného sběru a informační stránky; nic nezapisuje do databáze kontaktů. Odeslání vyžaduje výslovné schválení adresáta a účelu, které zatím nepřišlo.
+Po uživatelském potvrzení kontroly retence připravený konkrétní náhled jedné zprávy s veřejným PDF. Adresátem je kontaktní adresa správce ze soukromé konfigurace, nikoliv návštěvník. Test odděluje ověření Gmail doručení od dosud nedokončeného veřejného sběru a informační stránky; nic nezapisuje do databáze kontaktů. Uživatel následně výslovně napsal „pošli“. Jediný send uspěl a Gmail vrátil ID zprávy; to zůstává jen v ignorované private-data. Příjem do schránky a otevření PDF ještě nejsou potvrzené.
