@@ -127,4 +127,8 @@ Uživatel výslovně schválil nový veřejný bucket clientelo-public pro přip
 
 ## 2026-10-15 — samostatný test odesílatele (schváleno a odesláno)
 
-Po uživatelském potvrzení kontroly retence připravený konkrétní náhled jedné zprávy s veřejným PDF. Adresátem je kontaktní adresa správce ze soukromé konfigurace, nikoliv návštěvník. Test odděluje ověření Gmail doručení od dosud nedokončeného veřejného sběru a informační stránky; nic nezapisuje do databáze kontaktů. Uživatel následně výslovně napsal „pošli“. Jediný send uspěl a Gmail vrátil ID zprávy; to zůstává jen v ignorované private-data. Příjem do schránky a otevření PDF ještě nejsou potvrzené.
+Po uživatelském potvrzení kontroly retence připravený konkrétní náhled jedné zprávy s veřejným PDF. Adresátem je kontaktní adresa správce ze soukromé konfigurace, nikoliv návštěvník. Test odděluje ověření Gmail doručení od dosud nedokončeného veřejného sběru a informační stránky; nic nezapisuje do databáze kontaktů. Uživatel následně výslovně napsal „pošli“. Jediný send uspěl a Gmail vrátil ID zprávy; to zůstává jen v ignorované private-data. Uživatel následně potvrdil příjem do schránky; otevření PDF z e-mailu ještě výslovně nepotvrdil.
+
+## 2026-10-15 — další krok: hosting
+
+Uživatel si založí účet Vercel samostatně a poté se ozve. Žádné nasazení, propojení GitHub oprávnění nebo přenos serverových klíčů na hosting tímto krokem neproběhly. Po návratu dokončit skutečné provozní údaje pro informační stránku, soukromou konfiguraci hostingu a celý test formulář → Supabase → Gmail → PDF.
