@@ -17,7 +17,7 @@ Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký t
 - Bod 5 hotový; aktuální přepracování v [docs/design-2026-10-11.md](docs/design-2026-10-11.md), historie struktury v [docs/design.md](docs/design.md).
 - Bod 4 hotový jako příprava návrhů: [dvě textové reklamy](docs/ads.md) s nadpisem a CTA, zaměřené na rozdíly fondů a náklady v Kč. Úvod stránky navazuje na oba sliby; kampaň není spuštěná a návrhy čekají na posouzení uživatelem.
 - Bod 6 hotový: na přání uživatele implementovaná kalkulačka ročního nákladu v Kč a tříotázkový kvíz. [Popis a ověření funkcí](docs/interactive-feature.md).
-- Bod 7 rozpracovaný: formulář s validačními a síťovými stavy, ochranou proti dvojkliku a připraveným Supabase/Resend API. [Nastavení a zbývající kroky](docs/form.md). Čtyřstránkové PDF je hotové; správce a kontakt jsou známé. Skutečný sběr a doručení čekají na účty Supabase/Resend, odesílací doménu, veřejné URL a finální informace o zpracování. [Aktivace](docs/guide-activation.md).
+- Bod 7 rozpracovaný: formulář s validačními a síťovými stavy, ochranou proti dvojkliku a připraveným Supabase/Resend API. [Nastavení a zbývající kroky](docs/form.md). Čtyřstránkové PDF je hotové; správce a kontakt jsou známé. Uživatel nyní volí Gmail API bez vlastní domény; připravené místní OAuth propojení, živý souhlas a napojení Gmail transportu zbývá. Skutečný sběr a doručení dále čekají na Supabase, veřejné URL a finální informace o zpracování. [Propojení Gmailu](docs/gmail-setup.md). [Aktivace](docs/guide-activation.md).
 - Termín odevzdání: **16. října 2026**.
 
 Zadání bylo načteno z [Clientelo projektu v Notion](https://app.notion.com/p/3f4e1942c8af80ddacf7c7b070dea863). Notion nyní slouží pouze k odškrtávání bodů. Aktuální informace, rozhodnutí a podrobnosti řešení vedeme v tomto repozitáři.
@@ -137,3 +137,5 @@ Projektový `apple-design` pochází z Emilova balíčku; dřívější globáln
 Průvodce je v `public/guides/pruvodce-etf-2026-10-14.pdf` a build jej kopíruje do `dist/guides/`. Čtyři strany obsahují interpretaci fondů, příklady poplatků, checklist a klikatelné zdroje. Zdrojový generátor `scripts/generate-guide.py` používá stejná data jako web; vyžaduje Python + reportlab a Arial (`--font-dir` určuje adresář s arial.ttf/arialbd.ttf). PDF není nutné generovat při každém buildu. Vydání a data ověření nejsou automaticky dnešní; při změně obsahu aktualizovat zdroje, datum i název souboru vědomě.
 
 Ověření 14. 10. 2026: 11 testů prošlo, PDF vykresleno a zkontrolováno na všech čtyřech stranách včetně českých znaků a 8 odkazů. Živý test Supabase/Resend čeká na založení účtů. Lint ignoruje externí skripty nainstalovaných skillů; aplikační, serverový a vlastní skriptový kód zůstává kontrolovaný.
+
+Pro jednorázové propojení odesílacího Gmail účtu slouží npm run connect:gmail. Podrobný postup a omezení testovacího OAuth jsou v docs/gmail-setup.md. Tento příkaz neodešle žádný e-mail a sám neaktivuje formulář.

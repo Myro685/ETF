@@ -28,6 +28,11 @@ dist-ssr
 .env.*
 !.env.example
 private-data/
+# Guard against accidentally placing downloaded OAuth files outside private-data.
+client_secret*.json
+credentials.json
+token.json
+gmail-tokens.json
 
 # Downloaded platform-specific Impeccable engine (reinstall with npx impeccable install)
 .agents/skills/impeccable/scripts/bin/

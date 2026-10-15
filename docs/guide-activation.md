@@ -1,6 +1,6 @@
 # Aktivace doručení průvodce
 
-Stav 14. 10. 2026: uživatel zvolil Supabase + Resend, účty ještě nemá. Správce a zveřejnitelný kontakt jsou známé. Odesílací doména nebyla sdělena. Formulář zůstává vypnutý, dokud není možné pravdivě potvrdit celý proces.
+Stav 14. 10. 2026: uživatel zvolil Supabase + Resend, účty ještě nemá. Správce a zveřejnitelný kontakt jsou známé. Uživatel potvrdil, že zatím nemá vlastní odesílací doménu. Formulář zůstává vypnutý, dokud není možné pravdivě potvrdit celý proces.
 
 ## 1. Účty a přístupy
 
@@ -55,3 +55,7 @@ Po přípravě všeho výše nastavit `GUIDE_ENABLED=true`, restartovat API a ot
 - Ověřit finální zveřejněné informace a retenci. Teprve poté odškrtnout zbývající tři checkboxy bodu 7 v Notion.
 
 Oficiální dokumentace: [Supabase API keys](https://supabase.com/docs/guides/api/api-keys), [Supabase Cron](https://supabase.com/docs/guides/cron), [Supabase backups](https://supabase.com/docs/guides/platform/backups), [Resend domains](https://resend.com/docs/dashboard/domains/introduction), [Resend errors a omezení testovacího odesílání](https://resend.com/docs/api-reference/errors). Zkontrolováno 14. 10. 2026.
+
+## Navazující změna 15. 10. 2026
+
+Uživatel nemá vlastní doménu a pokračuje cestou Gmail API. Místní propojení připravené v docs/gmail-setup.md. Původní Resend kroky výše jsou alternativní cesta; pro zvolenou Gmail cestu není ověření vlastní domény podmínkou. Supabase, informace o zpracování a živé ověření stále zbývají.
