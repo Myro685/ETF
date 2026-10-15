@@ -1,6 +1,6 @@
 # Clientelo
 
-Veřejná stránka: https://etf-gold.vercel.app/ (Vercel Hobby). Frontend a PDF ověřené bez přihlášení 15. 10. 2026. Uživatel požaduje otevřené zadání e-mailu: připravený přechod z dema na veřejný režim; [nasazení a ověření](docs/deployment.md).
+Veřejná stránka: https://etf-gold.vercel.app/ (Vercel Hobby). Frontend a PDF ověřené bez přihlášení 15. 10. 2026. Formulář přijímá zadání libovolné platné e-mailové adresy, pole je prázdné a upravitelné; [nasazení a ověření](docs/deployment.md).
 
 Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký trh. Pomůže návštěvníkovi pochopit rozdíly mezi fondy a nabídne mu užitečný doplňující obsah výměnou za e-mail.
 
@@ -163,3 +163,5 @@ Produkční kontrola 15. 10. 2026: config API 200, available=true, demoOnly=true
 ## Zadání libovolné e-mailové adresy (15. 10. 2026)
 
 Na výslovný pokyn uživatele se režim mění na GUIDE_DEMO_MODE=false. Pole bude prázdné a upravitelné, server již nebude omezovat adresáta na správce. Platí dosavadní validace, kvóty, RLS a ochrana před duplicitním odesláním. Nová informace má verzi 2026-10-15-v1; původní demo informace zůstávají v public/privacy/2026-10-15-demo-v1.html. Zveřejnění informací není potvrzením smluvního pokrytí všech poskytovatelů. Pro skutečný veřejný sběr stále zbývá dořešit podmínky Vercel Hobby a osobního Gmailu, přenosy a doložení skutečné retence.
+
+Živé ověření přechodu 15. 10. 2026: API available=true, demoOnly=false, verze informací 2026-10-15-v1. Informační stránka 200, původní demo instrukce odstraněné z aktuální verze. V prohlížeči ověřený prázdný input bez readonly; syntetickou adresu šlo napsat a smazat, formulář nebyl odeslaný. Nejde o další skutečný e-mail nebo nový databázový záznam.
