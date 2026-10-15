@@ -52,7 +52,7 @@ Ilustrativní model: z 1 000 návštěv se 200 lidí dostane k nabídce PDF, 60 
 
 Konverze = **počet nově získaných unikátních kontaktů / počet návštěv × 100**. Opakované odeslání stejného kontaktu se nepočítá jako další nový kontakt. Vlastní testy je nutné z vyhodnocení vyřadit. Jeden úspěšný technický test není obchodní konverze.
 
-**Skutečná konverze zatím není známá.** Bod 8 (měření návštěv, zdrojů a událostí) není implementovaný; nemáme odpovídající jmenovatel a nelze uvést ani poctivých 0 %. Po zavedení měření budeme porovnávat reklamy, průchod ke kalkulačce, nabídce a formuláři a počet nových kontaktů. Případný souhlas a informace pro analytiku je potřeba vyřešit před jejím zapnutím.
+**Skutečná obchodní konverze zatím není známá.** Bod 8 má vlastní měření se souhlasem, rozlišením reklam a ověřováním úspěchu formuláře v Supabase. Interní testy se z reportu vyřazují. Výsledky platí pouze pro návštěvy se souhlasem; návštěva znamená relaci v jedné kartě, nové kontakty jsou unikátní v uchovávané historii. Přehled: `npm run report:measurement` (7 dní), případně `npm run report:measurement -- 30`. [Události, reklamní odkazy, vyhodnocení a omezení](docs/measurement.md).
 
 ## Tři A/B hypotézy podle očekávaného dopadu
 
@@ -134,7 +134,7 @@ check:guide vypisuje jen názvy chybějících kontrol bez hodnot. Kontroluje m�
 - Produkční API 200, available=true, demoOnly=false, aktuální informační stránka dostupná. Na živém webu ověřené prázdné upravitelné pole; následná kontrola se syntetickou adresou nebyla odeslaná.
 - Dřívější browser kontrola šířek 320, 390, 768 a 1 440 px je zaznamenaná v docs/design.md; neznamená dokončené testování měření ani plný screen reader audit. Pohyb respektuje prefers-reduced-motion.
 - **Bod 7:** technické ukládání a doručení funguje. Zbývá uzavřít doložení provozních a smluvních podmínek pro veřejný sběr; publikovaný informační text je nenahrazuje. Konkrétní stav a další kroky jsou v docs/privacy-operations.md.
-- **Bod 8:** měření není implementované. Skutečná konverze není známá; A/B hypotézy nejsou spuštěné.
+- **Bod 8:** vlastní měření se souhlasem, rozlišením reklam, událostmi a soukromým reportem. SQL migrace `003-measurement.sql` následuje po nastavení formuláře. Podrobnosti a ověření v [docs/measurement.md](docs/measurement.md). Skutečná obchodní konverze zatím není známá; A/B hypotézy nejsou spuštěné.
 - **Body 10–12:** úplné exporty AI konverzací, závěrečná kontrola tajných údajů v historii, souhrnný test nasazeného webu včetně měření a odevzdání ještě nejsou hotové. Původní zadávací e-mail nebyl načtený a odevzdávací zpráva nebyla odeslaná.
 - Vite upozorňuje na samostatný 3D chunk přibližně 530 kB. Mobilní LCP v reálné síti není změřené. Žádná placená reklama neběží.
 

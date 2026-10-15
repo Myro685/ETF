@@ -9,13 +9,17 @@ import { SourceList } from "./SourceList";
 import { CostCalculator } from "./CostCalculator";
 import { EtfQuiz } from "./EtfQuiz";
 import { GuideForm } from "./GuideForm";
+import { MeasurementConsent } from "./MeasurementConsent";
+import { measurement } from "../services/analytics";
 import "./EtfLanding.css";
 import { MarketSculpture } from "./MarketSculpture";
 import "./Atlas.css";
 const Arrow = () => <ArrowRightIcon aria-hidden="true" width={20} height={20} />;
 export const EtfLanding = () => {
   return (
-    <div className="cl-page" lang="cs">
+    <div className="cl-page" lang="cs" onClickCapture={event => {
+      if ((event.target as HTMLElement).closest('a[href="#cl-guide"]')) void measurement().track("guide_cta");
+    }}>
       <a className="cl-skip" href="#cl-main">
         Přejít na obsah
       </a>
@@ -278,6 +282,7 @@ export const EtfLanding = () => {
         <span>© 2026 Clientelo</span>
         <p>Rozumět rozdílům je dobrý začátek.</p>
         <span>Vzdělávací porovnání ETF</span>
+        <MeasurementConsent />
       </footer>
     </div>
   );

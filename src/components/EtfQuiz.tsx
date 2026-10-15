@@ -3,6 +3,7 @@ import { useRef, useState, type FormEvent } from "react";
 import { quizQuestions, summarizeQuiz, type QuizAnswers } from "../data/quiz";
 import { getSource } from "../data/etfs";
 import "./InteractiveTools.css";
+import { measurement } from "../services/analytics";
 
 export function EtfQuiz() {
   const [step, setStep] = useState(0);
@@ -122,6 +123,7 @@ export function EtfQuiz() {
                       value={option.id}
                       checked={selected === option.id}
                       onChange={() => {
+                        void measurement().track("quiz_use");
                         setAnswers({ ...answers, [question.id]: option.id });
                         setChecked({ ...checked, [question.id]: false });
                         setError("");

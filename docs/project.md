@@ -15,10 +15,10 @@ Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouz
 | 5 | Obsah, pořadí sekcí a vlastní vzhled pro mobil | Hotovo; aktuální redesign přímo v Reactu podle tří skillů, ověření v docs/design-2026-10-11.md |
 | 6 | Interaktivní funkce s ověřenými výsledky | Hotovo; na výslovné přání uživatele dvě: kalkulačka a kvíz, automatické a browser testy v docs/interactive-feature.md |
 | 7 | Formulář, uložení kontaktu, ochrana údajů, doručení | Technický koncový test potvrzený uživatelem a databází: 1 kontakt, 1 žádost, přijetí Gmailem. Uživatel nově požaduje libovolné adresy; přechod z dema nasazený: API demoOnly=false, input upravitelný. Aktivní hodinová retence a úspěšný běh 15. 10. ve 12:00 přímo ověřené. Veřejné informace publikované, konečné doložení smluvních/provozních podmínek zůstává otevřené; docs/privacy-operations.md |
-| 8 | Rozlišení reklam, události trychtýře a ověření záznamu | Nezahájeno |
+| 8 | Rozlišení reklam, události trychtýře a ověření záznamu | Implementované vlastní měření se souhlasem, Supabase RPC, retence a soukromý report; produkční ověření se dokončuje v tomto kroku. docs/measurement.md |
 | 9 | README, důvody řešení, zdroje, konverze, tři A/B hypotézy, spuštění | Hotovo: aktuální README obsahuje celý požadovaný rozsah; konverze 3 % s rozpětím 2–5 % je výslovně vlastní pracovní odhad, A/B hypotézy nejsou spuštěné |
 | 10 | AI pokyny, kontroly, chyby, exporty a metoda exportu | Rozpracováno; souhrn, úplné exporty chybí |
-| 11 | Veřejný GitHub, commity, hosting, mobilní a koncové testy | Rozpracováno; GitHub Myro685/ETF, ověřený responzivní frontend; veřejný frontend na https://etf-gold.vercel.app/ ověřený; opravené API ověřené HTTP 200; produkční veřejný režim a doručení ověřené; souhrnná kontrola včetně dosud neimplementovaného měření zbývá |
+| 11 | Veřejný GitHub, commity, hosting, mobilní a koncové testy | Rozpracováno; GitHub Myro685/ETF, ověřený responzivní frontend; veřejný frontend na https://etf-gold.vercel.app/ ověřený; opravené API ověřené HTTP 200; produkční veřejný režim a doručení ověřené; souhrnná kontrola včetně měření zbývá |
 | 12 | Odpověď na e-mail s GitHub, veřejným webem a omezeními | Nezahájeno |
 
 ## Priority

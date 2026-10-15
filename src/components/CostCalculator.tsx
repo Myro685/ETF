@@ -2,6 +2,7 @@ import { useState } from "react";
 import { funds, etfData, formatDate } from "../data/etfs";
 import { annualFundCost, formatCurrency, parseAmount } from "../utils/costs";
 import "./InteractiveTools.css";
+import { measurement } from "../services/analytics";
 
 export function CostCalculator() {
   const [input, setInput] = useState("100 000");
@@ -37,7 +38,7 @@ export function CostCalculator() {
             inputMode="decimal"
             maxLength={30}
             value={input}
-            onChange={(event) => setInput(event.target.value)}
+            onChange={(event) => { setInput(event.target.value); if (parseAmount(event.target.value).value !== null) void measurement().track("calculator_use"); }}
             aria-invalid={value === null}
             aria-describedby="cl-amount-help cl-amount-error"
           />
@@ -49,7 +50,7 @@ export function CostCalculator() {
               <button
                 key={amount}
                 type="button"
-                onClick={() => setInput(amount.toLocaleString("cs-CZ"))}
+                onClick={() => { setInput(amount.toLocaleString("cs-CZ")); void measurement().track("calculator_use"); }}
                 aria-pressed={value === amount}
               >
                 {amount.toLocaleString("cs-CZ")} Kč

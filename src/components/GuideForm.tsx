@@ -7,6 +7,7 @@ import {
   type GuideConfiguration,
 } from "../services/guide";
 import "./GuideForm.css";
+import { measurement } from "../services/analytics";
 
 type Status = "idle" | "invalid" | "sending" | "error" | "uncertain" | "success";
 export function GuideForm({
@@ -83,6 +84,7 @@ export function GuideForm({
         request.current.id,
         configuration.privacy.version,
       );
+      void measurement().track("form_success", request.current.id);
       if (!mounted.current) return;
       setDownloadUrl(result.downloadUrl);
       setEmail("");
@@ -161,6 +163,7 @@ export function GuideForm({
                 spellCheck={false}
                 placeholder="vas@email.cz"
                 value={email}
+                onFocus={() => { void measurement().track("form_start"); }}
                 readOnly={status === "sending" || configuration?.demoOnly === true}
                 required
                 aria-invalid={status === "invalid"}

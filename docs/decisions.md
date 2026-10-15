@@ -166,3 +166,8 @@ Na výslovnou žádost dokončit body 7 a 9 načtený aktuální checklist a pou
 V Supabase přečtený Cron přehled: clientelo-contact-retention, 0 * * * *, active=true, poslední běh 15. 10. 2026 12:00 Europe/Prague Succeeded. Žádný job se nevytvářel, nespouštěl ručně ani neměnil. Snímek bez kontaktů uložený mimo repozitář.
 
 Primární podmínky znovu ověřené: Vercel DPA výslovně vymezuje Pro/Enterprise. Google Privacy Help Center nejen uvádí absenci DPA pro spotřebitelský Gmail, ale také výslovně odmítá roli zpracovatele; nepřekládáme to na automatický právní zákaz používání Gmailu. Konkrétní role a použitelnost současného uspořádání je nutné posoudit/doložit. Připravený privacy-operations.md odděluje implementaci, důkazy a nezajištěné smluvní/provozní kroky. Aktivace guide-activation.md aktualizovaná; původní form.md výslovně označený jako historická specifikace. Neproběhl nákup, právní souhlas ani další e-mail. Bod 7 nelze bez chybějících skutečností poctivě označit celý jako dokončený.
+
+
+## 2026-10-15 — měření bodu 8
+
+Na pokyn uživatele vlastní analytika v existujícím Supabase přes Vercel API. Bez další služby a klientského tajného klíče. Dobrovolný souhlas s rovnocenným odmítnutím a odvoláním v patičce; měření neblokuje průvodce. Pevné reklamní kategorie podle připravených UTM, žádné hodnoty vstupů ani raw URL. Konverze ověřená proti skutečné dokončené žádosti, odlišení nového kontaktu od opakovaného stažení v uchovávané historii. Soukromý report vylučuje interní testy. Volba technického řešení v rámci autorizovaného dokončení bodu 8; nespouští placenou reklamu ani neuzavírá smluvní předpoklady bodu 7.

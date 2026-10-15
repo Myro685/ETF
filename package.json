@@ -7,6 +7,7 @@
     "dev": "vite",
     "connect:gmail": "node scripts/connect-gmail.ts",
     "check:guide": "node --env-file-if-exists=.env.local scripts/check-guide.ts",
+    "report:measurement": "node --env-file-if-exists=.env.local scripts/report-measurement.ts",
     "dev:api": "node --env-file-if-exists=.env.local server/dev.ts",
     "build": "tsc -b && vite build",
     "lint": "oxlint",

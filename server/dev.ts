@@ -1,10 +1,12 @@
 import { createServer } from "node:http";
 import { guideHttp } from "./http.ts";
+import { eventsHttp } from "./analytics-http.ts";
 createServer((request, response) => {
   if (request.url === "/api/guide-config")
     void guideHttp("config", request, response);
   else if (request.url === "/api/guide")
     void guideHttp("submit", request, response);
+  else if (request.url === "/api/events") void eventsHttp(request, response);
   else {
     response.writeHead(404);
     response.end();
