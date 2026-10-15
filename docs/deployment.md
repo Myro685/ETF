@@ -28,3 +28,5 @@ Veřejná informační stránka: /ochrana-udaju.html, verze 2026-10-15-demo-v1. 
 Vercel DPA výslovně vymezuje Pro/Enterprise, zatímco obecné podmínky odkazují na DPA; automatickou použitelnost pro Hobby netvrdíme. Ukázka není potvrzením právní připravenosti pro skutečný veřejný sběr. Provozní fakta a omezení jsou přiznaná v informacích.
 
 18 automatických testů, lint/build a vizuální kontrola syntetické demo scény prošly. Zamčené pole, výslovné vysvětlení a přechod do potvrzení s PDF ověřené v prohlížeči bez živého send.
+
+Po automatickém nasazení veřejné GET /ochrana-udaju.html vrací 200 a ověřenou verzi 2026-10-15-demo-v1. V Notion odškrtnuté informace o zpracování pro uživatelem zvolený demo rozsah; skutečné uložení a celá cesta doručení zůstávají otevřené do živého formulářového testu. Nový skutečný e-mail zatím neposlaný.
