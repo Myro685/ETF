@@ -7,7 +7,7 @@ Projekt: myro685s-projects/etf, Hobby, GitHub Myro685/ETF, produkční větev ma
 
 GET bez cookies/přihlášení: hlavní stránka 200 HTML s Clientelo; lokální veřejné vydání PDF 200 application/pdf, 86 902 bytů a platná hlavička. Konfigurační API původně 500 FUNCTION_INVOCATION_FAILED. Vercel runtime log ukázal ERR_MODULE_NOT_FOUND: emitovaný api/guide-config.js importoval neexistující server/http.ts.
 
-Příčina: Vercel nepřebírá TypeScript project references z kořenového tsconfig. Přidané kořenové compilerOptions NodeNext, ES2023 a rewriteRelativeImportExtensions. Lokální Node dál pracuje se zdrojovými .ts; produkční emit přepisuje relativní importy na .js. Nový regresní test přeloží oba API vstupy z kořenové konfigurace a skutečně spustí emitovaný konfigurační handler v samostatném procesu. 17 testů, lint a build úspěšné. Dva první HTTP testy sandbox odmítl EACCES; po povolení loopbacku prošly, bez živého send. Ověření opravy na novém deploymentu následuje.
+Příčina: Vercel nepřebírá TypeScript project references z kořenového tsconfig. Přidané kořenové compilerOptions NodeNext, ES2023 a rewriteRelativeImportExtensions. Lokální Node dál pracuje se zdrojovými .ts; produkční emit přepisuje relativní importy na .js. Nový regresní test přeloží oba API vstupy z kořenové konfigurace a skutečně spustí emitovaný konfigurační handler v samostatném procesu. 17 testů, lint a build úspěšné. Dva první HTTP testy sandbox odmítl EACCES; po povolení loopbacku prošly, bez živého send. Oprava ověřená také na živé doméně po automatickém nasazení: GET /api/guide-config vrací 200 application/json s available=false a privacy=null. Služba se správně hlásí jako dosud nenakonfigurovaná.
 
 ## Soukromá produkční konfigurace
 
