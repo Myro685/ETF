@@ -10,6 +10,7 @@ export type PublicPrivacy = {
 };
 type Configuration = {
   origin: string;
+  demoOnly: boolean;
   supabaseUrl: string;
   supabaseKey: string;
   resendKey: string;
@@ -47,6 +48,7 @@ export function readConfiguration(env: Environment): Configuration | null {
   }
   return {
     origin,
+    demoOnly: env.GUIDE_DEMO_MODE === "true",
     from,
     supabaseUrl: env.SUPABASE_URL.replace(/\/$/, ""),
     supabaseKey: env.SUPABASE_SECRET_KEY,
@@ -86,7 +88,7 @@ export async function handleGuide(
     return input.method === "GET"
       ? {
           status: 200,
-          body: { available: !!config, privacy: config?.privacy || null },
+          body: { available: !!config, privacy: config?.privacy || null, demoOnly: config?.demoOnly || false },
         }
       : error(405, "method_not_allowed");
   if (input.method !== "POST") return error(405, "method_not_allowed");
@@ -113,6 +115,8 @@ export async function handleGuide(
   if (input.origin !== config.origin) return error(403, "forbidden");
   if (noticeVersion !== config.privacy.version)
     return error(409, "privacy_changed");
+  // Demo accepts only the operator address, even for a forged direct API request.
+  if (config.demoOnly && email !== config.privacy.contact) return error(403, "demo_only");
   const supabaseHeaders: Record<string, string> = {
     apikey: config.supabaseKey,
     "Content-Type": "application/json",

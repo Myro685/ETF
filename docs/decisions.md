@@ -136,3 +136,9 @@ Uživatel si založí účet Vercel samostatně a poté se ozve. Žádné nasaze
 ## 15. 10. 2026 — první Vercel nasazení
 
 Uživatel dodal etf-gold.vercel.app. Veřejným GET bez autentizace ověřený frontend i PDF. Konfigurační API vracelo 500; read-only Vercel runtime log odhalil import server/http.ts z emitovaného JS. Kořenová konfigurace doplněná o přepis přípon, protože Vercel nepoužívá project references. Nový test skutečně spouští emitované API. 17 testů, lint a build prošly. Soukromá produkční konfigurace připravená lokálně, nikoliv nahraná na hosting. Notion pouze dva checkboxy bodu 11 (nasazení a veřejná dostupnost), zpětné načtení ověřené. Celý bod 7 a koncové testy zůstávají otevřené. Podrobnosti v docs/deployment.md.
+
+## 15. 10. 2026 — ukázkový provoz místo veřejného sběru
+
+Uživatel potvrdil import a redeploy a poté výslovně zvolil ukázku pro hodnocení. Souhlasil s ručním trvalým výmazem kopií zpráv z Gmailu do 30 dnů. Zkontrolované názvy 11 produkčních Secret proměnných bez načtení hodnot; chyběl MAIL_PROVIDER. Veřejný config GET 200, dostupnost zatím false.
+
+Přidaný GUIDE_DEMO_MODE omezuje server před databází i send na přesnou kontaktní adresu správce; frontend předvyplní a zamkne pole a vysvětlí omezení. Syntetický test potvrzuje odmítnutí cizích adres a aliasů bez externího volání. Připravené veřejné informace pro tento konkrétní režim, bez tvrzení o kompletním právním pokrytí veřejného sběru na Hobby a osobním Gmailu. Použité primární podklady Vercel runtime logs/DPA/terms, Supabase DPA/backups a Google privacy; odkazy v docs/deployment.md a informační stránce. 18 testů, lint a build úspěšné; browser syntetický test potvrzení a zamčeného pole bez skutečné zprávy. Soukromé exporty doplněné, sběr zatím false.

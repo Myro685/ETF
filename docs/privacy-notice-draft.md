@@ -1,3 +1,5 @@
+> Historický návrh pro případný veřejný sběr. Uživatel 15. 10. 2026 zvolil pouze ukázku pro hodnocení. Aktuální informace pro tento omezený režim jsou v public/ochrana-udaju.html; tento původní návrh není podkladem pro zapnutí sběru cizích kontaktů.
+
 # Informace o zpracování kontaktu - návrh před aktivací
 
 Datum přípravy: 14. 10. 2026. Tento dokument zatím není publikovaná informační stránka. Před aktivací doplnit provozní skutečnosti uvedené na konci; nevkládat jeho cestu do PRIVACY_POLICY_URL jako hotovou veřejnou stránku.

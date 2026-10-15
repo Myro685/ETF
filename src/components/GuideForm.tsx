@@ -34,7 +34,10 @@ export function GuideForm({
     service
       .load(controller.signal)
       .then((data) => {
-        if (active) setConfiguration(data);
+        if (active) {
+          setConfiguration(data);
+          if (data.demoOnly && data.privacy) setEmail(data.privacy.contact);
+        }
       })
       .catch(() => {
         if (active) setConfiguration({ available: false, privacy: null });
@@ -107,7 +110,7 @@ export function GuideForm({
             Průvodce je připravený.
           </h3>
           <p>
-            E-mail s odkazem jsme předali k odeslání. Doručení do schránky může
+            {configuration?.demoOnly ? "Testovací e-mail provozovateli jsme předali k odeslání." : "E-mail s odkazem jsme předali k odeslání."} Doručení do schránky může
             chvíli trvat; podívejte se také do spamu.
           </p>
           <a
@@ -125,6 +128,12 @@ export function GuideForm({
         </div>
       ) : (
         <>
+          {configuration?.demoOnly && (
+            <p className="cl-prototype-note" id="cl-demo-note">
+              Ukázkový provoz pro hodnocení. Test odešle průvodce pouze provozovateli;
+              vlastní e-mail nezadávejte. Po odeslání si PDF můžete stáhnout i tady.
+            </p>
+          )}
           {!configuration?.available && (
             <p className="cl-prototype-note" id="cl-form-availability">
               {configuration
@@ -152,10 +161,10 @@ export function GuideForm({
                 spellCheck={false}
                 placeholder="vas@email.cz"
                 value={email}
-                readOnly={status === "sending"}
+                readOnly={status === "sending" || configuration?.demoOnly === true}
                 required
                 aria-invalid={status === "invalid"}
-                aria-describedby="cl-form-note cl-form-status"
+                aria-describedby={configuration?.demoOnly ? "cl-demo-note cl-form-note cl-form-status" : "cl-form-note cl-form-status"}
                 onChange={(event) => {
                   setEmail(event.target.value);
                   setStatus("idle");
@@ -177,7 +186,7 @@ export function GuideForm({
                   : configuration?.available
                     ? status === "error"
                       ? "Zkusit odeslat znovu"
-                      : "Poslat průvodce zdarma"
+                      : configuration.demoOnly ? "Poslat testovací průvodce" : "Poslat průvodce zdarma"
                     : "Zkontrolovat e-mail"}
               </button>
             </div>

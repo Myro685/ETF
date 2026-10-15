@@ -1,6 +1,6 @@
 # Clientelo
 
-Veřejná stránka: https://etf-gold.vercel.app/ (Vercel Hobby). Frontend a PDF ověřené bez přihlášení 15. 10. 2026. Formulář čeká na produkční konfiguraci a finální informace o zpracování; [nasazení a ověření](docs/deployment.md).
+Veřejná stránka: https://etf-gold.vercel.app/ (Vercel Hobby). Frontend a PDF ověřené bez přihlášení 15. 10. 2026. Uživatel zvolil ukázku pro hodnocení: připravený formulář přijímá pouze testovací adresu správce a čeká na aktivaci demo nastavení; [nasazení a ověření](docs/deployment.md).
 
 Mobilní stránka pro srozumitelné porovnání ETF zaměřených na americký trh. Pomůže návštěvníkovi pochopit rozdíly mezi fondy a nabídne mu užitečný doplňující obsah výměnou za e-mail.
 
@@ -151,3 +151,9 @@ Pro nový prázdný Supabase projekt lze místo samostatného spouštění dvou 
 Supabase připojení ověřené 15. 10. 2026: API schématu HTTP 200, tabulky a potřebné serverové funkce dostupné. Živé uložení kontaktu a doručení čekají na retenci, finální informace, veřejné URL a akceptační test.
 
 15. 10. 2026: uživatel potvrdil úspěšné spuštění kontroly retence; konkrétní řádky výsledku nebyly předané. Připravený `node --env-file=.env.local scripts/test-gmail.ts` zobrazí náhled zprávy bez síťových požadavků. Varianta `--send` je pouze pro výslovně schválený jednorázový test na kontaktní adresu správce, s lokální ochranou proti opakování. Po výslovném pokynu uživatele Gmail přijal jednu skutečnou testovací zprávu; uživatel následně potvrdil příjem ve schránce; otevření PDF z e-mailu zatím výslovně nepotvrdil. Sběr zůstává vypnutý.
+
+## Ukázkový provoz pro hodnocení (15. 10. 2026)
+
+Uživatel zvolil demo, nikoliv veřejný sběr kontaktů. GUIDE_DEMO_MODE=true serverově přijímá jen PRIVACY_CONTACT_EMAIL; jinou adresu odmítne před databází i poskytovatelem. Formulář předvyplní tuto zveřejněnou adresu správce a zamkne pole, vysvětlí omezení a po úspěchu nabídne PDF. Veřejné informace jsou v /ochrana-udaju.html, verze 2026-10-15-demo-v1. Při změně režimu je nutné znovu vyřešit smluvní podmínky a informační povinnosti pro skutečné návštěvníky. Gmail kopie bude provozovatel podle svého potvrzení trvale mazat nejpozději po 30 dnech.
+
+Produkční API po uživatelském importu proměnných a redeployi vrací HTTP 200, available=false. V UI zkontrolovaná existence 11 Secret položek Production bez čtení hodnot; chyběl MAIL_PROVIDER. Čtyři doplňující položky jsou připravené v ignorované .env.vercel-demo.local; aktivace GUIDE_ENABLED je zvláštní poslední krok. Následuje skutečný test celého formuláře s databázovým zápisem.

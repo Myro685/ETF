@@ -2,6 +2,7 @@ import { isSafeLink } from "../utils/email.ts";
 
 export type GuideConfiguration = {
   available: boolean;
+  demoOnly?: boolean;
   privacy: null | {
     controller: string;
     contact: string;
@@ -18,6 +19,7 @@ export class GuideError extends Error {
   }
 }
 export const guideMessages: Record<string, string> = {
+  demo_only: "V ukázkovém provozu lze průvodce poslat pouze na testovací adresu provozovatele. Cizí kontakt nebyl uložen ani odeslán.",
   invalid_email: "Zadejte e-mail ve tvaru jmeno@domena.cz.",
   unavailable:
     "Doručení průvodce připravujeme. Při tomto pokusu se e-mail neukládá ani neodesílá.",
@@ -56,7 +58,7 @@ export async function loadGuideConfiguration(
     typeof data.privacy.version !== "string"
   )
     throw new GuideError("unavailable");
-  return data;
+  return { ...data, demoOnly: data.demoOnly === true };
 }
 
 export async function requestGuide(

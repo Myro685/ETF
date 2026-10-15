@@ -14,6 +14,7 @@ export function FormPreview() {
       async load() {
         return {
           available: mode !== "unavailable",
+          demoOnly: mode === "demo",
           privacy:
             mode === "unavailable"
               ? null
@@ -56,6 +57,7 @@ export function FormPreview() {
           }}
         >
           <option value="success">Úspěch</option>
+          <option value="demo">Ukázkový provoz</option>
           <option value="failure">Chyba odeslání</option>
           <option value="network">Výpadek sítě</option>
           <option value="uncertain">Nejisté přijetí Gmailem</option>
