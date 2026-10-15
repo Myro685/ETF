@@ -38,3 +38,5 @@ Na žádost uživatele vytvořen projekt C:\Users\miros\Projects\clientelo: Reac
 Na pokyn uživatele doplněné střídmé animace úvodních 3D bloků a ovládacích prvků podle emil-design-eng a animate. Specifikace a ověření v docs/motion.md. Jde o doladění bodu 5; nové body v Notion se neodškrtávají.
 
 2026-10-14: nainstalované projektové skilly pro Codex: emilkowalski/skills (15), Impeccable a gpt-taste. Instalace ověřená; žádný další bod Notion checklistu se tím neuzavírá.
+
+15. 10. 2026: SQL nastavení Supabase dokončené podle potvrzení uživatele. API ověření, klíče, retence a koncový test zbývají.

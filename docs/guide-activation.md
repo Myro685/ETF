@@ -67,3 +67,5 @@ Gmail OAuth je nyní skutečně propojené a obnovení tokenu ověřené. Nový 
 Uživatel potvrdil vytvoření nového Supabase projektu. Pro první nastavení je připravený jediný `supabase/setup-new-project.sql`, který spojuje 001 a 002 do transakce. Použít buď tento soubor, nebo původní dvě migrace; nikoliv oba postupy. Kontrola existujících tabulek brání omylu při opakovaném spuštění. Soubor neobsahuje osobní kontakty ani klíče, neodesílá poštu a sám neplánuje Cron.
 
 V SQL editoru nového projektu vytvořit nový dotaz, vložit celý obsah a spustit Run. Úspěch: Success / No rows returned, v public dvě nové tabulky guide_contacts a guide_requests. Teprve potvrzení výsledku znamená provedenou migraci; zatím je zaznamenané pouze vytvoření projektu podle uživatele. Potom doplnit serverový secret key soukromě do konfigurace a nastavit/ověřit hodinovou retenci.
+
+Uživatel 15. 10. 2026 potvrdil úspěšné spuštění SQL. Schéma zatím nebylo ověřené přes API; dalším krokem je soukromé doplnění SUPABASE_URL a SUPABASE_SECRET_KEY do .env.local. Formulář zůstává vypnutý.
