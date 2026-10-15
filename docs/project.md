@@ -4,7 +4,7 @@ Zdroj: [Clientelo projekt v Notion](https://app.notion.com/p/3f4e1942c8af80ddacf
 
 Termín: **2026-10-16**. Aktualizace: **2026-10-15**.
 
-Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouze k odškrtávání dokončených bodů. Uživatel se vrátil k reklamám: dva návrhy bodu 4 připravené; frontend i bod 6 implementované. Bod 7 zůstává rozpracovaný.
+Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouze k odškrtávání dokončených bodů. Uživatel se vrátil k reklamám: dva návrhy bodu 4 připravené; frontend i bod 6 implementované. Bod 7 dokončený v rozsahu formuláře, doručení a informačního požadavku; samostatné smluvní/provozní mezery jsou evidované v docs/privacy-operations.md.
 
 | Bod | Výsledek | Stav |
 | --- | --- | --- |
@@ -14,7 +14,7 @@ Podrobnosti a rozhodnutí vedeme v projektových souborech. Notion slouží pouz
 | 4 | Dvě reklamy s textem, nadpisem a CTA v repozitáři | Hotovo jako příprava návrhů; docs/ads.md, návaznost úvodu stránky ověřená; kampaň nespuštěná, návrhy k posouzení |
 | 5 | Obsah, pořadí sekcí a vlastní vzhled pro mobil | Hotovo; aktuální redesign přímo v Reactu podle tří skillů, ověření v docs/design-2026-10-11.md |
 | 6 | Interaktivní funkce s ověřenými výsledky | Hotovo; na výslovné přání uživatele dvě: kalkulačka a kvíz, automatické a browser testy v docs/interactive-feature.md |
-| 7 | Formulář, uložení kontaktu, ochrana údajů, doručení | Technický koncový test potvrzený uživatelem a databází: 1 kontakt, 1 žádost, přijetí Gmailem. Uživatel nově požaduje libovolné adresy; přechod z dema nasazený: API demoOnly=false, input upravitelný. Aktivní hodinová retence a úspěšný běh 15. 10. ve 12:00 přímo ověřené. Veřejné informace publikované, konečné doložení smluvních/provozních podmínek zůstává otevřené; docs/privacy-operations.md |
+| 7 | Formulář, uložení kontaktu, ochrana údajů, doručení | Hotovo v rozsahu zadání: skutečný průchod potvrzený uživatelem, upravitelné pole, chybové stavy, účel a retence u pole, informace o správci a veřejná stránka ochrany údajů dostupná i z patičky. Retence a doručení ověřené. Dokončení checklistu nepotvrzuje vyřešení samostatně evidovaných smluvních podmínek ostrého provozu; docs/privacy-operations.md |
 | 8 | Rozlišení reklam, události trychtýře a ověření záznamu | Hotovo: vlastní měření se souhlasem, Supabase RPC, retence a soukromý report; všechny události skutečně zapsané, obě reklamy rozlišené, opakovaná a smyšlená konverze ověřené. Kontrola ovládání živého webu prošla. docs/measurement.md |
 | 9 | README, důvody řešení, zdroje, konverze, tři A/B hypotézy, spuštění | Hotovo: aktuální README obsahuje celý požadovaný rozsah; konverze 3 % s rozpětím 2–5 % je výslovně vlastní pracovní odhad, A/B hypotézy nejsou spuštěné |
 | 10 | AI pokyny, kontroly, chyby, exporty a metoda exportu | Rozpracováno; souhrn, úplné exporty chybí |

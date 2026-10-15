@@ -171,3 +171,8 @@ Primární podmínky znovu ověřené: Vercel DPA výslovně vymezuje Pro/Enterp
 ## 2026-10-15 — měření bodu 8
 
 Na pokyn uživatele vlastní analytika v existujícím Supabase přes Vercel API. Bez další služby a klientského tajného klíče. Dobrovolný souhlas s rovnocenným odmítnutím a odvoláním v patičce; měření neblokuje průvodce. Pevné reklamní kategorie podle připravených UTM, žádné hodnoty vstupů ani raw URL. Konverze ověřená proti skutečné dokončené žádosti, odlišení nového kontaktu od opakovaného stažení v uchovávané historii. Soukromý report vylučuje interní testy. Volba technického řešení v rámci autorizovaného dokončení bodu 8; nespouští placenou reklamu ani neuzavírá smluvní předpoklady bodu 7.
+
+
+## 2026-10-15 — Rozsah dokončení bodu 7
+
+Na žádost dokončit bod 7 znovu načtené přesné zadání v Notion. Zjištěno, že poslední checkbox požaduje vysvětlení účelu a odpovídající informace o ochraně údajů; dřívější závěr jej rozšířil na úplné smluvní posouzení poskytovatelů. Toto rozšíření nebylo výslovným požadavkem zadání. Účel, správce, rozsah, poskytovatelé, uchování a práva jsou zveřejněné. Doplněná retence přímo u formuláře a trvalý odkaz v patičce. Oddělené dokončení funkčního a informačního rozsahu od otevřených podmínek ostrého provozu: žádná smlouva nebyla přijata, tarif zakoupen, poskytovatel změněn ani další e-mail odeslán. Primární podmínky Vercel a Googlu znovu potvrzují dosud evidované mezery; jejich uzavření se netvrdí. Historické záznamy ponechané jako historie, současný stav výslovně upřesněný.

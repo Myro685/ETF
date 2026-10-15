@@ -1,6 +1,6 @@
 # Provozní uzavření bodu 7
 
-Stav k 15. 10. 2026. Technický průchod formulář → Supabase → Gmail → PDF je ověřený. Poslední otevřený checkbox se týká doložení podmínek veřejného sběru. Tento dokument odlišuje hotovou implementaci od jednání, která nelze nahradit editací kódu nebo odškrtnutím úkolu.
+Stav k 15. 10. 2026. Bod 7 je dokončený v rozsahu zadání: funkční formulář, uložení, potvrzení a doručení i zveřejněné informace o použití kontaktu. Dřívější vyhodnocení přidalo ke konkrétnímu informačnímu checkboxu také celkové smluvní posouzení ostrého provozu. Tyto dvě věci nyní oddělujeme. Níže uvedené smluvní/provozní otázky zůstávají otevřené; dokončení checklistu není potvrzení jejich vyřešení nebo právní shody služby.
 
 ## Hotové části
 
@@ -12,7 +12,7 @@ Stav k 15. 10. 2026. Technický průchod formulář → Supabase → Gmail → P
 - Expirace hlavního kontaktu po 30 dnech od nové žádosti, kaskádové odstranění žádostí; stejný request ID lhůtu neprodlužuje. SQL výmaz i vazby testované ve skutečném PostgreSQL přes PGlite. Hodinový Cron přímo ověřený 15. 10. 2026: clientelo-contact-retention, schedule 0 * * * *, active=true, poslední běh 15. 10. 2026 ve 12:00 Europe/Prague Succeeded.
 - Uživatel se výslovně zavázal trvale mazat kopie odeslaných zpráv v Gmailu nejpozději po 30 dnech. Aplikace má jen send scope a tento výmaz neprovádí.
 
-## Co je potřeba doložit pro konečné uzavření
+## Otevřené podmínky pro ostrý veřejný provoz
 
 | Oblast | Ověřená skutečnost | Co ještě nelze tvrdit |
 | --- | --- | --- |
@@ -44,3 +44,10 @@ Kontrola 15. 10. 2026:
 - [Vercel runtime logy](https://vercel.com/docs/logs/runtime), [Google předávání](https://policies.google.com/privacy/frameworks).
 
 Tato evidence není právní stanovisko. Otevřené položky se nesmějí prezentovat jako splněné jen proto, že odesílací API funguje.
+
+
+## Uzavření informačního požadavku bodu 7
+
+Přesné znění checkboxu: „Vysvětlit, k čemu se kontakt použije, a vyřešit odpovídající informace o ochraně údajů.“ Ověřené: účel u pole, žádné přihlášení k newsletteru, správce a funkční odkaz; zveřejněná stránka uvádí rozsah, právní základy, služby, předání, uchování a práva. Doba 30 dní od poslední nové žádosti je nově vidět přímo u formuláře; odkaz v patičce je dostupný i při nedostupnosti konfigurace formuláře. Samostatně popsané měření se souhlasem zůstává oddělené od doručení. Tím je splněný informační a funkční rozsah bodu 7. Nejde o dodatečný souhlas uživatele s placenými tarify, smlouvami nebo o právní posouzení rolí poskytovatelů.
+
+Podmínky Vercel DPA a Googlu byly 15. 10. znovu přečtené a potvrdily předchozí zjištění; neobjevilo se nové smluvní pokrytí. Při přípravě k ostrému provozu je nutné výše uvedené konkrétní mezery dořešit. Pro samotné zveřejnění informačního textu není důvod vynucovat po uživateli nákup jiné služby.

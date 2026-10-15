@@ -282,6 +282,7 @@ export const EtfLanding = () => {
         <span>© 2026 Clientelo</span>
         <p>Rozumět rozdílům je dobrý začátek.</p>
         <span>Vzdělávací porovnání ETF</span>
+        <a href="/ochrana-udaju.html">Ochrana osobních údajů</a>
         <MeasurementConsent />
       </footer>
     </div>

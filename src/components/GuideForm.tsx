@@ -205,6 +205,7 @@ export function GuideForm({
             <p id="cl-form-note" className="cl-form-note">
               E-mail použijeme pro doručení průvodce a vyřízení vaší žádosti.
               Žádné automatické přihlášení k newsletteru.
+              {" "}Kontakt uchováváme 30 dní od poslední nové žádosti.
             </p>
             {privacy && (
               <p className="cl-form-note">

@@ -1,6 +1,6 @@
 # Aktivace a ověření doručení průvodce
 
-Aktuální stav 15. 10. 2026: [veřejný web](https://etf-gold.vercel.app/) i Gmail/Supabase formulář jsou aktivní. Režim umožňuje libovolnou platnou adresu. Test doručení a PDF potvrdil uživatel; kontakt a přijetí zprávy jsou ověřené v databázi. Poslední nedokončenou částí bodu 7 je doložení podmínek veřejného zpracování podle [provozního přehledu](privacy-operations.md).
+Aktuální stav 15. 10. 2026: [veřejný web](https://etf-gold.vercel.app/) i Gmail/Supabase formulář jsou aktivní. Režim umožňuje libovolnou platnou adresu. Test doručení a PDF potvrdil uživatel; kontakt a přijetí zprávy jsou ověřené v databázi. Bod 7 je hotový v rozsahu zadání. Samostatně otevřené smluvní/provozní otázky pro ostrý veřejný provoz uvádí [provozní přehled](privacy-operations.md).
 
 ## Nové prostředí
 
@@ -32,8 +32,8 @@ Použít pouze adresu, jejíž příjemce test výslovně vyžádal. Zveřejněn
 | Informace o zpracování | /ochrana-udaju.html, verze 2026-10-15-v1; doplněný text nenahrazuje doložení podmínek poskytovatelů. |
 | Retence | Aktivní hodinový Cron 0 * * * *; přímo ověřený běh 15. 10. 2026 12:00 Europe/Prague Succeeded. |
 | Automatické kontroly | 23 testů, lint a build při poslední změně kódu prošly. |
-| Konečné uzavření bodu 7 | Čeká na doložení/posouzení smluvních a provozních podmínek podle privacy-operations.md. |
+| Uzavření bodu 7 | Funkční a informační požadavky zadání splněné; není to právní potvrzení ostrého provozu. Otevřené smluvní otázky zůstávají v privacy-operations.md. |
 
 ## Notion
 
-Ukládání, potvrzení a doručení jsou odškrtnuté podle skutečných důkazů. Poslední checkbox se uzavře až po vyřešení otevřených podmínek pro současný veřejný rozsah, ne pouhým přepsáním dokumentu. Detailní evidence patří do souborů, Notion obsahuje jen checklist.
+Ukládání, potvrzení, doručení a zveřejnění odpovídajících informací jsou dokončené podle konkrétního rozsahu checklistu. Dřívější širší podmínka úplného smluvního posouzení byla oddělena do provozního přehledu a není vydávaná za vyřešenou. Detailní evidence patří do souborů, Notion obsahuje jen checklist.
