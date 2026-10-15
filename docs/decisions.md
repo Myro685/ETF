@@ -116,3 +116,7 @@ Uživatel pokračoval průvodcem pro Gmail: potvrdil zapnuté API, OAuth konfigu
 ## 2026-10-15 — propojený Gmail a databázová ochrana odeslání
 
 Uživatel potvrdil propojení; ověřený soukromý token a živé obnovení bez send. Implementovaný Gmail transport jako zvolená cesta, původní Resend zachovaný alternativně. Obě SQL migrace povinné. Gmail send nemá nativní idempotenci, proto jediný databázově převzatý pokus a při nejasném výsledku ruční ověření místo automatického opakování. Omezení a evidence v docs/gmail-setup.md. Kontakty zůstávají vypnuté; čekáme na skutečný Supabase projekt, informace o zpracování, veřejné PDF a autorizovaný akceptační test.
+
+## 2026-10-15 — první nastavení Supabase
+
+Uživatel potvrdil vytvoření projektu. Pro postup po krocích připravený jediný atomický setup-new-project.sql odvozený z obou migrací. Slouží pouze novému prázdnému projektu a odmítne existující tabulky. Spuštění na živém Supabase zatím nepotvrzené; klíče ani kontakty se do souboru nevkládají.
