@@ -1,3 +1,5 @@
+> Aktuální stav 15. 10. 2026: produkční Gmail/Supabase doručení je ověřené a formulář přijímá libovolné platné adresy. Aktuální postup a limity jsou v guide-activation.md a privacy-operations.md. Níže je původní implementační specifikace a historická evidence; tvrzení o dosud neaktivovaných službách nejsou současným stavem.
+
 # Formulář a doručení — bod 7
 
 Aktualizace: 2026-10-14. **Hotová implementace formuláře a připravené serverové napojení; skutečné služby a doručení zatím nejsou aktivované.** Uživatel požádal zaměřit se na formulář. PDF je nyní vytvořené a správce i zveřejnitelný kontakt jsou známé. Uživatel zvolil Supabase + Resend, ale účty ještě nemá. K úplnému bodu 7 zbývají účty, ověřená odesílací doména, veřejné URL, dokončené informace o zpracování a živý koncový test. Postup v docs/guide-activation.md.
